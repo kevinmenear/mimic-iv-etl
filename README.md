@@ -1,17 +1,19 @@
 # mimic-iv-etl
 A streamlined, flexible ETL pipeline tool designed for efficient processing and analysis of MIMIC-IV healthcare data.
 
-## Environment Setup
+## Setup
+Navigate to the `mimic-iv-etl` directory.
 
-To set up the Conda environment for this project, follow these steps:
-
-1. **Create and Activate the Conda Environment:**
+### Environment
+Set up and activate the Conda environment for this project:
    ```
    conda env create -f environment.yml
    conda activate mimic-iv-etl
    ```
 
-3. **Deactivate the Environment (when done):**
+### Package Installation
+
+Install the `mimicfouretl` Python package:
    ```
-   conda deactivate
+   pip install .
    ```
