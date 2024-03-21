@@ -1,0 +1,51 @@
+dataset_description: "All recorded hospital admissions."
+
+schema:
+  subject_id:
+    type: int
+    description: A unique identifier for each patient.
+  hadm_id:
+    type: int
+    description: A unique identifier for each hospital admission.
+  admittime:
+    type: timestamp
+    description: The date and time of hospital admission.
+  dischtime:
+    type: timestamp
+    description: The date and time of hospital discharge.
+  deathtime:
+    type: timestamp|null
+    description: The date and time of death if the patient expired during the hospitalization, null if patient survived.
+  admission_type:
+    type: string
+    description: Classification of the admission type (e.g., emergency, elective).
+  admit_provider_id:
+    type: int|null
+    description: Identifier for the provider who admitted the patient, null if unknown.
+  admission_location:
+    type: string
+    description: The location from which the patient was admitted (e.g., emergency room, direct admission).
+  discharge_location:
+    type: string
+    description: The location to which the patient was discharged (e.g., home, another healthcare facility).
+  insurance:
+    type: string
+    description: Information about the patient's insurance coverage or payer status.
+  language:
+    type: string
+    description: The language spoken by the patient.
+  marital_status:
+    type: string
+    description: The marital status of the patient.
+  race:
+    type: string
+    description: The race of the patient.
+  edregtime:
+    type: timestamp|null
+    description: The date and time of registration in the emergency department, null if not applicable.
+  edouttime:
+    type: timestamp|null
+    description: The date and time of discharge from the emergency department, null if not applicable.
+  hospital_expire_flag:
+    type: int
+    description: A flag indicating whether the patient expired during the hospitalization (0 for no, 1 for yes).
