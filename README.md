@@ -17,3 +17,12 @@ Install the `mimicfouretl` Python package:
    ```
    pip install .
    ```
+
+### Set Up Google Authorization to Access MIMIC-IV Dataset
+
+   ```
+   pip install google-auth
+   pip install google-auth-oauthlib
+   pip install google-auth-httplib2
+   pip install google-cloud-bigquery
+   ```
