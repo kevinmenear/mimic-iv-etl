@@ -4,4 +4,5 @@
 /data/processed/
 /src/mimicfouretl.egg-info/
 bq_credentials/
+__pycache__/
 *.ipynb_checkpoints
