@@ -12,3 +12,5 @@ dependencies:
   - seaborn==0.13.2
   - jupyterlab==4.1.5
   - ipywidgets==8.1.2
+  - google-auth-oauthlib==0.5.2
+  # - google-cloud-bigquery==3.19.0 needs to be pip installed
