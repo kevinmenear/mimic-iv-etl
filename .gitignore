@@ -7,3 +7,5 @@
 
 
 /src/mimicfouretl.egg-info/
+
+.ipynb_checkpoints/*
