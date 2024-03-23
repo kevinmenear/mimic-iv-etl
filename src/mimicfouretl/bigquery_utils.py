@@ -1,11 +1,14 @@
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.cloud import bigquery
+from google.oauth2 import service_account
+from google.api_core.exceptions import NotFound
 
 from pyspark.sql import SparkSession
 
 _credentials_path = None
 _project_id = None
 _access_token = None
+_client = None
 
 def set_credentials_file(path):
     global _credentials_path
@@ -21,41 +24,53 @@ def set_project_id(id):
 def get_project_id():
     return _project_id
 
-def get_client():
+def get_client(use_service_account_auth=False):
     if _credentials_path is None:
         raise ValueError("Credentials file path is not set.")
     if _project_id is None:
         raise ValueError("Project ID is not set.")
 
-    flow = InstalledAppFlow.from_client_secrets_file(_credentials_path, 
-                                                     scopes=["https://www.googleapis.com/auth/bigquery"])
-    credentials = flow.run_local_server(port=0)
-    client = bigquery.Client(credentials=credentials, project=_project_id)
+    if use_service_account_auth:
+        credentials = service_account.Credentials.from_service_account_file(_credentials_path)
+    else: 
+        flow = InstalledAppFlow.from_client_secrets_file(_credentials_path, 
+                                                        scopes=["https://www.googleapis.com/auth/bigquery"])
+        credentials = flow.run_local_server(port=0)
+    global _client
+    _client = bigquery.Client(credentials=credentials, project=_project_id)
     global _access_token
-    _access_token = client._credentials.token
-    return client
+    _access_token = _client._credentials.token
+    return _client
 
 def list_tables(client, dataset_id):
     tables = client.list_tables(dataset_id)
     return [f"{dataset_id}.{table.table_id}" for table in tables]
 
-def get_spark_session(client):
+def get_spark_session(client, materialization_dataset="mimiciv_materialization"):
     spark = SparkSession.builder \
-    .appName("BigQuery with OAuth") \
-    .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:latest.version") \
-    .getOrCreate()
+                .appName("BigQuery with OAuth") \
+                .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:latest.version") \
+                .getOrCreate()
     spark.read.format("bigquery").option("credentialsFile", "_credentials_path")
-    spark.conf.set("gcpAccessToken", _access_token)
-    materialization_dataset = "mimiciv_materialization"
+    # spark.conf.set("gcpAccessToken", _access_token)
     spark.conf.set("viewsEnabled", "true")
     spark.conf.set("materializationDataset", materialization_dataset)
     return spark
 
-def run_query(spark, query):
+def run_query(spark, query, materialization_dataset="mimiciv_materialization"):    
+    # Check if the materialization dataset exists, create it if it doesn't
+    dataset_ref = _client.dataset(materialization_dataset)
+    
+    try:
+        dataset = _client.get_dataset(dataset_ref)
+    except NotFound:
+        dataset = bigquery.Dataset(dataset_ref)
+        dataset = _client.create_dataset(dataset)
+        
     # DataFrame with results
     df = spark.read.format("bigquery") \
-    .option("query", query) \
-    .load()
+              .option("query", query) \
+              .load()
     return df
 
 def display_sampled_df(spark_df, sample_type='random', number=10, seed=12):
