@@ -3,7 +3,6 @@ from google.cloud import bigquery
 
 from pyspark.sql import SparkSession
 
-# Global variables to store credentials and project ID
 _credentials_path = None
 _project_id = None
 _access_token = None
@@ -28,7 +27,8 @@ def get_client():
     if _project_id is None:
         raise ValueError("Project ID is not set.")
 
-    flow = InstalledAppFlow.from_client_secrets_file(_credentials_path, scopes=["https://www.googleapis.com/auth/bigquery"])
+    flow = InstalledAppFlow.from_client_secrets_file(_credentials_path, 
+                                                     scopes=["https://www.googleapis.com/auth/bigquery"])
     credentials = flow.run_local_server(port=0)
     client = bigquery.Client(credentials=credentials, project=_project_id)
     global _access_token
@@ -57,5 +57,25 @@ def run_query(spark, query):
     .option("query", query) \
     .load()
     return df
+
+def display_sampled_df(spark_df, sample_type='random', number=10, seed=12):
+    """
+    Displays a sample of a PySpark DataFrame as a Pandas DataFrame.
+
+    :param spark_df: The PySpark DataFrame to sample from.
+    :param sample_type: Type of sample. Options: 'random_fraction', 'random_fixed', 'head'.
+    :param fraction: Fraction of rows to sample (for 'random_fraction').
+    :param number: Number of rows to sample (for 'random_fixed').
+    :param seed: Seed for random number generator.
+    """
+    if sample_type == 'random':
+        sampled_df = spark_df.sample(withReplacement=False, fraction=1.0, seed=seed).limit(number)
+    elif sample_type == 'head':
+        sampled_df = spark_df.limit(number)
+    else:
+        raise ValueError("Invalid sample type. Choose from 'random' or 'head'.")
+
+    display(sampled_df.toPandas())
+
 
     
