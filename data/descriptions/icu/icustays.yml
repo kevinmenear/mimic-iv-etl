@@ -1,4 +1,4 @@
-dataset_description: "All recorded ICU stays."
+dataset_description: "All recorded Intensive Care Unit (ICU) stays."
 
 schema:
   subject_id:

@@ -1,4 +1,4 @@
-dataset_description: "Removal or elimination of fluids, medications, or other substances from patients during ICU stays."
+dataset_description: "Removal or elimination of fluids, medications, or other substances from patients during Intensive Care Unit (ICU) stays."
 
 schema:
   subject_id:

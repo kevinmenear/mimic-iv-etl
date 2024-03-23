@@ -1,4 +1,4 @@
-dataset_description: "Events associated to the administration or management of a specific ingredient/substance during ICU stays."
+dataset_description: "Events associated to the administration or management of a specific ingredient/substance during Intensive Care Unit (ICU) stays."
 
 schema:
   subject_id:

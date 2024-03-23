@@ -1,4 +1,4 @@
-dataset_description: "Medical events that can be measured or observed during ICU stays."
+dataset_description: "Medical events that can be measured or observed during Intensive Care Unit (ICU) stays."
 
 schema:
   itemid:

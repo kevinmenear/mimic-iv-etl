@@ -1,4 +1,4 @@
-dataset_description: "Events associated to patients during ICU stays."
+dataset_description: "Events associated to patients during Intensive Care Unit (ICU) stays."
 
 schema:
   subject_id:
