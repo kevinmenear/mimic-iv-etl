@@ -1,0 +1,69 @@
+dataset_description: "Procedures performed on patients in the Intensive Care Unit (ICU)."
+
+schema:
+  subject_id:
+    type: int
+    description: "Unique identifier for the patient."
+  hadm_id:
+    type: int
+    description: "Unique identifier for the hospital admission."
+  stay_id:
+    type: int
+    description: "Unique identifier for the patient's ICU stay."
+  caregiver_id:
+    type: int
+    description: "Identifier for the caregiver responsible for the procedure."
+  starttime:
+    type: str
+    description: "Start time of the procedure."
+  endtime:
+    type: str
+    description: "End time of the procedure."
+  storetime:
+    type: str
+    description: "Time when the data was stored."
+  itemid:
+    type: int
+    description: "Identifier for the item associated with the procedure."
+  value:
+    type: float
+    description: "Value associated with the procedure."
+  valueuom:
+    type: str
+    description: "Unit of measurement for the value."
+  location:
+    type: str
+    description: "Location where the procedure took place."
+  locationcategory:
+    type: str
+    description: "Category of the location."
+  orderid:
+    type: int
+    description: "Identifier for the order associated with the procedure."
+  linkorderid:
+    type: int
+    description: "Identifier for the linked order."
+  ordercategoryname:
+    type: str
+    description: "Name of the order category."
+  ordercategorydescription:
+    type: str
+    description: "Description of the order category."
+  patientweight:
+    type: float
+    description: "Weight of the patient."
+  isopenbag:
+    type: int
+    description: "Whether the bag containing the administered input event is open or closed."
+  continueinnextdept:
+    type: int
+    description: "Whether the administration of the input event should continue when the patient is transferred to the next department or unit within the hospital."
+  statusdescription:
+    type: str
+    description: "Description of the status of the procedure."
+  originalamount:
+    type: float
+    description: "Original amount associated with the procedure."
+  originalrate:
+    type: float
+    description: "Original rate associated with the procedure."

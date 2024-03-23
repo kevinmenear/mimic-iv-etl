@@ -1,0 +1,81 @@
+dataset_description: "Input of fluids, medications, or other substances into patients during Intensive Care Unit (ICU) stays."
+
+schema:
+  subject_id:
+    type: int
+    description: "Unique identifier for the patient."
+  hadm_id:
+    type: int
+    description: "Unique identifier for the hospital admission."
+  stay_id:
+    type: int
+    description: "Unique identifier for the ICU stay."
+  caregiver_id:
+    type: int
+    description: "Unique identifier for the caregiver."
+  starttime:
+    type: datetime
+    description: "Start time of the input event."
+  endtime:
+    type: datetime
+    description: "End time of the input event."
+  storetime:
+    type: datetime
+    description: "Time when the event was stored."
+  itemid:
+    type: int
+    description: "Unique identifier for the ICU item."
+  amount:
+    type: float
+    description: "Amount of the ICU item."
+  amountuom:
+    type: str
+    description: "Unit of measurement for the amount."
+  rate:
+    type: float
+    description: "Rate of item."
+  rateuom:
+    type: str
+    description: "Unit of measurement for the rate."
+  orderid:
+    type: int
+    description: "Identifier for the order."
+  linkorderid:
+    type: int
+    description: "Identifier linked to the order."
+  ordercategoryname:
+    type: str
+    description: "Category name of the order."
+  secondaryordercategoryname:
+    type: str
+    description: "Secondary category name of the order."
+  ordercomponenttypedescription:
+    type: str
+    description: "Description of the order component type."
+  ordercategorydescription:
+    type: str
+    description: "Description of the order category."
+  patientweight:
+    type: float
+    description: "Weight of the patient."
+  totalamount:
+    type: float
+    description: "Total amount of input."
+  totalamountuom:
+    type: str
+    description: "Unit of measurement for the total amount."
+  isopenbag:
+    type: int
+    description: "Whether the bag containing the administered input event is open or closed."
+  continueinnextdept:
+    type: int
+    description: "Whether the administration of the input event should continue when the patient is transferred to the next department or unit within the hospital."
+  statusdescription:
+    type: str
+    description: "Description of the status of the input event."
+  originalamount:
+    type: float
+    description: "Original amount of the input event."
+  originalrate:
+    type: float
+    description: "Original rate of the input event."
