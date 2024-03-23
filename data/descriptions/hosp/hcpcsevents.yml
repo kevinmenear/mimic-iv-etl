@@ -1,4 +1,4 @@
-dataset_description: "Healthcare common procedure coding system (HCPCS) codes assigned to patients during hospital admissions."
+dataset_description: "Healthcare common procedure coding system (HCPCS) codes assigned to patients during hospital visits."
 
 schema:
   subject_id:

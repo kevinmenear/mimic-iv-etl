@@ -1,4 +1,4 @@
-dataset_description: "Laboratory events recorded for patients during hospital stays."
+dataset_description: "Laboratory events recorded for patients during hospital visits."
 
 schema:
   labevent_id:

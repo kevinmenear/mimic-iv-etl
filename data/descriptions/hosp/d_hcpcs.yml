@@ -1,4 +1,4 @@
-dataset_description: "Medical procedure codes, categories and descriptions."
+dataset_description: "Medical procedures defined by the Healthcare Common Procedure Coding System (HCPCS)."
 
 schema:
   code:

@@ -1,4 +1,4 @@
-dataset_description: "Microbiology events recorded for patients during hospital stays."
+dataset_description: "Microbiology events recorded for patients during hospital visits."
 
 schema:
   microevent_id:
