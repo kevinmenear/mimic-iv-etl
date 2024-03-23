@@ -13,9 +13,7 @@ def get_item_frequency(item_id, column_name, dataset, limit=None):
     Returns:
     - DataFrame: A DataFrame containing the frequency count of the specified item.
 
-    Example Usage:
-    >>> item_frequency = get_item_frequency(51248, 'itemid', 'labevents')
-    >>> item_frequency.show()
+    Example Output:
     +-------+-----+
     | itemid|count|
     +-------+-----+
@@ -45,9 +43,7 @@ def get_temporal_trends(item_id, column_name, date_column, dataset, limit):
     Returns:
     - DataFrame: A DataFrame showing the trend of the item over time.
 
-    Example Usage:
-    >>> trend_data = get_temporal_trends(51248, 'itemid', 'charttime', 'labevents')
-    >>> trend_data.show()
+    Example Output:
     +-------+----------+-----+
     | itemid| charttime|count|
     +-------+----------+-----+
@@ -67,38 +63,32 @@ def get_temporal_trends(item_id, column_name, date_column, dataset, limit):
     return bq.run_query(query)
 
 
-def count_patient_outcomes(item_id, item_column, outcome_column, dataset, outcome_dataset, limit):
+def get_outcomes_by_item(self, item_id, item_column, outcome_column, item_dataset, outcome_dataset):
     """
-    Correlates specific items (like tests or medications) with patient outcomes (such as length of stay or readmission).
+    Fetches patient outcomes related to specific items.
 
     Parameters:
-    - item_id (int or str): Identifier for the item to be correlated.
-    - item_column (str): Name of the column in the dataset that corresponds to the item.
-    - outcome_column (str): Name of the column in the outcome dataset that indicates the patient outcome.
-    - dataset (str): Name of the dataset containing the item.
-    - outcome_dataset (str): Name of the dataset containing patient outcome information.
+    - item_id (int or str): Identifier for the item of interest.
+    - item_column (str): Column name in the dataset corresponding to the item.
+    - outcome_column (str): Column in the outcome dataset indicating the patient outcome.
+    - item_dataset (str): Dataset name containing the item.
+    - outcome_dataset (str): Dataset name containing patient outcome information.
 
     Returns:
-    - DataFrame: A DataFrame showing the correlation between the specified item and patient outcomes.
+    DataFrame: A DataFrame showing each occurrence of the specified item along with the associated patient outcomes.
 
-    Example Usage:
-    >>> correlation_data = get_patient_outcomes_correlation(51248, 'itemid', 'length_of_stay', 'labevents', 'admissions')
-    >>> correlation_data.show()
-    +-------+---------------+----------------+
-    | itemid| length_of_stay|      count     |
-    +-------+---------------+----------------+
-    |  51248|              5|             75 |
-    |  51248|             10|             60 |
-    +-------+---------------+----------------+
+    Example Output:
+    +-----------+--------+---------+-------------+
+    | subject_id| hadm_id| item_id | outcome     |
+    +-----------+--------+---------+-------------+
+    |     12345 | 54321  |  51248  | Recovered   |
+    |     12345 | 54321  |  51248  | Readmitted  |
+    +-----------+--------+---------+-------------+
     """
     query = f"""
-    SELECT A.{item_column}, B.{outcome_column}, COUNT(*) as count
-    FROM `{dataset}` A
-    JOIN `{outcome_dataset}` B ON A.subject_id = B.subject_id
-    WHERE A.{item_column} = {item_id}
-    GROUP BY A.{item_column}, B.{outcome_column}
+    SELECT A.subject_id, A.hadm_id, A.{item_column} AS item_value, B.{outcome_column} AS outcome_value
+    FROM `{item_dataset}` A
+    JOIN `{outcome_dataset}` B ON A.subject_id = B.subject_id AND A.hadm_id = B.hadm_id
+    WHERE A.{item_column} = '{item_id}'
     """
-    if limit is not None:
-        query += f" LIMIT {limit}"
-    return bq.run_query(query)
-
+    return bq.run_query(self.spark, query)
