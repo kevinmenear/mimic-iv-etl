@@ -1,0 +1,51 @@
+dataset_description: "Laboratory events recorded for patients during hospital visits."
+
+schema:
+  labevent_id:
+    type: int
+    description: "A unique identifier for each laboratory event."
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int|null
+    description: "A unique identifier for each hospital admission."
+  specimen_id:
+    type: int|null
+    description: "The specimen ID."
+  itemid:
+    type: int
+    description: "The item ID."
+  order_provider_id:
+    type: int|null
+    description: "The provider ID for the order."
+  charttime:
+    type: timestamp
+    description: "The time the measurement was charted."
+  storetime:
+    type: timestamp
+    description: "The time the measurement was stored."
+  value:
+    type: string|null
+    description: "The value of the measurement."
+  valuenum:
+    type: float|null
+    description: "The numeric value of the measurement."
+  valueuom:
+    type: string|null
+    description: "The unit of measurement."
+  ref_range_lower:
+    type: float|null
+    description: "The lower limit of the reference range."
+  ref_range_upper:
+    type: float|null
+    description: "The upper limit of the reference range."
+  flag:
+    type: string|null
+    description: "A flag indicating abnormality or other status."
+  priority:
+    type: string|null
+    description: "The priority of the measurement."
+  comments:
+    type: string|null
+    description: "Additional comments or notes associated with the measurement."

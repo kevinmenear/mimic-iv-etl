@@ -1,0 +1,18 @@
+dataset_description: "International Classification of Diseases (ICD) diagnoses assigned to patients during hospital admissions."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  seq_num:
+    type: int
+    description: "The sequence number of the ICD code."
+  icd_code:
+    type: string
+    description: "The ICD code assigned to the patient."
+  icd_version:
+    type: int
+    description: "The version of the ICD coding system (e.g., ICD-9, ICD-10)."

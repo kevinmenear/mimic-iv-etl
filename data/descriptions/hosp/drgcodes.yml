@@ -1,0 +1,24 @@
+dataset_description: "Diagnosis-Related Group (DRG) codes assigned to patients during hospital admissions."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  drg_type:
+    type: string
+    description: "The type of DRG code."
+  drg_code:
+    type: string
+    description: "The DRG code assigned to the patient."
+  description:
+    type: string
+    description: "A description of the DRG code."
+  drg_severity:
+    type: string|null
+    description: "The severity level associated with the DRG code, if available."
+  drg_mortality:
+    type: string|null
+    description: "The mortality level associated with the DRG code, if available."

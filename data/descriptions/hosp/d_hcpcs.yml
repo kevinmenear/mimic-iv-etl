@@ -1,0 +1,15 @@
+dataset_description: "Medical procedures defined by the Healthcare Common Procedure Coding System (HCPCS)."
+
+schema:
+  code:
+    type: string
+    description: "The code associated with the medical procedure."
+  category:
+    type: string|null
+    description: "The category of the medical procedure, if available."
+  long_description:
+    type: string|null
+    description: "A detailed long description of the medical procedure, if available."
+  short_description:
+    type: string
+    description: "A brief short description of the medical procedure."
