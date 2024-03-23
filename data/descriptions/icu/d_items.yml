@@ -1,0 +1,30 @@
+dataset_description: "Medical events that can be measured or observed during ICU stays."
+
+schema:
+  itemid:
+    type: int
+    description: "Unique identifier for each ICU item."
+  label:
+    type: string
+    description: "Full label or description of the item."
+  abbreviation:
+    type: string
+    description: "Abbreviation or short name for the item."
+  linksto:
+    type: string
+    description: "The type of event or data this item is linked to."
+  category:
+    type: string
+    description: "Category or group this item belongs to."
+  unitname:
+    type: string
+    description: "Unit name for the item."
+  param_type:
+    type: string
+    description: "Parameter type for the item."
+  lownormalvalue:
+    type: string
+    description: "Low normal value for the item."
+  highnormalvalue:
+    type: string
+    description: "High normal value for the item."

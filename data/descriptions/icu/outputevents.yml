@@ -1,0 +1,30 @@
+dataset_description: "Removal or elimination of fluids, medications, or other substances from patients during ICU stays."
+
+schema:
+  subject_id:
+    type: int
+    description: "Unique identifier for the patient."
+  hadm_id:
+    type: int
+    description: "Unique identifier for the hospital admission."
+  stay_id:
+    type: int
+    description: "Unique identifier for the ICU stay."
+  caregiver_id:
+    type: int
+    description: "Unique identifier for the caregiver."
+  charttime:
+    type: str
+    description: "Time at which the event was charted."
+  storetime:
+    type: str
+    description: "Time at which the event data was stored or recorded."
+  itemid:
+    type: int
+    description: "Identifier for the item associated with the output event."
+  value:
+    type: float
+    description: "Value associated with the output event."
+  valueuom:
+    type: str
+    description: "Unit of measurement for the value associated with the output event."

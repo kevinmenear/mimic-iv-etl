@@ -1,0 +1,6 @@
+dataset_description: "ICU (Intensive Care Unit) caregivers."
+
+schema:
+  caregiver_id:
+    type: int
+    description: "Unique identifier for each caregiver."

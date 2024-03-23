@@ -1,0 +1,54 @@
+dataset_description: "Events associated to the administration or management of a specific ingredient/substance during ICU stays."
+
+schema:
+  subject_id:
+    type: int
+    description: "Identifier for the patient."
+  hadm_id:
+    type: int
+    description: "Identifier for the hospital admission."
+  stay_id:
+    type: int
+    description: "Identifier for the ICU stay."
+  caregiver_id:
+    type: int
+    description: "Identifier for the caregiver."
+  starttime:
+    type: string
+    description: "Start time of the ingredient event."
+  endtime:
+    type: string
+    description: "End time of the ingredient event."
+  storetime:
+    type: string
+    description: "Time when the event was stored."
+  itemid:
+    type: int
+    description: "Identifier for the item."
+  amount:
+    type: float
+    description: "Amount of the ingredient."
+  amountuom:
+    type: string
+    description: "Unit of measurement for the amount."
+  rate:
+    type: float
+    description: "Rate of the ingredient."
+  rateuom:
+    type: string
+    description: "Unit of measurement for the rate."
+  orderid:
+    type: int
+    description: "Identifier for the order."
+  linkorderid:
+    type: int
+    description: "Identifier linked to the order."
+  statusdescription:
+    type: string
+    description: "Description of the status of the event."
+  originalamount:
+    type: float
+    description: "Original amount of the ingredient."
+  originalrate:
+    type: float
+    description: "Original rate of the ingredient."
