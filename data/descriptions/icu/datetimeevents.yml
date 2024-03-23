@@ -1,0 +1,35 @@
+dataset_description: "Events associated to patients during Intensive Care Unit (ICU) stays."
+
+schema:
+  subject_id:
+    type: int
+    description: "The unique identifier for the patient."
+  hadm_id:
+    type: int
+    description: "The unique identifier for the hospital admission."
+  stay_id:
+    type: int
+    description: "The unique identifier for the ICU stay."
+  caregiver_id:
+    type: int
+    description: "The unique identifier for the caregiver."
+  charttime:
+    type: string
+    format: date-time
+    description: "Time when the event was charted."
+  storetime:
+    type: string
+    format: date-time
+    description: "Time when the event was stored."
+  itemid:
+    type: int
+    description: "The unique identifier for the event item."
+  value:
+    type: string
+    description: "Date or date time associated with the event."
+  valueuom:
+    type: string
+    description: "Unit of measurement for the value (date or datetime)."
+  warning:
+    type: int
+    description: "Indicates if there was a warning associated with the event."

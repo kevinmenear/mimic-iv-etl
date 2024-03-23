@@ -1,0 +1,21 @@
+dataset_description: "Hospital patients."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each subject."
+  gender:
+    type: string
+    description: "The gender of the subject."
+  anchor_age:
+    type: int
+    description: "The anchor age of the subject."
+  anchor_year:
+    type: int
+    description: "The anchor year of the subject."
+  anchor_year_group:
+    type: string
+    description: "The anchor year group of the subject."
+  dod:
+    type: date|null
+    description: "The date of death of the subject (if available)."

@@ -1,0 +1,24 @@
+dataset_description: "Patient transfers."
+
+schema:
+  subject_id:
+    type: int
+    description: "Unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "Unique identifier for each hospital admission."
+  transfer_id:
+    type: int
+    description: "Unique identifier for each transfer event."
+  eventtype:
+    type: string
+    description: "Type of transfer event."
+  careunit:
+    type: string
+    description: "Care unit associated with the transfer."
+  intime:
+    type: datetime
+    description: "The time when the patient was transferred in."
+  outtime:
+    type: datetime
+    description: "The time when the patient was transferred out."

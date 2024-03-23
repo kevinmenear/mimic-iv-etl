@@ -1,0 +1,18 @@
+dataset_description: "Pharmacy order event details."
+
+schema:
+  poe_id:
+    type: string
+    description: "A unique identifier for each pharmacy order event."
+  poe_seq:
+    type: int
+    description: "The sequence number of the pharmacy order event."
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  field_name:
+    type: string
+    description: "The name of the field associated with the pharmacy order event."
+  field_value:
+    type: string
+    description: "The value of the field associated with the pharmacy order event."

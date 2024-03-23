@@ -1,0 +1,18 @@
+dataset_description: "Services provided to patients."
+
+schema:
+  subject_id:
+    type: int
+    description: "Unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "Unique identifier for each hospital admission."
+  transfertime:
+    type: datetime
+    description: "The time when the transfer occurred."
+  prev_service:
+    type: string
+    description: "Previous service associated with the patient."
+  curr_service:
+    type: string
+    description: "Current service associated with the patient."

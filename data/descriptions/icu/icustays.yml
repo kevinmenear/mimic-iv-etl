@@ -1,0 +1,27 @@
+dataset_description: "All recorded Intensive Care Unit (ICU) stays."
+
+schema:
+  subject_id:
+    type: int
+    description: "Identifier for the patient."
+  hadm_id:
+    type: int
+    description: "Identifier for the hospital admission."
+  stay_id:
+    type: int
+    description: "Identifier for the ICU stay."
+  first_careunit:
+    type: string
+    description: "The first care unit where the patient was admitted to during the ICU stay."
+  last_careunit:
+    type: string
+    description: "The last care unit where the patient was admitted to during the ICU stay."
+  intime:
+    type: string
+    description: "Time when the patient was admitted to the ICU."
+  outtime:
+    type: string
+    description: "Time when the patient was discharged from the ICU."
+  los:
+    type: float
+    description: "Length of stay (in days) in the ICU."
