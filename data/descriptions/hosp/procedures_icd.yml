@@ -1,0 +1,21 @@
+dataset_description: "International Classification of Diseases (ICD) procedures administered on patients during hospital visits."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  seq_num:
+    type: int
+    description: "The sequence number of the procedure."
+  chartdate:
+    type: date
+    description: "The date when the procedure was recorded."
+  icd_code:
+    type: string
+    description: "The ICD code associated with the procedure."
+  icd_version:
+    type: int
+    description: "The version of the ICD code used."

@@ -1,0 +1,6 @@
+dataset_description: "Providers."
+
+schema:
+  provider_id:
+    type: string
+    description: "Unique identifier for each provider."
