@@ -1,0 +1,18 @@
+dataset_description: "OMRs (Open Medical Results) recorded for patients during hospital visits."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  chartdate:
+    type: date
+    description: "The date of the OMR."
+  seq_num:
+    type: int
+    description: "The sequence number."
+  result_name:
+    type: string
+    description: "The name of the medical result."
+  result_value:
+    type: string
+    description: "The value of the medical result."

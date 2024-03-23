@@ -1,0 +1,84 @@
+dataset_description: "Pharmacy records on patients."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  pharmacy_id:
+    type: int
+    description: "A unique identifier for each pharmacy record."
+  poe_id:
+    type: int
+    description: "A unique identifier for each pharmacy order event."
+  starttime:
+    type: timestamp
+    description: "The start time of medication administration."
+  stoptime:
+    type: timestamp|null
+    description: "The stop time of medication administration."
+  medication:
+    type: string
+    description: "The name of the medication."
+  proc_type:
+    type: string
+    description: "The type of procedure associated with the medication."
+  status:
+    type: string
+    description: "The status of medication administration."
+  entertime:
+    type: timestamp
+    description: "The time the medication order was entered."
+  verifiedtime:
+    type: timestamp
+    description: "The time the medication order was verified."
+  route:
+    type: string|null
+    description: "The route of medication administration."
+  frequency:
+    type: string|null
+    description: "The frequency of medication administration."
+  disp_sched:
+    type: string|null
+    description: "The dispensation schedule of medication."
+  infusion_type:
+    type: string|null
+    description: "The type of infusion of medication."
+  sliding_scale:
+    type: string|null
+    description: "The sliding scale of medication dosage."
+  lockout_interval:
+    type: string|null
+    description: "The lockout interval for medication administration."
+  basal_rate:
+    type: string|null
+    description: "The basal rate of medication infusion."
+  one_hr_max:
+    type: string|null
+    description: "The maximum dosage allowed within one hour."
+  doses_per_24_hrs:
+    type: string|null
+    description: "The number of doses allowed within 24 hours."
+  duration:
+    type: string|null
+    description: "The duration of medication administration."
+  duration_interval:
+    type: string|null
+    description: "The interval for the duration of medication administration."
+  expiration_value:
+    type: string|null
+    description: "The expiration value of medication."
+  expiration_unit:
+    type: string|null
+    description: "The expiration unit of medication."
+  expirationdate:
+    type: timestamp|null
+    description: "The expiration date of medication."
+  dispensation:
+    type: string|null
+    description: "The dispensation information of medication."
+  fill_quantity:
+    type: string|null
+    description: "The quantity filled for medication."

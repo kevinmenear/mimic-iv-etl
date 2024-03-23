@@ -1,0 +1,39 @@
+dataset_description: "Pharmacy order events."
+
+schema:
+  poe_id:
+    type: string
+    description: "A unique identifier for each pharmacy order event."
+  poe_seq:
+    type: int
+    description: "The sequence number of the pharmacy order event."
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  ordertime:
+    type: timestamp
+    description: "The time the order was placed."
+  order_type:
+    type: string
+    description: "The type of the order."
+  order_subtype:
+    type: string|null
+    description: "The subtype of the order."
+  transaction_type:
+    type: string
+    description: "The transaction type of the order."
+  discontinue_of_poe_id:
+    type: string|null
+    description: "The ID of the pharmacy order event being discontinued."
+  discontinued_by_poe_id:
+    type: string|null
+    description: "The ID of the pharmacy order event that discontinued this order."
+  order_provider_id:
+    type: string
+    description: "The ID of the provider who placed the order."
+  order_status:
+    type: string
+    description: "The status of the order."

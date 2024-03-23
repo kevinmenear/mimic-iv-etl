@@ -1,0 +1,66 @@
+dataset_description: "Prescriptions given to hospital patients."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  pharmacy_id:
+    type: int
+    description: "A unique identifier for each pharmacy."
+  poe_id:
+    type: string
+    description: "A unique identifier for each prescription order event."
+  poe_seq:
+    type: int
+    description: "The sequence number of the prescription order event."
+  order_provider_id:
+    type: string
+    description: "The ID of the provider who placed the prescription order."
+  starttime:
+    type: timestamp
+    description: "The time the prescription order was started."
+  stoptime:
+    type: timestamp|null
+    description: "The time the prescription order was stopped."
+  drug_type:
+    type: string
+    description: "The type of drug prescribed."
+  drug:
+    type: string
+    description: "The name of the drug prescribed."
+  formulary_drug_cd:
+    type: string|null
+    description: "The formulary drug code."
+  gsn:
+    type: string|null
+    description: "The Generic Product Identifier (GSN) of the prescribed drug."
+  ndc:
+    type: string|null
+    description: "The National Drug Code (NDC) of the prescribed drug."
+  prod_strength:
+    type: string|null
+    description: "The strength of the prescribed drug."
+  form_rx:
+    type: string|null
+    description: "The formulary prescription."
+  dose_val_rx:
+    type: float|null
+    description: "The dose value in the prescription."
+  dose_unit_rx:
+    type: string|null
+    description: "The dose unit in the prescription."
+  form_val_disp:
+    type: string|null
+    description: "The form value dispensed."
+  form_unit_disp:
+    type: string|null
+    description: "The form unit dispensed."
+  doses_per_24_hrs:
+    type: int|null
+    description: "Number of doses prescribed per 24 hours."
+  route:
+    type: string|null
+    description: "The route of administration for the prescribed drug."
