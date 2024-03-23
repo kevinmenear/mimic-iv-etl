@@ -1,0 +1,21 @@
+dataset_description: "Healthcare common procedure coding system (HCPCS) codes assigned to patients during hospital admissions."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  chartdate:
+    type: date
+    description: "The date of the chart."
+  hcpcs_cd:
+    type: int
+    description: "The HCPCS code assigned to the patient."
+  seq_num:
+    type: int
+    description: "The sequence number of the HCPCS code."
+  short_description:
+    type: string
+    description: "A brief short description of the HCPCS code."

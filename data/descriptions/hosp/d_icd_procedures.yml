@@ -1,0 +1,12 @@
+dataset_description: "International Classification of Diseases (ICD) procedures."
+
+schema:
+  icd_code:
+    type: string
+    description: "The ICD code for the procedure."
+  icd_version:
+    type: int
+    description: "The version of the ICD coding system (e.g., ICD-9, ICD-10)."
+  long_title:
+    type: string
+    description: "A detailed long title describing the procedure."

@@ -1,0 +1,39 @@
+dataset_description: "Medication administration events recorded in an Electronic Medication Administration Record (eMAR)."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int
+    description: "A unique identifier for each hospital admission."
+  emar_id:
+    type: string
+    description: "A unique identifier for each Electronic Medication Administration Record (eMAR)."
+  emar_seq:
+    type: int
+    description: "The sequence number of the medication administration event within the eMAR."
+  poe_id:
+    type: string
+    description: "A unique identifier for each Provider Order Entry (POE) event associated with the medication administration."
+  pharmacy_id:
+    type: string|null
+    description: "A unique identifier for the pharmacy responsible for the medication, if available."
+  enter_provider_id:
+    type: string|null
+    description: "The identifier of the provider who entered the medication order into the system, if available."
+  charttime:
+    type: timestamp
+    description: "The timestamp when the medication administration event was charted."
+  medication:
+    type: string|null
+    description: "The name or description of the medication administered."
+  event_txt:
+    type: string|null
+    description: "A textual description of the medication administration event."
+  scheduletime:
+    type: timestamp|null
+    description: "The scheduled time for medication administration, if available."
+  storetime:
+    type: timestamp
+    description: "The timestamp when the medication administration event was stored or recorded in the system."

@@ -1,0 +1,102 @@
+dataset_description: "Details regarding medication administration events recorded in an Electronic Medication Administration Record (eMAR)."
+
+schema:
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  emar_id:
+    type: int
+    description: "A unique identifier for each medication administration record (eMAR)."
+  emar_seq:
+    type: int
+    description: "The sequence number of the medication administration within the eMAR."
+  parent_field_ordinal:
+    type: float
+    description: "The ordinal of the parent field."
+  administration_type:
+    type: string|null
+    description: "The type of medication administration."
+  pharmacy_id:
+    type: int|null
+    description: "The pharmacy identifier."
+  barcode_type:
+    type: string|null
+    description: "The type of barcode used, if applicable."
+  reason_for_no_barcode:
+    type: string|null
+    description: "The reason for not using a barcode, if applicable."
+  complete_dose_not_given:
+    type: string|null
+    description: "Indicates if the complete dose was not given."
+  dose_due:
+    type: float|null
+    description: "The dose due."
+  dose_due_unit:
+    type: string|null
+    description: "The unit of the dose due."
+  dose_given:
+    type: float|null
+    description: "The dose given."
+  dose_given_unit:
+    type: string|null
+    description: "The unit of the dose given."
+  will_remainder_of_dose_be_given:
+    type: string|null
+    description: "Indicates if the remainder of the dose will be given."
+  product_amount_given:
+    type: float|null
+    description: "The amount of product given."
+  product_unit:
+    type: string|null
+    description: "The unit of the product."
+  product_code:
+    type: string|null
+    description: "The code of the product."
+  product_description:
+    type: string|null
+    description: "The description of the product."
+  product_description_other:
+    type: string|null
+    description: "Another description of the product."
+  prior_infusion_rate:
+    type: string|null
+    description: "The prior infusion rate."
+  infusion_rate:
+    type: string|null
+    description: "The infusion rate."
+  infusion_rate_adjustment:
+    type: string|null
+    description: "The adjustment made to the infusion rate."
+  infusion_rate_adjustment_amount:
+    type: float|null
+    description: "The amount of adjustment made to the infusion rate."
+  infusion_rate_unit:
+    type: string|null
+    description: "The unit of the infusion rate."
+  route:
+    type: string|null
+    description: "The route of administration."
+  infusion_complete:
+    type: string|null
+    description: "Indicates if the infusion is complete."
+  completion_interval:
+    type: string|null
+    description: "The interval of completion."
+  new_iv_bag_hung:
+    type: string|null
+    description: "Indicates if a new IV bag was hung."
+  continued_infusion_in_other_location:
+    type: string|null
+    description: "Indicates if the infusion is continued in another location."
+  restart_interval:
+    type: string|null
+    description: "The interval of restart."
+  side:
+    type: string|null
+    description: "The side of administration."
+  site:
+    type: string|null
+    description: "The site of administration."
+  non_formulary_visual_verification:
+    type: string|null
+    description: "Indicates if non-formulary visual verification is performed."

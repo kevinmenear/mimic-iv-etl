@@ -1,0 +1,78 @@
+dataset_description: "Microbiology events recorded for patients during hospital stays."
+
+schema:
+  microevent_id:
+    type: int
+    description: "A unique identifier for each microbiology event."
+  subject_id:
+    type: int
+    description: "A unique identifier for each patient."
+  hadm_id:
+    type: int|null
+    description: "A unique identifier for each hospital admission."
+  micro_specimen_id:
+    type: int|null
+    description: "The specimen ID."
+  order_provider_id:
+    type: int|null
+    description: "The provider ID for the order."
+  chartdate:
+    type: date
+    description: "The date of the chart."
+  charttime:
+    type: timestamp|null
+    description: "The time the measurement was charted."
+  spec_itemid:
+    type: int
+    description: "The item ID of the specimen."
+  spec_type_desc:
+    type: string
+    description: "The description of the specimen type."
+  test_seq:
+    type: int
+    description: "The sequence number of the test."
+  storedate:
+    type: date
+    description: "The date the measurement was stored."
+  storetime:
+    type: timestamp
+    description: "The time the measurement was stored."
+  test_itemid:
+    type: int
+    description: "The item ID of the test."
+  test_name:
+    type: string
+    description: "The name of the test."
+  org_itemid:
+    type: int|null
+    description: "The item ID of the organism."
+  org_name:
+    type: string|null
+    description: "The name of the organism."
+  isolate_num:
+    type: int|null
+    description: "The isolate number."
+  quantity:
+    type: string|null
+    description: "The quantity of the measurement."
+  ab_itemid:
+    type: int|null
+    description: "The item ID of the antibiotic."
+  ab_name:
+    type: string|null
+    description: "The name of the antibiotic."
+  dilution_text:
+    type: string|null
+    description: "The dilution text."
+  dilution_comparison:
+    type: string|null
+    description: "The comparison used for dilution."
+  dilution_value:
+    type: float|null
+    description: "The value of the dilution."
+  interpretation:
+    type: string|null
+    description: "The interpretation of the measurement."
+  comments:
+    type: string|null
+    description: "Additional comments or notes associated with the measurement."

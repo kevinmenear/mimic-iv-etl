@@ -1,0 +1,15 @@
+dataset_description: "Medical parameters that can be measured or observed in laboratory tests."
+
+schema:
+  itemid:
+    type: int
+    description: "The unique identifier for the lab item."
+  label:
+    type: string
+    description: "The label or name of the lab item."
+  fluid:
+    type: string
+    description: "The fluid associated with the lab item."
+  category:
+    type: string
+    description: "The category to which the lab item belongs."
