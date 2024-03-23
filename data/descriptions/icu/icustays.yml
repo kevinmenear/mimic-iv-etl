@@ -1,4 +1,4 @@
-dataset_description: "This dataset contains information about ICU stays."
+dataset_description: "All recorded ICU stays."
 
 schema:
   subject_id:
