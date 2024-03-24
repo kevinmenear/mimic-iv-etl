@@ -5,6 +5,7 @@ import pandas as pd
 import ipywidgets as widgets
 from IPython.display import display, clear_output, Markdown
 
+
 def get_dataset_description(file_path):
     with open(file_path, 'r') as file:
         description = yaml.safe_load(file)
@@ -16,6 +17,7 @@ def get_dataset_description(file_path):
     schema_df = schema_df[['field', 'type', 'description']]
     
     return dataset_description, schema_df
+
 
 def create_ui():
     description_path = '../data/descriptions'
