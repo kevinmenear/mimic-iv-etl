@@ -46,13 +46,13 @@ def list_tables(client, dataset_id):
     tables = client.list_tables(dataset_id)
     return [f"{dataset_id}.{table.table_id}" for table in tables]
 
-def get_spark_session(client, materialization_dataset="mimiciv_materialization"):
+def get_spark_session(client, materialization_dataset="mimiciv_materialization", use_service_account_auth=False):
     spark = SparkSession.builder \
                 .appName("BigQuery with OAuth") \
                 .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:latest.version") \
                 .getOrCreate()
     spark.read.format("bigquery").option("credentialsFile", "_credentials_path")
-    # spark.conf.set("gcpAccessToken", _access_token)
+    if not use_service_account_auth: spark.conf.set("gcpAccessToken", _access_token)
     spark.conf.set("viewsEnabled", "true")
     spark.conf.set("materializationDataset", materialization_dataset)
     return spark
