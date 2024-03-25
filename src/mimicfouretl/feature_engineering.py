@@ -41,39 +41,6 @@ def get_item_frequency(self, column_name, dataset, item_id=None, limit=None):
 
 
 
-def get_temporal_trends(item_id, column_name, date_column, dataset, limit):
-    """
-    Examines trends over time for a specific item or event within a dataset.
-
-    Parameters:
-    - item_id (int or str): Identifier for the item or event to analyze.
-    - column_name (str): Name of the column to match with item_id.
-    - date_column (str): Name of the date/time column to use for the trend analysis.
-    - dataset (str): Name of the dataset to be queried.
-
-    Returns:
-    - DataFrame: A DataFrame showing the trend of the item over time.
-
-    Example Output:
-    +-------+----------+-----+
-    | itemid| charttime|count|
-    +-------+----------+-----+
-    |  51248|2020-01-01|  10 |
-    |  51248|2020-01-02|  12 |
-    +-------+----------+-----+
-    """
-    query = f"""
-    SELECT {column_name}, {date_column}, COUNT(*) as count
-    FROM `{dataset}`
-    WHERE {column_name} = {item_id}
-    GROUP BY {column_name}, {date_column}
-    ORDER BY {date_column}
-    """
-    if limit is not None:
-        query += f" LIMIT {limit}"
-    return bq.run_query(query)
-
-
 def get_outcomes_by_item(self, item_id, item_column, outcome_column, item_dataset, outcome_dataset):
     """
     Fetches patient outcomes related to specific items.
@@ -286,6 +253,100 @@ def calculate_event_to_death_interval(self, event_date_column, event_dataset):
            DATEDIFF(d.date_of_death, e.event_date) AS days_to_death
     FROM events e
     JOIN death_dates d ON e.subject_id = d.subject_id AND e.hadm_id = d.hadm_id
+    """
+    return bq.run_query(self.spark, query)
+
+
+def calculate_event_to_event_interval(self, event_params):
+    """
+    Calculates the time interval between two specified events for each patient.
+
+    Parameters:
+    - event_params (dict): A dictionary with keys 'first_event' and 'second_event', each containing another dict with 'dataset', 'event_type', and 'time_column'.
+
+    Returns:
+    - DataFrame: A DataFrame showing the time intervals between the two events for each patient.
+
+    Example Output:
+    +-----------+--------+--------------+---------------+
+    | subject_id| hadm_id| first_event  | second_event  |
+    +-----------+--------+--------------+---------------+
+    |     12345 | 54321  | 2020-01-01   | 2020-01-05    |
+    |     23456 | 65432  | 2020-02-01   | 2020-02-03    |
+    +-----------+--------+--------------+---------------+
+
+    Example Usage:
+    event_params = {
+        'first_event': {'dataset': 'dataset1', 'event_type': 'type1', 'time_column': 'time1'},
+        'second_event': {'dataset': 'dataset2', 'event_type': 'type2', 'time_column': 'time2'}
+    }
+    """
+    fe = event_params['first_event']
+    se = event_params['second_event']
+
+    query = f"""
+    WITH FirstEvent AS (
+        SELECT subject_id, hadm_id, {fe['time_column']} AS first_event_time
+        FROM `{fe['dataset']}`
+        WHERE event_type = '{fe['event_type']}'
+    ),
+    SecondEvent AS (
+        SELECT subject_id, hadm_id, {se['time_column']} AS second_event_time
+        FROM `{se['dataset']}`
+        WHERE event_type = '{se['event_type']}'
+    )
+    SELECT f.subject_id, f.hadm_id, f.first_event_time, s.second_event_time
+    FROM FirstEvent f
+    JOIN SecondEvent s ON f.subject_id = s.subject_id AND f.hadm_id = s.hadm_id
+    """
+    return bq.run_query(self.spark, query)
+
+
+def search_dataset_by_value(self, dataset, column_name, search_value, columns='*', closeness='exact'):
+    """
+    Searches a dataset for rows where a specified column's value matches or is close to a given string,
+    and returns specified columns or all columns by default.
+    
+    Parameters:
+    - dataset (str): Name of the dataset to search.
+    - column_name (str): Column to search in.
+    - search_value (str): String value to search for.
+    - columns (str or list): Columns to return. Default is '*', which returns all columns.
+    - closeness (str): Matching closeness ('exact', 'contains', 'starts_with', or 'ends_with').
+
+    Returns:
+    - DataFrame: Rows from the dataset where the column matches or is close to the search value.
+
+    Example Output:
+    +-----------+--------+-------------+
+    | subject_id| hadm_id| column_value |
+    +-----------+--------+-------------+
+    |     10001 | 50001  | search_val   |
+    |     10002 | 50002  | search_val   |
+    +-----------+--------+-------------+
+
+    Example Usage:
+    search_dataset_by_value('dataset_name', 'medication', 'Aspirin', ['subject_id', 'medication'], 'contains')
+    """
+
+    search_value = search_value.lower()
+    if closeness == 'exact':
+        condition = f"LOWER({column_name}) = '{search_value}'"
+    elif closeness == 'contains':
+        condition = f"LOWER({column_name}) LIKE '%{search_value}%'"
+    elif closeness == 'starts_with':
+        condition = f"LOWER({column_name}) LIKE '{search_value}%'"
+    elif closeness == 'ends_with':
+        condition = f"LOWER({column_name}) LIKE '%{search_value}'"
+    else:
+        raise ValueError("Closeness parameter must be 'exact', 'contains', 'starts_with', or 'ends_with'.")
+
+    select_columns = ', '.join(columns) if isinstance(columns, list) else columns
+
+    query = f"""
+    SELECT {select_columns}
+    FROM `{dataset}`
+    WHERE {condition}
     """
     return bq.run_query(self.spark, query)
 
