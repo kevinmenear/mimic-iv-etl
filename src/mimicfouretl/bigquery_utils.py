@@ -10,19 +10,24 @@ _project_id = None
 _access_token = None
 _client = None
 
+
 def set_credentials_file(path):
     global _credentials_path
     _credentials_path = path
 
+
 def get_credentials_file():
     return _credentials_path
+
 
 def set_project_id(id):
     global _project_id
     _project_id = id
 
+
 def get_project_id():
     return _project_id
+
 
 def get_client(use_service_account_auth=False):
     if _credentials_path is None:
@@ -42,22 +47,19 @@ def get_client(use_service_account_auth=False):
     _access_token = _client._credentials.token
     return _client
 
+
 def list_tables(client, dataset_id):
     tables = client.list_tables(dataset_id)
     return [f"{dataset_id}.{table.table_id}" for table in tables]
 
-def get_spark_session(client, materialization_dataset="mimiciv_materialization"):
+
+def get_spark_session(materialization_dataset="mimiciv_materialization", use_service_account_auth=False):
     spark = SparkSession.builder \
                 .appName("BigQuery with OAuth") \
                 .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:latest.version") \
                 .getOrCreate()
     spark.read.format("bigquery").option("credentialsFile", "_credentials_path")
-    # spark.conf.set("gcpAccessToken", _access_token)
-    spark.conf.set("viewsEnabled", "true")
-    spark.conf.set("materializationDataset", materialization_dataset)
-    return spark
-
-def run_query(spark, query, materialization_dataset="mimiciv_materialization"):    
+    
     # Check if the materialization dataset exists, create it if it doesn't
     dataset_ref = _client.dataset(materialization_dataset)
     
@@ -66,12 +68,22 @@ def run_query(spark, query, materialization_dataset="mimiciv_materialization"):
     except NotFound:
         dataset = bigquery.Dataset(dataset_ref)
         dataset = _client.create_dataset(dataset)
-        
+    
+    if not use_service_account_auth: 
+        spark.conf.set("gcpAccessToken", _access_token)
+    spark.conf.set("materializationDataset", materialization_dataset)
+    spark.conf.set("viewsEnabled", "true")
+
+    return spark
+
+
+def run_query(spark, query):            
     # DataFrame with results
     df = spark.read.format("bigquery") \
               .option("query", query) \
               .load()
     return df
+
 
 def display_sampled_df(spark_df, sample_type='random', number=10, seed=12):
     """

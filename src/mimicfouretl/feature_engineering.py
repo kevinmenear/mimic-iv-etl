@@ -1,6 +1,7 @@
-from mimicfouretl.bigquery_utils as bq
+import mimicfouretl.bigquery_utils as bq
 
-def get_item_frequency(self, column_name, dataset, item_id=None, limit=None):
+
+def get_item_frequency(spark, column_name, dataset, item_id=None, limit=None):
     """
     Analyzes the frequency of items within a dataset. Can target a specific item or all items.
 
@@ -36,12 +37,12 @@ def get_item_frequency(self, column_name, dataset, item_id=None, limit=None):
     query += f" GROUP BY {column_name}"
     if limit is not None:
         query += f" LIMIT {limit}"
-    
-    return bq.run_query(self.spark, query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, query)
 
 
 
-def get_outcomes_by_item(self, item_id, item_column, outcome_column, item_dataset, outcome_dataset):
+def get_outcomes_by_item(spark, item_id, item_column, item_dataset, outcome_column, outcome_dataset):
     """
     Fetches patient outcomes related to specific items.
 
@@ -69,10 +70,11 @@ def get_outcomes_by_item(self, item_id, item_column, outcome_column, item_datase
     JOIN `{outcome_dataset}` B ON A.subject_id = B.subject_id AND A.hadm_id = B.hadm_id
     WHERE A.{item_column} = '{item_id}'
     """
-    return bq.run_query(self.spark, query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, query)
 
 
-def get_abnormal_item_analysis(self, item_id, item_column, value_column, bounds, dataset):
+def get_abnormal_item_analysis(spark, item_id, item_column, value_column, bounds, dataset):
     """
     Analyzes instances of abnormal values for an item, based on specified bounds.
 
@@ -106,10 +108,11 @@ def get_abnormal_item_analysis(self, item_id, item_column, value_column, bounds,
     FROM `{dataset}`
     WHERE {item_column} = '{item_id}' AND ({condition_str})
     """
-    return bq.run_query(self.spark, query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, query)
 
 
-def get_provider_activity_analysis(self, provider_id, dataset_columns):
+def get_provider_activity_analysis(spark, provider_id, dataset_columns):
     """
     Analyzes the activities of a specific provider across various datasets with different activity columns.
 
@@ -141,10 +144,11 @@ def get_provider_activity_analysis(self, provider_id, dataset_columns):
         queries.append(query)
 
     full_query = " UNION ALL ".join(queries)
-    return bq.run_query(self.spark, full_query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, full_query)
 
 
-def get_co_occurrence_analysis(self, dataset, primary_column, secondary_column, threshold=0.1):
+def get_co_occurrence_analysis(spark, dataset, primary_column, secondary_column, threshold=0.1):
     """
     Identifies frequent co-occurrences or combinations of events in a given dataset.
 
@@ -174,12 +178,13 @@ def get_co_occurrence_analysis(self, dataset, primary_column, secondary_column, 
     SELECT {primary_column} AS primary_event, {secondary_column} AS secondary_event, 
            (freq / SUM(freq) OVER (PARTITION BY {primary_column})) AS frequency
     FROM co_occurrence
-    WHERE (freq / SUM(freq) OVER (PARTITION BY {primary_column})) >= {threshold}
+    QUALIFY (freq / SUM(freq) OVER (PARTITION BY {primary_column})) >= {threshold}
     """
-    return bq.run_query(self.spark, query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, query)
 
 
-def get_cross_dataset_co_occurrence(self, dataset1, dataset2, primary_column, secondary_column, threshold=0.1):
+def get_cross_dataset_co_occurrence(spark, dataset1, dataset2, primary_column, secondary_column, threshold=0.1):
     """
     Identifies co-occurrence patterns between events across two different datasets.
 
@@ -215,12 +220,13 @@ def get_cross_dataset_co_occurrence(self, dataset1, dataset2, primary_column, se
     SELECT {primary_column} AS primary_event, {secondary_column} AS secondary_event, 
            (freq / SUM(freq) OVER (PARTITION BY {primary_column})) AS frequency
     FROM co_occurrence
-    WHERE (freq / SUM(freq) OVER (PARTITION BY {primary_column})) >= {threshold}
+    QUALIFY (freq / SUM(freq) OVER (PARTITION BY {primary_column})) >= {threshold}
     """
-    return bq.run_query(self.spark, query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, query)
 
 
-def calculate_event_to_death_interval(self, event_date_column, event_dataset):
+def calculate_event_to_death_interval(spark, event_date_column, event_dataset):
     """
     Calculates the time between a specified event and the patient's death.
 
@@ -238,10 +244,11 @@ def calculate_event_to_death_interval(self, event_date_column, event_dataset):
     |     12345 | 54321  | 2020-01-01  | 2020-01-15       | 14              |
     +-----------+--------+-------------+------------------+-----------------+
     """
-    patients_table = "physionet-data.mimiciv_hosp.patients"
+    # patients_table = "physionet-data.mimiciv_hosp.patients"
+    patients_table = "micro-vine-412020.mimic_iv.hosp_patients"
     query = f"""
     WITH death_dates AS (
-        SELECT subject_id, hadm_id, dod AS date_of_death
+        SELECT subject_id, dod AS date_of_death
         FROM `{patients_table}`
         WHERE dod IS NOT NULL
     ),
@@ -250,14 +257,15 @@ def calculate_event_to_death_interval(self, event_date_column, event_dataset):
         FROM `{event_dataset}`
     )
     SELECT e.subject_id, e.hadm_id, e.event_date, d.date_of_death,
-           DATEDIFF(d.date_of_death, e.event_date) AS days_to_death
+           DATE_DIFF(DATE(d.date_of_death), DATE(e.event_date), day) AS days_to_death
     FROM events e
-    JOIN death_dates d ON e.subject_id = d.subject_id AND e.hadm_id = d.hadm_id
+    JOIN death_dates d ON e.subject_id = d.subject_id
     """
-    return bq.run_query(self.spark, query)
+    print("GENERATED QUERY:\n", query)
+    return bq.run_query(spark, query)
 
 
-def calculate_event_to_event_interval(self, event_params):
+def calculate_event_to_event_interval(spark, event_params):
     """
     Calculates the time interval between two specified events for each patient.
 
@@ -299,10 +307,10 @@ def calculate_event_to_event_interval(self, event_params):
     FROM FirstEvent f
     JOIN SecondEvent s ON f.subject_id = s.subject_id AND f.hadm_id = s.hadm_id
     """
-    return bq.run_query(self.spark, query)
+    return bq.run_query(spark, query)
 
 
-def search_dataset_by_value(self, dataset, column_name, search_value, columns='*', closeness='exact'):
+def search_dataset_by_value(spark, dataset, column_name, search_value, columns='*', closeness='exact'):
     """
     Searches a dataset for rows where a specified column's value matches or is close to a given string,
     and returns specified columns or all columns by default.
@@ -348,5 +356,5 @@ def search_dataset_by_value(self, dataset, column_name, search_value, columns='*
     FROM `{dataset}`
     WHERE {condition}
     """
-    return bq.run_query(self.spark, query)
+    return bq.run_query(spark, query)
 
