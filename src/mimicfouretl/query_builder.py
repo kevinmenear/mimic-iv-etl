@@ -11,7 +11,7 @@ class QueryBuilder:
         - filters (list): Conditions applied to filter the query.
         - joins (list): Join conditions for combining with other datasets.
         """
-        self.dataset = dataset
+        self.dataset = 'physionet_data.mimiciv_' + dataset
         if columns:
             if isinstance(columns, list):
                 self.columns = columns
@@ -52,17 +52,20 @@ class QueryBuilder:
         else:
             self.filters.append(condition)
 
-    def join_with(self, other_qb, join_type, on_conditions):
+    def join_with(self, other_qb, join_type, columns):
         """
         Joins the current dataset with another dataset.
 
         Parameters:
         - other_qb (QueryBuilder): Another QueryBuilder object representing the dataset to join.
         - join_type (str): The type of join (e.g., 'inner', 'left').
-        - on_conditions (str or list): The column name(s) to join on, either as a single string or a list for multiple join keys.
+        - columns (str or list): The column name(s) to join on, either as a single string or a list for multiple join keys.
         """
-        if not isinstance(on_conditions, list):
-            on_conditions = [on_conditions] 
+        if not isinstance(columns, list):
+            columns = [columns] 
+        on_conditions = []
+        for col in columns:
+            on_conditions.append(f"{self.dataset}.{col} = {other_qb.dataset}.{col}")
         joined_on = ' AND '.join(on_conditions)
         join_query = f"{join_type.upper()} JOIN `{other_qb.dataset}` ON {joined_on}"
         self.joins.append(join_query)
@@ -76,7 +79,7 @@ class QueryBuilder:
         Returns:
         - str: A string representing the complete SQL query, combining selected columns, filters, and joins.
         """
-        select_clause = f"SELECT {', '.join(self.columns)}" if self.columns else "SELECT *"
+        select_clause = f"SELECT {', '.join(set(self.columns))}" if self.columns else "SELECT *"
         from_clause = f"FROM `{self.dataset}`"
         if len(self.joins) > 0:
             join_clauses = "\n".join(self.joins)
