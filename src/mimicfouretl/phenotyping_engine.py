@@ -6,27 +6,23 @@ class PhenotypingEngine:
         self.data = data
         self.rules = []
 
-    def add_rule(self, rule: dict):
+    def add_rule(self, label: str, conditions: str):
         """
         Adds a new phenotyping rule.
 
         Parameters:
-        rule (dict): A dictionary defining the rule. Expected to have 'conditions' and 'label'.
-
-        'conditions' should be a string of all conditions (e.g. "'gender' = 'male' AND 'anchor_age' > 65")
-        'outcome' should be the phenotype label (CASE, CONTROL, OTHER).
+        - label (str): Label for the rule ('CASE' or 'CONTROL').
+        - conditions (str): Conditions in SQL format.
         """
-        if not rule.get('conditions'):
-            raise ValueError("'conditions' must be provided.")
-        if not isinstance(rule['conditions'], str):
-            raise TypeError("Conditions must be provided as a single string.")
-            
-        if not rule.get('label'):
-            raise ValueError("'label' must be provided.")
-        if rule.get('label').upper() not in ['CASE', 'CONTROL']:
-            raise ValueError("Label must be either 'CASE' or 'CONTROL' (case-insensitive)")
+        # Validate input
+        if label not in ['CASE', 'CONTROL']:
+            raise ValueError("Label must be 'CASE' or 'CONTROL'")
 
-        self.rules.append(rule)
+        if not isinstance(conditions, str):
+            raise TypeError("Conditions must be a string")
+
+        # Append the rule
+        self.rules.append({'label': label, 'conditions': conditions})
 
     def _apply_single_rule(self, rule: dict):
         """
