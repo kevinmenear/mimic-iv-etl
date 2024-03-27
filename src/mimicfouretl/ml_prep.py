@@ -158,6 +158,42 @@ class MLPrep:
     
         print(f"Data exported successfully to {filepath}")
 
+    def evaluate_classification_model(self):
+        """
+        Evaluates the classification model on the test set.
+
+        Returns:
+            dict: A dictionary containing key evaluation metrics for regression.
+        """
+        predictions = self.model.predict(self.data['test'][self.features])
+        accuracy = accuracy_score(self.data['test'][self.target], predictions)
+        precision = precision_score(self.data['test'][self.target], predictions)
+        recall = recall_score(self.data['test'][self.target], predictions)
+        f1 = f1_score(self.data['test'][self.target], predictions)
+        auc_roc = roc_auc_score(self.data['test'][self.target], predictions)
+
+        # Return evaluation metrics
+        return {'accuracy': accuracy, 'precision': precision, 'recall': recall, 'f1': f1, 'auc_roc': auc_roc}
+
+    def evaluate_regression_model(self):
+        """
+        Evaluates the regression model on the test set.
+
+        Returns:
+            dict: A dictionary containing key evaluation metrics for regression.
+        """
+        # Assuming self.model is the trained regression model and self.data['test'] is the test set
+        predictions = self.model.predict(self.data['test'][self.features])
+        
+        # Calculate evaluation metrics
+        mse = mean_squared_error(self.data['test'][self.target], predictions)
+        mae = mean_absolute_error(self.data['test'][self.target], predictions)
+        r2 = r2_score(self.data['test'][self.target], predictions)
+
+        # Return evaluation metrics
+        return {'mean_squared_error': mse, 'mean_absolute_error': mae, 'r2_score': r2}
+
+
     def log_changes(self, change_description):
         """
         Logs a description of the changes made to the data.
@@ -175,4 +211,30 @@ class MLPrep:
 
         print("Change logged successfully.")
 
-    # Additional methods and utilities can be added as needed
+
+
+# Subclasses of MLPrep for various modeling goals
+
+class ReadmissionRiskPrediction(MLPrep):
+    def __init__(self, data):
+        super().__init__(data)
+        # Additional initializations for readmission risk
+
+    def clean_data(self, *args, **kwargs):
+        # Override or extend data cleaning specifically for readmission risk
+        super().clean_data(*args, **kwargs)
+        # Additional cleaning steps
+
+    # Add model goal-specific methods
+    def feature_engineering_for_readmission(self):
+        # Specific feature engineering steps
+        pass
+
+    def train_model(self):
+        # Logic to train a model for readmission risk
+        pass
+
+    def evaluate_model(self):
+        # Logic to evaluate the readmission risk model
+        pass
+
