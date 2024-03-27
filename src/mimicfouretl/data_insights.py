@@ -19,7 +19,7 @@ def get_dataset_description(file_path):
     return dataset_description, schema_df
 
 
-def create_ui():
+def display_datasets():
     description_path = '../data/descriptions'
     subdirs = ['hosp', 'icu']
     pd.set_option('display.max_colwidth', None)
@@ -31,7 +31,7 @@ def create_ui():
             if file.endswith('.yml'):
                 file_name_without_ext = os.path.splitext(file)[0]
                 full_path = os.path.join(subdir_path, file)
-                datasets[f'{subdir}/{file_name_without_ext}'] = full_path
+                datasets[f'{subdir}.{file_name_without_ext}'] = full_path
 
     dropdown = widgets.Dropdown(options=list(datasets.keys()), description='Dataset:')
     output = widgets.Output()
