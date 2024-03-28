@@ -81,7 +81,7 @@ def extract_related(spark):
     pandas_df = data.toPandas()
     pandas_df.to_csv(f"data/sample/mimiciv_hosp.d_icd_procedures", index=False)
     
-    # hcpcsevents
+    # d_hcpcs
     hcpcsevents = pd.read_csv("data/sample/mimiciv_hosp.hcpcsevents")
     hcpcs_codes = set(hcpcsevents['hcpcs_cd'])
     hcpcs_codes_string = ','.join([f'\'{code}\'' for code in hcpcs_codes])
@@ -94,7 +94,7 @@ def extract_related(spark):
     pandas_df = data.toPandas()
     pandas_df.to_csv(f"data/sample/mimiciv_hosp.d_hcpcs", index=False)
     
-    # labevents
+    # d_labitems
     labevents = pd.read_csv("data/sample/mimiciv_hosp.labevents")
     item_ids = set(labevents['itemid'])
     item_ids_string = ','.join(map(str, item_ids))
