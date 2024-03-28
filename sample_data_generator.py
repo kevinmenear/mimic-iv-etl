@@ -116,7 +116,6 @@ def extract_related(spark):
     pandas_df.to_csv(f"data/sample/mimiciv_hosp.d_labitems", index=False)
     
     # d_items
-    #  'micro-vine-412020.mimiciv_icu.d_items', -> chart events, datetimeevents, igredient events, input events, output events, procedure events
     chart = pd.read_csv("data/sample/mimiciv_icu.chartevents")['itemid']
     datetime = pd.read_csv("data/sample/mimiciv_icu.datetimeevents")['itemid']
     ingredient = pd.read_csv("data/sample/mimiciv_icu.ingredientevents")['itemid']
