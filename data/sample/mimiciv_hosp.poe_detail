@@ -1,0 +1,121 @@
+poe_id,poe_seq,subject_id,field_name,field_value
+11894273-459,459,11894273,Tubes & Drains type,NGT
+11894273-363,363,11894273,Tubes & Drains type,NGT
+11894273-126,126,11894273,Tubes & Drains type,NGT
+11894273-440,440,11894273,Transfer to,Surgery
+11894273-186,186,11894273,Admit to,Surgery
+11894273-345,345,11894273,Admit to,Surgery
+11894273-214,214,11894273,Admit to,Surgery
+11894273-141,141,11894273,Admit to,Surgery
+11894273-120,120,11894273,Admit to,Surgery
+11894273-71,71,11894273,Admit to,Surgery
+11894273-315,315,11894273,Admit to,Surgery
+11894273-135,135,11894273,Admit to,Surgery
+11894273-20,20,11894273,Admit to,Surgery
+11894273-411,411,11894273,Admit to,Surgery
+11894273-722,722,11894273,Consult Status,Accepted
+11894273-616,616,11894273,Consult Status,Accepted
+11894273-109,109,11894273,Discharge Planning,Finalized
+11894273-741,741,11894273,Discharge Planning,Finalized
+11894273-162,162,11894273,Discharge Planning,Finalized
+11894273-745,745,11894273,Discharge Planning,Finalized
+11894273-240,240,11894273,Discharge Planning,Finalized
+11894273-751,751,11894273,Discharge Planning,Finalized
+11894273-473,473,11894273,Indication,Antibiotics
+11894273-742,742,11894273,Discharge When,Discharge Now
+11894273-752,752,11894273,Discharge When,Discharge Now
+11894273-241,241,11894273,Discharge When,Discharge Now
+11894273-746,746,11894273,Discharge When,Discharge Now
+11894273-163,163,11894273,Discharge When,Discharge Now
+11894273-110,110,11894273,Discharge When,Discharge Now
+11894273-745,745,11894273,Admit category,Admit to inpatient
+11894273-741,741,11894273,Admit category,Admit to inpatient
+11894273-71,71,11894273,Admit category,Admit to inpatient
+11894273-214,214,11894273,Admit category,Admit to inpatient
+11894273-109,109,11894273,Admit category,Admit to inpatient
+11894273-742,742,11894273,Admit category,Admit to inpatient
+11894273-751,751,11894273,Admit category,Admit to inpatient
+11894273-411,411,11894273,Admit category,Admit to inpatient
+11894273-746,746,11894273,Admit category,Admit to inpatient
+11894273-241,241,11894273,Admit category,Admit to inpatient
+11894273-240,240,11894273,Admit category,Admit to inpatient
+11894273-141,141,11894273,Admit category,Admit to inpatient
+11894273-752,752,11894273,Admit category,Admit to inpatient
+11894273-440,440,11894273,Admit category,Admit to inpatient
+11894273-20,20,11894273,Admit category,Admit to inpatient
+11894273-110,110,11894273,Admit category,Admit to inpatient
+11894273-616,616,11894273,Consult Status Time,2186-04-22 13:22:11
+11894273-722,722,11894273,Consult Status Time,2186-04-29 11:37:34
+11894273-186,186,11894273,Admit category,Place in observation
+11894273-135,135,11894273,Admit category,Place in observation
+11894273-315,315,11894273,Admit category,Place in observation
+11894273-120,120,11894273,Admit category,Place in observation
+11894273-345,345,11894273,Admit category,Place in observation
+11894273-616,616,11894273,Level of Urgency,Routine (within 24 hours)
+11894273-722,722,11894273,Level of Urgency,Routine (within 24 hours)
+11894273-335,335,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-77,77,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-387,387,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-471,471,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-460,460,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-313,313,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-491,491,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+11894273-357,357,11894273,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+17186831-9,9,17186831,Admit to,Surgery
+17186831-31,31,17186831,Discharge Planning,Finalized
+17186831-32,32,17186831,Discharge When,Discharge Now
+17186831-9,9,17186831,Admit category,Admit to inpatient
+17186831-32,32,17186831,Admit category,Admit to inpatient
+17186831-31,31,17186831,Admit category,Admit to inpatient
+17875341-46,46,17875341,Admit to,Surgery
+17875341-36,36,17875341,Admit to,Surgery
+17875341-107,107,17875341,Admit to,Surgery
+17875341-108,108,17875341,Discharge Planning,Finalized
+17875341-110,110,17875341,Discharge When,Discharge Now
+17875341-107,107,17875341,Admit category,Admit to inpatient
+17875341-46,46,17875341,Admit category,Admit to inpatient
+17875341-64,64,17875341,Tubes & Drains type,Closed suction drain
+17875341-110,110,17875341,Admit category,Place in observation
+17875341-108,108,17875341,Admit category,Place in observation
+17875341-36,36,17875341,Admit category,Place in observation
+17875341-52,52,17875341,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+17875341-41,41,17875341,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+15556019-21,21,15556019,Admit to,ED - Observation
+15556019-21,21,15556019,Admit category,Place in observation
+14905789-50,50,14905789,Transfer to,Medicine
+14905789-118,118,14905789,Discharge Planning,Finalized
+14905789-126,126,14905789,Discharge Planning,Finalized
+14905789-95,95,14905789,Indication,Hydration
+14905789-119,119,14905789,Discharge When,Discharge Now
+14905789-127,127,14905789,Discharge When,Discharge Now
+14905789-19,19,14905789,Admit to,MICU - Orange
+14905789-19,19,14905789,Admit category,Admit to inpatient
+14905789-127,127,14905789,Admit category,Admit to inpatient
+14905789-50,50,14905789,Admit category,Admit to inpatient
+14905789-118,118,14905789,Admit category,Admit to inpatient
+14905789-126,126,14905789,Admit category,Admit to inpatient
+14905789-119,119,14905789,Admit category,Admit to inpatient
+14905789-62,62,14905789,Code status,Resuscitate (Full code)
+14905789-40,40,14905789,Code status,Resuscitate (Full code)
+13897954-135,135,13897954,Admit to,ICU
+13897954-128,128,13897954,Transfer to,Medicine
+13897954-207,207,13897954,Transfer to,Medicine
+13897954-89,89,13897954,Transfer to,Medicine
+13897954-235,235,13897954,Discharge Planning,Finalized
+13897954-132,132,13897954,Discharge Planning,Finalized
+13897954-133,133,13897954,Discharge When,Discharge Now
+13897954-237,237,13897954,Discharge When,Discharge Now
+13897954-11,11,13897954,Admit to,MICU - Orange
+13897954-225,225,13897954,Code status,Resuscitate (Full code)
+13897954-136,136,13897954,Code status,Resuscitate (Full code)
+13897954-229,229,13897954,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+13897954-140,140,13897954,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+13897954-16,16,13897954,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+13897954-118,118,13897954,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+17712099-25,25,17712099,Admit to,Medicine
+17712099-20,20,17712099,Admit to,Medicine
+17712099-59,59,17712099,Discharge Planning,Finalized
+17712099-55,55,17712099,Discharge Planning,Finalized
+17712099-56,56,17712099,Discharge When,Discharge Now
+17712099-60,60,17712099,Discharge When,Discharge Now
+17712099-25,25,17712099,Admit category,Admit to inpatient

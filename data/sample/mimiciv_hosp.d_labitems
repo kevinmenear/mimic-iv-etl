@@ -1,0 +1,172 @@
+itemid,label,fluid,category
+52023,Assist/Control,Blood,Blood Gas
+52033,Specimen Type,Blood,Blood Gas
+50806,"Chloride, Whole Blood",Blood,Blood Gas
+50804,Calculated Total CO2,Blood,Blood Gas
+50812,Intubated,Blood,Blood Gas
+50818,pCO2,Blood,Blood Gas
+50808,Free Calcium,Blood,Blood Gas
+50822,"Potassium, Whole Blood",Blood,Blood Gas
+50802,Base Excess,Blood,Blood Gas
+50826,Tidal Volume,Blood,Blood Gas
+50815,O2 Flow,Blood,Blood Gas
+50819,PEEP,Blood,Blood Gas
+50820,pH,Blood,Blood Gas
+50816,Oxygen,Blood,Blood Gas
+50828,Ventilator,Blood,Blood Gas
+50824,"Sodium, Whole Blood",Blood,Blood Gas
+50803,"Calculated Bicarbonate, Whole Blood",Blood,Blood Gas
+50809,Glucose,Blood,Blood Gas
+50821,pO2,Blood,Blood Gas
+50813,Lactate,Blood,Blood Gas
+50825,Temperature,Blood,Blood Gas
+50827,Ventilation Rate,Blood,Blood Gas
+50992,Thyroid Peroxidase Antibodies,Blood,Chemistry
+50942,Hepatitis B Virus Core Antibody,Blood,Chemistry
+50947,I,Blood,Chemistry
+50904,"Cholesterol, HDL",Blood,Chemistry
+50979,Red Top Hold,Blood,Chemistry
+50995,"Thyroxine (T4), Free",Blood,Chemistry
+50952,Iron,Blood,Chemistry
+50940,Hepatitis B Surface Antibody,Blood,Chemistry
+51003,Troponin T,Blood,Chemistry
+51735,STX4,Blood,Chemistry
+50876,Anti-Smooth Muscle Antibody,Blood,Chemistry
+51613,eAG,Blood,Chemistry
+51661,HPE5,Blood,Chemistry
+50909,Cortisol,Blood,Chemistry
+50927,Gamma Glutamyltransferase,Blood,Chemistry
+50868,Anion Gap,Blood,Chemistry
+50920,Estimated GFR (MDRD equation),Blood,Chemistry
+50998,Transferrin,Blood,Chemistry
+50971,Potassium,Blood,Chemistry
+50915,D-Dimer,Blood,Chemistry
+50981,Salicylate,Blood,Chemistry
+53153,HIV Screen,Blood,Chemistry
+51733,STX2,Blood,Chemistry
+50853,25-OH Vitamin D,Blood,Chemistry
+50903,Cholesterol Ratio (Total/HDL),Blood,Chemistry
+50958,Luteinizing Hormone,Blood,Chemistry
+50970,Phosphate,Blood,Chemistry
+51564,ARCH-1,Blood,Chemistry
+50862,Albumin,Blood,Chemistry
+50882,Bicarbonate,Blood,Chemistry
+50937,Hepatitis A Virus Antibody,Blood,Chemistry
+50941,Hepatitis B Surface Antigen,Blood,Chemistry
+51659,HPE3,Blood,Chemistry
+50852,% Hemoglobin A1c,Blood,Chemistry
+50878,Asparate Aminotransferase (AST),Blood,Chemistry
+50907,"Cholesterol, Total",Blood,Chemistry
+50916,DHEA-Sulfate,Blood,Chemistry
+50956,Lipase,Blood,Chemistry
+51006,Urea Nitrogen,Blood,Chemistry
+50993,Thyroid Stimulating Hormone,Blood,Chemistry
+51648,Hepatitis B Viral Load,Blood,Chemistry
+50926,Follicle Stimulating Hormone,Blood,Chemistry
+50955,Light Green Top Hold,Blood,Chemistry
+51007,Uric Acid,Blood,Chemistry
+50912,Creatinine,Blood,Chemistry
+50924,Ferritin,Blood,Chemistry
+50873,Anti-Nuclear Antibody,Blood,Chemistry
+50953,"Iron Binding Capacity, Total",Blood,Chemistry
+51009,Vancomycin,Blood,Chemistry
+50856,Acetaminophen,Blood,Chemistry
+50922,Ethanol,Blood,Chemistry
+50939,"Hepatitis B Core Antibody, IgM",Blood,Chemistry
+50960,Magnesium,Blood,Chemistry
+51736,STX5,Blood,Chemistry
+50931,Glucose,Blood,Chemistry
+51732,STX1,Blood,Chemistry
+50933,Green Top Hold (plasma),Blood,Chemistry
+50999,Tricyclic Antidepressant Screen,Blood,Chemistry
+51010,Vitamin B12,Blood,Chemistry
+51663,HPE7,Blood,Chemistry
+50887,Blue Top Hold,Blood,Chemistry
+50934,H,Blood,Chemistry
+51737,STX6,Blood,Chemistry
+50863,Alkaline Phosphatase,Blood,Chemistry
+50906,"Cholesterol, LDL, Measured",Blood,Chemistry
+50973,Prolactin,Blood,Chemistry
+51658,HPE2,Blood,Chemistry
+50946,Human Chorionic Gonadotropin,Blood,Chemistry
+50893,"Calcium, Total",Blood,Chemistry
+50910,Creatine Kinase (CK),Blood,Chemistry
+50879,Barbiturate Screen,Blood,Chemistry
+50889,C-Reactive Protein,Blood,Chemistry
+51657,HPE1,Blood,Chemistry
+50885,"Bilirubin, Total",Blood,Chemistry
+51734,STX3,Blood,Chemistry
+50880,Benzodiazepine Screen,Blood,Chemistry
+51001,Triiodothyronine (T3),Blood,Chemistry
+51678,L,Blood,Chemistry
+50943,Hepatitis C Virus Antibody,Blood,Chemistry
+51660,HPE4,Blood,Chemistry
+50902,Chloride,Blood,Chemistry
+50861,Alanine Aminotransferase (ALT),Blood,Chemistry
+50874,"Anti-Nuclear Antibody, Titer",Blood,Chemistry
+50905,"Cholesterol, LDL, Calculated",Blood,Chemistry
+50925,Folate,Blood,Chemistry
+50919,EDTA Hold,Blood,Chemistry
+50983,Sodium,Blood,Chemistry
+51000,Triglycerides,Blood,Chemistry
+52075,Absolute Neutrophil Count,Blood,Hematology
+51275,PTT,Blood,Hematology
+51222,Hemoglobin,Blood,Hematology
+52172,RDW-SD,Blood,Hematology
+51200,Eosinophils,Blood,Hematology
+51133,Absolute Lymphocyte Count,Blood,Hematology
+52073,Absolute Eosinophil Count,Blood,Hematology
+52135,Immature Granulocytes,Blood,Hematology
+51254,Monocytes,Blood,Hematology
+51301,White Blood Cells,Blood,Hematology
+51146,Basophils,Blood,Hematology
+51244,Lymphocytes,Blood,Hematology
+51277,RDW,Blood,Hematology
+52069,Absolute Basophil Count,Blood,Hematology
+51250,MCV,Blood,Hematology
+51265,Platelet Count,Blood,Hematology
+51274,PT,Blood,Hematology
+51248,MCH,Blood,Hematology
+51237,INR(PT),Blood,Hematology
+51221,Hematocrit,Blood,Hematology
+51279,Red Blood Cells,Blood,Hematology
+51214,"Fibrinogen, Functional",Blood,Hematology
+52074,Absolute Monocyte Count,Blood,Hematology
+51256,Neutrophils,Blood,Hematology
+51266,Platelet Smear,Blood,Hematology
+51249,MCHC,Blood,Hematology
+51933,C. diff PCR,Stool,Chemistry
+51956,CDT027,Stool,Chemistry
+51090,"Methadone, Urine",Urine,Chemistry
+51074,"Barbiturate Screen, Urine",Urine,Chemistry
+51082,"Creatinine, Urine",Urine,Chemistry
+51079,"Cocaine, Urine",Urine,Chemistry
+51087,Length of Urine Collection,Urine,Chemistry
+51092,"Opiate Screen, Urine",Urine,Chemistry
+51093,"Osmolality, Urine",Urine,Chemistry
+51100,"Sodium, Urine",Urine,Chemistry
+51105,"Uric Acid, Urine",Urine,Chemistry
+51075,"Benzodiazepine Screen, Urine",Urine,Chemistry
+51071,"Amphetamine Screen, Urine",Urine,Chemistry
+51103,Uhold,Urine,Chemistry
+51085,"HCG, Urine, Qualitative",Urine,Chemistry
+51512,Urine Mucous,Urine,Hematology
+51476,Epithelial Cells,Urine,Hematology
+51492,Protein,Urine,Hematology
+51484,Ketone,Urine,Hematology
+52425,XUCU,Urine,Hematology
+51463,Bacteria,Urine,Hematology
+51508,Urine Color,Urine,Hematology
+51493,RBC,Urine,Hematology
+51514,Urobilinogen,Urine,Hematology
+51516,WBC,Urine,Hematology
+51478,Glucose,Urine,Hematology
+51486,Leukocytes,Urine,Hematology
+51464,Bilirubin,Urine,Hematology
+51466,Blood,Urine,Hematology
+51491,pH,Urine,Hematology
+51487,Nitrite,Urine,Hematology
+51498,Specific Gravity,Urine,Hematology
+51482,Hyaline Casts,Urine,Hematology
+51519,Yeast,Urine,Hematology
+51506,Urine Appearance,Urine,Hematology
