@@ -1,0 +1,81 @@
+icd_code,icd_version,long_title
+V1749,9,Family history of other cardiovascular diseases
+81343,9,Closed fracture of distal end of ulna (alone)
+8730,9,"Open wound of scalp, without mention of complication"
+29562,9,"Schizophrenic disorders, residual type, chronic"
+7840,9,Headache
+E8495,9,Street and highway accidents
+49320,9,"Chronic obstructive asthma, unspecified"
+0389,9,Unspecified septicemia
+4550,9,Internal hemorrhoids without mention of complication
+E8136,9,Motor vehicle traffic accident involving collision with other vehicle injuring pedal cyclist
+V1789,9,Family history of other musculoskeletal diseases
+42789,9,Other specified cardiac dysrhythmias
+V5869,9,Long-term (current) use of other medications
+56210,9,Diverticulosis of colon (without mention of hemorrhage)
+7850,9,"Tachycardia, unspecified"
+4011,9,Benign essential hypertension
+53011,9,Reflux esophagitis
+V5865,9,Long-term (current) use of steroids
+45981,9,"Venous (peripheral) insufficiency, unspecified"
+V180,9,Family history of diabetes mellitus
+72992,9,Nontraumatic hematoma of soft tissue
+82131,9,"Open fracture of condyle, femoral"
+32723,9,Obstructive sleep apnea (adult)(pediatric)
+4786,9,Edema of larynx
+27801,9,Morbid obesity
+4241,9,Aortic valve disorders
+3310,9,Alzheimer's disease
+51881,9,Acute respiratory failure
+56400,9,"Constipation, unspecified"
+E8120,9,Other motor vehicle traffic accident involving collision with motor vehicle injuring driver of motor vehicle other than motorcycle
+04186,9,Helicobacter pylori [H. pylori]
+8505,9,Concussion with loss of consciousness of unspecified duration
+V1581,9,"Personal history of noncompliance with medical treatment, presenting hazards to health"
+49390,9,"Asthma, unspecified type, unspecified"
+73300,9,"Osteoporosis, unspecified"
+44020,9,"Atherosclerosis of native arteries of the extremities, unspecified"
+86502,9,"Injury to spleen without mention of open wound into cavity, capsular tears, without major disruption of parenchyma"
+2875,9,"Thrombocytopenia, unspecified"
+4019,9,Unspecified essential hypertension
+80704,9,Closed fracture of four ribs
+3320,9,Paralysis agitans
+6826,9,"Cellulitis and abscess of leg, except foot"
+V1582,9,Personal history of tobacco use
+49121,9,Obstructive chronic bronchitis with (acute) exacerbation
+99592,9,Severe sepsis
+25000,9,"Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled"
+29410,9,Dementia in conditions classified elsewhere without behavioral disturbance
+30500,9,"Alcohol abuse, unspecified"
+2724,9,Other and unspecified hyperlipidemia
+5693,9,Hemorrhage of rectum and anus
+V4579,9,Other acquired absence of organ
+53550,9,"Unspecified gastritis and gastroduodenitis, without mention of hemorrhage"
+7295,9,Pain in limb
+E0064,9,Activities involving bike riding
+7823,9,Edema
+Z9049,10,Acquired absence of other specified parts of digestive tract
+I10,10,Essential (primary) hypertension
+V180,10,Pedal cycle driver injured in noncollision transport accident in nontraffic accident
+Y042XXA,10,"Assault by strike against or bumped into by another person, initial encounter"
+B9620,10,Unspecified Escherichia coli [E. coli] as the cause of diseases classified elsewhere
+Y832,10,"Surgical operation with anastomosis, bypass or graft as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+R569,10,Unspecified convulsions
+B952,10,Enterococcus as the cause of diseases classified elsewhere
+R51,10,Headache
+I9581,10,Postprocedural hypotension
+K5090,10,"Crohn's disease, unspecified, without complications"
+K5000,10,Crohn's disease of small intestine without complications
+V892XXA,10,"Person injured in unspecified motor-vehicle accident, traffic, initial encounter"
+F10129,10,"Alcohol abuse with intoxication, unspecified"
+K9189,10,Other postprocedural complications and disorders of digestive system
+K631,10,Perforation of intestine (nontraumatic)
+R000,10,"Tachycardia, unspecified"
+Y92410,10,Unspecified street and highway as the place of occurrence of the external cause
+R079,10,"Chest pain, unspecified"
+R1031,10,Right lower quadrant pain
+K50012,10,Crohn's disease of small intestine with intestinal obstruction
+Y929,10,Unspecified place or not applicable
+E039,10,"Hypothyroidism, unspecified"
+K651,10,Peritoneal abscess
+A419,10,"Sepsis, unspecified organism"

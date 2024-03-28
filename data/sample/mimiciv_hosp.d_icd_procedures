@@ -1,0 +1,18 @@
+icd_code,icd_version,long_title
+4523,9,Colonoscopy
+9604,9,Insertion of endotracheal tube
+8628,9,"Nonexcisional debridement of wound, infection or burn"
+8659,9,Closure of skin and subcutaneous tissue of other sites
+3893,9,"Venous catheterization, not elsewhere classified"
+4516,9,Esophagogastroduodenoscopy [EGD] with closed biopsy
+8016,9,"Other arthrotomy, knee"
+9671,9,Continuous invasive mechanical ventilation for less than 96 consecutive hours
+0DBB4ZZ,10,"Excision of Ileum, Percutaneous Endoscopic Approach"
+0DBB0ZZ,10,"Excision of Ileum, Open Approach"
+0W9G3ZZ,10,"Drainage of Peritoneal Cavity, Percutaneous Approach"
+0DJD4ZZ,10,"Inspection of Lower Intestinal Tract, Percutaneous Endoscopic Approach"
+3E0436Z,10,"Introduction of Nutritional Substance into Central Vein, Percutaneous Approach"
+0DBH4ZZ,10,"Excision of Cecum, Percutaneous Endoscopic Approach"
+0W9G30Z,10,"Drainage of Peritoneal Cavity with Drainage Device, Percutaneous Approach"
+0W9F3ZZ,10,"Drainage of Abdominal Wall, Percutaneous Approach"
+0DBK0ZZ,10,"Excision of Ascending Colon, Open Approach"
