@@ -38,7 +38,15 @@ def extract_direct(spark, sample_patients):
         'micro-vine-412020.mimiciv_hosp.prescriptions',
         'micro-vine-412020.mimiciv_hosp.procedures_icd',
         'micro-vine-412020.mimiciv_hosp.services',
-        'micro-vine-412020.mimiciv_hosp.transfers'
+        'micro-vine-412020.mimiciv_hosp.transfers',
+        'micro-vine-412020.mimiciv_icu.chartevents',
+        'micro-vine-412020.mimiciv_icu.datetimeevents',
+        'micro-vine-412020.mimiciv_icu.icustays',
+        'micro-vine-412020.mimiciv_icu.ingredientevents',
+        'micro-vine-412020.mimiciv_icu.inputevents',
+        'micro-vine-412020.mimiciv_icu.outputevents',
+        'micro-vine-412020.mimiciv_icu.procedureevents'
+        
     ]
     patients_string = ','.join(map(str, sample_patients))
     
@@ -107,6 +115,27 @@ def extract_related(spark):
     pandas_df = data.toPandas()
     pandas_df.to_csv(f"data/sample/mimiciv_hosp.d_labitems", index=False)
     
+    # d_items
+    #  'micro-vine-412020.mimiciv_icu.d_items', -> chart events, datetimeevents, igredient events, input events, output events, procedure events
+    chart = pd.read_csv("data/sample/mimiciv_icu.chartevents")['itemid']
+    datetime = pd.read_csv("data/sample/mimiciv_icu.datetimeevents")['itemid']
+    ingredient = pd.read_csv("data/sample/mimiciv_icu.ingredientevents")['itemid']
+    input = pd.read_csv("data/sample/mimiciv_icu.inputevents")['itemid']
+    output = pd.read_csv("data/sample/mimiciv_icu.outputevents")['itemid']
+    procedure = pd.read_csv("data/sample/mimiciv_icu.procedureevents")['itemid']
+    
+    item_ids = set(chart) | set(datetime) | set(ingredient) | set(input) | set(output) | set(procedure)
+    item_ids_string = ','.join(map(str, item_ids))
+    
+    query = f'''
+        SELECT * FROM `micro-vine-412020.mimiciv_icu.d_items`
+        WHERE itemid IN ({item_ids_string})
+    '''
+    data = bq.run_query(spark, query)
+    pandas_df = data.toPandas()
+    pandas_df.to_csv(f"data/sample/mimiciv_icu.d_items", index=False)
+     
+
 
 if __name__ == '__main__':
     # connect to BQ

@@ -1,18 +1,35 @@
 icd_code,icd_version,long_title
-4523,9,Colonoscopy
-9604,9,Insertion of endotracheal tube
-8628,9,"Nonexcisional debridement of wound, infection or burn"
-8659,9,Closure of skin and subcutaneous tissue of other sites
-3893,9,"Venous catheterization, not elsewhere classified"
-4516,9,Esophagogastroduodenoscopy [EGD] with closed biopsy
-8016,9,"Other arthrotomy, knee"
-9671,9,Continuous invasive mechanical ventilation for less than 96 consecutive hours
-0DBB4ZZ,10,"Excision of Ileum, Percutaneous Endoscopic Approach"
-0DBB0ZZ,10,"Excision of Ileum, Open Approach"
-0W9G3ZZ,10,"Drainage of Peritoneal Cavity, Percutaneous Approach"
-0DJD4ZZ,10,"Inspection of Lower Intestinal Tract, Percutaneous Endoscopic Approach"
-3E0436Z,10,"Introduction of Nutritional Substance into Central Vein, Percutaneous Approach"
-0DBH4ZZ,10,"Excision of Cecum, Percutaneous Endoscopic Approach"
-0W9G30Z,10,"Drainage of Peritoneal Cavity with Drainage Device, Percutaneous Approach"
-0W9F3ZZ,10,"Drainage of Abdominal Wall, Percutaneous Approach"
-0DBK0ZZ,10,"Excision of Ascending Colon, Open Approach"
+5371,9,"Laparoscopic repair of diaphragmatic hernia, abdominal approach"
+2319,9,Other surgical extraction of tooth
+3521,9,Open and other replacement of aortic valve with tissue graft
+3723,9,Combined right and left heart cardiac catheterization
+4011,9,Biopsy of lymphatic structure
+8107,9,"Lumbar and lumbosacral fusion of the posterior column, posterior technique"
+3722,9,Left heart cardiac catheterization
+8162,9,Fusion or refusion of 2-3 vertebrae
+8856,9,Coronary arteriography using two catheters
+9354,9,Application of splint
+0481,9,Injection of anesthetic into peripheral nerve for analgesia
+9904,9,Transfusion of packed cells
+3611,9,(Aorto)coronary bypass of one coronary artery
+3961,9,Extracorporeal circulation auxiliary to open heart surgery
+4467,9,Laparoscopic procedures for creation of esophagogastric sphincteric competence
+3615,9,Single internal mammary-coronary artery bypass
+8541,9,Unilateral simple mastectomy
+7901,9,"Closed reduction of fracture without internal fixation, humerus"
+02HV33Z,10,"Insertion of Infusion Device into Superior Vena Cava, Percutaneous Approach"
+00U20JZ,10,"Supplement Dura Mater with Synthetic Substitute, Open Approach"
+B211YZZ,10,Fluoroscopy of Multiple Coronary Arteries using Other Contrast
+0WQFXZ2,10,"Repair Abdominal Wall, Stoma, External Approach"
+00B70ZZ,10,"Excision of Cerebral Hemisphere, Open Approach"
+06BQ4ZZ,10,"Excision of Left Saphenous Vein, Percutaneous Endoscopic Approach"
+0DNW4ZZ,10,"Release Peritoneum, Percutaneous Endoscopic Approach"
+0D1L4Z4,10,"Bypass Transverse Colon to Cutaneous, Percutaneous Endoscopic Approach"
+10E0XZZ,10,"Delivery of Products of Conception, External Approach"
+3E0G76Z,10,"Introduction of Nutritional Substance into Upper GI, Via Natural or Artificial Opening"
+0WUF0JZ,10,"Supplement Abdominal Wall with Synthetic Substitute, Open Approach"
+021109W,10,"Bypass Coronary Artery, Two Arteries from Aorta with Autologous Venous Tissue, Open Approach"
+5A1221Z,10,"Performance of Cardiac Output, Continuous"
+00C00ZZ,10,"Extirpation of Matter from Brain, Open Approach"
+02100Z9,10,"Bypass Coronary Artery, One Artery from Left Internal Mammary, Open Approach"
+0WUF4JZ,10,"Supplement Abdominal Wall with Synthetic Substitute, Percutaneous Endoscopic Approach"
