@@ -1,4 +1,6 @@
-from pyspark.sql.functions import col, when, max, expr
+from pyspark.sql import Window
+
+from pyspark.sql.functions import col, count, expr, max, when
 from pyspark.sql import DataFrame
 
 class FeatureEngineering:
@@ -56,6 +58,67 @@ class FeatureEngineering:
 
         # Merge the event flag into the ML dataset
         self.ml_data = self.ml_data.join(event_flag_agg, on=self.subject_column, how='left')
+
+        return self.ml_data
+
+    def count_previous_events(self, partition_column, order_column, event_column, event_name=None):
+        """
+        Counts the previous occurrences of a specific event for each subject in the dataset.
+    
+        Parameters:
+        - partition_column (str): The column name to partition the data (e.g., 'subject_id').
+        - order_column (str): The column name to order the data (e.g., 'admittime').
+        - event_column (str): The column name representing the event to count (e.g., 'diagnosis').
+        - event_name (str, optional): The specific event to count. If provided, only occurrences of this event are counted.
+                                       If None, all events in the event_column are counted.
+    
+        Returns:
+        - DataFrame: A DataFrame with an additional column named 'previous_events' indicating the count of previous occurrences
+                     of the specified event for each subject.
+    
+        The function creates a new column in the dataset that represents the count of the specified event
+        that occurred before the current record for each subject. This can be particularly useful for tracking
+        historical data like previous admissions or diagnoses.
+        """
+        # Sort dataset by the specified partition and order columns
+        window_spec = Window.partitionBy(partition_column).orderBy(order_column)
+        
+        # Count previous occurrences of the specified event
+        if event_name:
+            count_condition = (count(col(event_column)).over(window_spec) - 1).alias("previous_" + event_column)
+            self.ml_data = self.ml_data.withColumn(f"previous_{event_column}_{event_name}", count_condition).filter(col(event_column) == event_name)
+        else:
+            count_condition = (count(col(event_column)).over(window_spec) - 1).alias("previous_" + event_column)
+            self.ml_data = self.ml_data.withColumn(f"previous_{event_column}", count_condition)
+    
+        return self.ml_data
+
+    def check_event_within_timeframe(self, event_column, subject_column='subject_id', event_value=None, timeframe=30):
+        """
+        Checks for the occurrence of a specified event within a given timeframe.
+
+        Parameters:
+        - event_column (str): The column to check for the event.
+        - subject_column (str): Column name representing the subject ID.
+        - event_value (optional, value): The specific value to check within the event_column.
+        - timeframe (int): Timeframe in days to check for the event.
+
+        Adds a column indicating if the specified event occurred within the timeframe.
+        """
+        # Define window specification for lead function
+        windowSpec = Window.partitionBy(subject_column).orderBy(col(event_column))
+
+        # Use lead to get the date of the next occurrence of the event for each subject
+        self.ml_data = self.ml_data.withColumn('next_event_date', lead(col(event_column), 1).over(windowSpec))
+
+        # Calculate the days to the next event
+        self.ml_data = self.ml_data.withColumn('days_to_next_event', datediff(col('next_event_date'), col(event_column)))
+
+        # Check if the next event (if specific event_value is given) is within the specified timeframe
+        if event_value is not None:
+            self.ml_data = self.ml_data.withColumn('event_within_timeframe', (col(event_column) == event_value) & (col('days_to_next_event') <= timeframe) & (col('days_to_next_event') > 0))
+        else:
+            self.ml_data = self.ml_data.withColumn('event_within_timeframe', (col('days_to_next_event') <= timeframe) & (col('days_to_next_event') > 0))
 
         return self.ml_data
 
