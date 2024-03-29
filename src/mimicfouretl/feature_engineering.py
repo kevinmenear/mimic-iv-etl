@@ -1,4 +1,5 @@
 from pyspark.sql.functions import col, when, max, expr
+from pyspark.sql import DataFrame
 
 class FeatureEngineering:
     def __init__(self, raw_data: DataFrame, subject_column='subject_id'):
@@ -60,6 +61,7 @@ class FeatureEngineering:
 
     def encode_categorical(self, categorical_columns):
         # Implement encoding for categorical variables
+        pass
 
     def calculate_statistics(self, numeric_column, statistics=['mean', 'stddev', 'percentile']):
         """
