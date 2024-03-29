@@ -94,13 +94,14 @@ def get_spark_session(materialization_dataset="mimiciv_materialization", use_ser
 
 def run_query(spark, query, use_local_data=False):  
     if use_local_data:
-        match = re.search(r'FROM\s+`?([^`\s]+)`?', query, re.IGNORECASE)
-        csv_file_name = match.group(1)
-        print(csv_file_name)
-        
-        df = spark.read.csv(f"../data/sample/{csv_file_name}", header=True, inferSchema=True)
-        df.createOrReplaceTempView("csv_data")
-        result = spark.sql(query.replace(csv_file_name, "csv_data"))
+        for file_name in os.listdir(f'../data/sample/'):
+            df = spark.read.csv(f"../data/sample/{file_name}", header=True, inferSchema=True)
+            df.createOrReplaceTempView(file_name.split('.')[1])
+            
+        query = query.replace('mimiciv_hosp.', '')
+        query = query.replace('mimiciv_icu.', '')
+                        
+        result = spark.sql(query)
         return result
     else:          
         # DataFrame with results
