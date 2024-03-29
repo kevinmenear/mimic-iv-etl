@@ -11,7 +11,7 @@ class QueryBuilder:
         - filters (list): Conditions applied to filter the query.
         - joins (list): Join conditions for combining with other datasets.
         """
-        self.dataset = 'physionet_data.mimiciv_' + dataset
+        self.dataset = 'physionet-data.mimiciv_' + dataset
         if columns:
             if isinstance(columns, list):
                 self.columns = columns
@@ -40,7 +40,7 @@ class QueryBuilder:
         else:
             self.columns.append(columns)
 
-    def apply_filters(self, condition):
+    def apply_filters(self, filters):
         """
         Applies filter conditions to the query.
 
@@ -48,9 +48,9 @@ class QueryBuilder:
         - condition (str or tuple): The filter condition(s) to apply. Can be a single condition as a string or multiple conditions in a tuple.
         """
         if isinstance(filters, list):
-            self.filters.extend(condition)
+            self.filters.extend(filters)
         else:
-            self.filters.append(condition)
+            self.filters.append(filters)
 
     def join_with(self, other_qb, join_type, columns):
         """
@@ -65,14 +65,30 @@ class QueryBuilder:
             columns = [columns] 
         on_conditions = []
         for col in columns:
-            on_conditions.append(f"{self.dataset}.{col} = {other_qb.dataset}.{col}")
+            on_conditions.append(f"`{self.dataset}`.{col} = `{other_qb.dataset}`.{col}")
         joined_on = ' AND '.join(on_conditions)
         join_query = f"{join_type.upper()} JOIN `{other_qb.dataset}` ON {joined_on}"
         self.joins.append(join_query)
         self.columns.extend(other_qb.columns)
+
+        # Qualify duplicate columns with the name of the current dataset
+        # and only include column from the current dataset.
+        # Note: this assumes unique column names across datasets
+        #       i.e. if two column names are the same, they refer to the same data
+        #            and there is no reason to bring in both columns
+        seen = set()
+        new_columns_list = []
+        for column in self.columns:
+            if column not in seen:
+                new_columns_list.append(column)
+                seen.add(column)
+            else:
+                new_columns_list.remove(column)
+                new_columns_list.append(f'`{self.dataset}`' + '.' + column)
+        self.columns = new_columns_list
         self.filters.extend(other_qb.filters)
 
-    def generate_query(self):
+    def generate_query(self, limit=None):
         """
         Constructs and returns the final SQL query string.
 
@@ -87,5 +103,8 @@ class QueryBuilder:
         else:
             join_clauses = ''
         where_clause = f"WHERE {' AND '.join(self.filters)}" if self.filters else ""
+
+        if limit:
+            return f"{select_clause}\n{from_clause}\n{join_clauses}{where_clause}\nLIMIT {limit}"
 
         return f"{select_clause}\n{from_clause}\n{join_clauses}{where_clause}"
