@@ -1,0 +1,5 @@
+subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime,los
+12270967,23436743,34170426,Trauma SICU (TSICU),Trauma SICU (TSICU),2130-02-25T18:15:21,2130-02-26T02:49:42,0.3571875
+16913836,25000857,30230548,Surgical Intensive Care Unit (SICU),Neuro Surgical Intensive Care Unit (Neuro SICU),2120-06-10T16:00,2120-06-22T20:58:56,12.207592592592592
+19215107,20512350,37649574,Cardiac Vascular Intensive Care Unit (CVICU),Cardiac Vascular Intensive Care Unit (CVICU),2138-07-09T10:58:54,2138-07-10T17:57:51,1.2909375
+14823881,20886388,33624004,Cardiac Vascular Intensive Care Unit (CVICU),Cardiac Vascular Intensive Care Unit (CVICU),2120-08-14T11:22:03,2120-08-15T11:35:58,1.0096643518518518

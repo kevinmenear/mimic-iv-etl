@@ -1,3 +1,10 @@
 subject_id,hadm_id,chartdate,hcpcs_cd,seq_num,short_description
-10151468,29727150,2159-01-18,99219,1,Hospital observation services
-15556019,23154837,2146-04-10,G0378,1,Hospital observation per hr
+19215107,28382861,2138-08-07,93540,3,Cardiovascular
+19215107,28382861,2138-08-07,93510,1,Cardiovascular
+19215107,28382861,2138-08-07,93545,4,Cardiovascular
+19215107,28382861,2138-08-07,G0378,5,Hospital observation per hr
+19215107,28382861,2138-08-07,93539,2,Cardiovascular
+12568379,22444607,2203-05-01,19303,1,Integumentary system
+12568379,22444607,2203-05-01,64450,3,Nervous system
+12568379,22444607,2203-05-01,38500,2,Hemic and lymphatic systems
+12568379,22444607,2203-05-01,G0378,4,Hospital observation per hr

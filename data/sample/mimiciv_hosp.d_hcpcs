@@ -1,3 +1,9 @@
 code,category,long_description,short_description
-99219,1.0,,Hospital observation services
 G0378,,"Hospital observation service, per hour",Hospital observation per hr
+19303,1.0,,Integumentary system
+38500,1.0,,Hemic and lymphatic systems
+64450,1.0,,Nervous system
+93545,1.0,,Cardiovascular
+93510,1.0,,Cardiovascular
+93540,1.0,,Cardiovascular
+93539,1.0,,Cardiovascular
