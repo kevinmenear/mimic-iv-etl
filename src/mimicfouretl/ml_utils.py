@@ -16,7 +16,7 @@ from pyspark.ml.stat import Correlation
 from pyspark.ml.feature import VectorAssembler
 
 
-class MLPrep:
+class MLUtils:
     def __init__(self, data: DataFrame):
         self.data = data
         self.target = None
@@ -236,7 +236,7 @@ class MLPrep:
 
 # Subclasses of MLPrep for various modeling goals
 
-class ReadmissionRiskPrediction(MLPrep):
+class ReadmissionRiskPrediction(MLUtils):
     def __init__(self, data):
         super().__init__(data)
         # Initialize target variable and feature selection
