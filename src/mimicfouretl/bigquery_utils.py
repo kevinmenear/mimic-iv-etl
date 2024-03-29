@@ -5,6 +5,9 @@ from google.api_core.exceptions import NotFound
 
 from pyspark.sql import SparkSession
 
+import os
+import re
+
 _credentials_path = None
 _project_id = None
 _access_token = None
@@ -48,40 +51,62 @@ def get_client(use_service_account_auth=False):
     return _client
 
 
-def list_tables(client, dataset_id):
-    tables = client.list_tables(dataset_id)
-    return [f"{dataset_id}.{table.table_id}" for table in tables]
+def list_tables(dataset_id, client=None, use_local_data=False):
+    if use_local_data:
+        tables = []
+        for file_name in os.listdir(f'../data/sample/'):
+            if file_name.startswith(dataset_id):
+                tables.append(file_name)    
+        return tables
+    else:
+        tables = client.list_tables(dataset_id)
+        return [f"{dataset_id}.{table.table_id}" for table in tables]
 
 
-def get_spark_session(materialization_dataset="mimiciv_materialization", use_service_account_auth=False):
-    spark = SparkSession.builder \
-                .appName("BigQuery with OAuth") \
-                .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:latest.version") \
-                .getOrCreate()
-    spark.read.format("bigquery").option("credentialsFile", "_credentials_path")
-    
-    # Check if the materialization dataset exists, create it if it doesn't
-    dataset_ref = _client.dataset(materialization_dataset)
-    
-    try:
-        dataset = _client.get_dataset(dataset_ref)
-    except NotFound:
-        dataset = bigquery.Dataset(dataset_ref)
-        dataset = _client.create_dataset(dataset)
-    
-    if not use_service_account_auth: 
-        spark.conf.set("gcpAccessToken", _access_token)
-    spark.conf.set("materializationDataset", materialization_dataset)
-    spark.conf.set("viewsEnabled", "true")
+def get_spark_session(materialization_dataset="mimiciv_materialization", use_service_account_auth=False, use_local_data=False):
+    if use_local_data:
+        spark = SparkSession.builder \
+            .appName("Local Physionet copy") \
+            .getOrCreate()
+        return spark
+    else:
+        spark = SparkSession.builder \
+                    .appName("BigQuery with OAuth") \
+                    .config("spark.jars.packages", "com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:latest.version") \
+                    .getOrCreate()
+        spark.read.format("bigquery").option("credentialsFile", "_credentials_path")
+        
+        # Check if the materialization dataset exists, create it if it doesn't
+        dataset_ref = _client.dataset(materialization_dataset)
+        
+        try:
+            dataset = _client.get_dataset(dataset_ref)
+        except NotFound:
+            dataset = bigquery.Dataset(dataset_ref)
+            dataset = _client.create_dataset(dataset)
+        
+        if not use_service_account_auth: 
+            spark.conf.set("gcpAccessToken", _access_token)
+        spark.conf.set("materializationDataset", materialization_dataset)
+        spark.conf.set("viewsEnabled", "true")
+        return spark
 
-    return spark
 
-
-def run_query(spark, query):            
-    # DataFrame with results
-    df = spark.read.format("bigquery") \
-              .option("query", query) \
-              .load()
+def run_query(spark, query, use_local_data=False):  
+    if use_local_data:
+        match = re.search(r'FROM\s+`?([^`\s]+)`?', query, re.IGNORECASE)
+        csv_file_name = match.group(1)
+        print(csv_file_name)
+        
+        df = spark.read.csv(f"../data/sample/{csv_file_name}", header=True, inferSchema=True)
+        df.createOrReplaceTempView("csv_data")
+        result = spark.sql(query.replace(csv_file_name, "csv_data"))
+        return result
+    else:          
+        # DataFrame with results
+        df = spark.read.format("bigquery") \
+                .option("query", query) \
+                .load()
     return df
 
 
