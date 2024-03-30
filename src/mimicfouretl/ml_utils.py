@@ -1,26 +1,39 @@
-import numpy as np
-
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
-from imblearn.over_sampling import SMOTE
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-
-
 from pyspark.sql import DataFrame
 
 from pyspark.sql.functions import col
 from pyspark.ml.stat import Correlation
 from pyspark.ml.feature import VectorAssembler
 
+import numpy as np
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+from sklearn.metrics import confusion_matrix
+
+from imblearn.over_sampling import SMOTE
+from imblearn.under_sampling import RandomUnderSampler
+from imblearn.pipeline import Pipeline
+
+import xgboost as xgb
+
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 class MLUtils:
     def __init__(self, data: DataFrame):
         self.data = data
-        self.target = None
-        self.features = None
+        
+        self.features = None # List of input features
+        self.target = None # List of target features
+        
+        self.train_data = None
+        self.eval_data = {'val': None, 'test': None}
+        
+        self.model = None
+        
+        self.predictions = {'val': None, 'test': None}
 
     def set_target(self, target: str):
         """
@@ -46,18 +59,34 @@ class MLUtils:
         self.features = features
 
 
-    def clean_data(self, column_name):
+    def clean_data(self, columns=None, verbose=False):
         """
-        Removes rows from the DataFrame where the specified column has missing values.
-
+        Removes rows from the DataFrame where specified columns have missing values and logs the count of dropped rows.
+    
         Parameters:
-        - column_name (str): The name of the column to check for missing values.
+        - columns (list, optional): A list of column names to check for missing values. If None, checks all columns.
         """
-        # Drop rows where the specified column has a missing (null) value
-        self.data = self.data.na.drop(subset=[column_name])
+        if columns is None:
+            # If no columns are specified, consider all feature and target columns
+            columns = self.features + [self.target]
+    
+        # Count rows before cleaning
+        if verbose: 
+            initial_row_count = self.data.count()
+    
+        # Perform cleaning
+        self.data = self.data.na.drop(subset=columns, how='any')
+    
+        if verbose: 
+            # Count rows after cleaning
+            final_row_count = self.data.count()
+            # Calculate and log the number of rows dropped
+            dropped_rows = initial_row_count - final_row_count
+            print(f"Number of rows dropped: {dropped_rows}")
+    
         return self.data
-        
 
+        
     def select_features(self, features, selection_type='subset', correlation_threshold=None, top_n=None):
         """
         Selects features based on correlation with the target variable.
@@ -74,12 +103,11 @@ class MLUtils:
         if selection_type == 'subset':
             # Keep only the specified subset of features
             self.set_features(features)
-            self.data = self.data.select([col(f) for f in features])
 
         elif selection_type == 'correlation':
             # Calculate correlation and filter features
             if self.target is None:
-                raise ValueError("Target feature needs to be set with set_target method before calculating feature correlation."
+                raise ValueError("Target feature needs to be set with set_target method before calculating feature correlation.")
             correlated_features = []
         
             for feature in features:
@@ -104,9 +132,6 @@ class MLUtils:
             # Select the features that met the criteria
             selected_feature_names = [feature for feature, _ in correlated_features]
             self.set_features(selected_feature_names)
-            self.data = self.data.select([col(f) for f in selected_feature_names])
-    
-        return self.data
 
     def engineer_features(self):
         # Implement feature engineering steps
@@ -130,7 +155,7 @@ class MLUtils:
             raise ValueError("Ratios must be between 0 and 1")
     
         # Split the data
-        train_data, remaining_data = train_test_split(self.data, test_size=(val_ratio + test_ratio), random_state=42)
+        train_data, remaining_data = train_test_split(self.data.toPandas(), test_size=(val_ratio + test_ratio), random_state=42)
         val_data, test_data = train_test_split(remaining_data, test_size=test_ratio/(val_ratio + test_ratio), random_state=42)
             
         # Normalize/standardize/encode if specified
@@ -161,7 +186,9 @@ class MLUtils:
                 val_data[col] = encoder.transform(val_data[[col]])
                 test_data[col] = encoder.transform(test_data[[col]])
     
-        return {'train': train_data, 'validation': val_data, 'test': test_data}
+        self.train_data = train_data
+        self.eval_data['val'] = val_data
+        self.eval_data['test'] = test_data
 
     def export_data(self, filename='exported_data'):
         """
@@ -179,24 +206,80 @@ class MLUtils:
     
         print(f"Data exported successfully to {filepath}")
 
-    def evaluate_classification_model(self):
+    def train_regression_model(self):
+        xg_reg = xgb.XGBRegressor()
+        xg_reg.fit(self.train_data[self.features], self.train_data[self.target])
+        self.model = xg_reg
+
+    def train_classification_model(self, smote=True, undersample_factor=0, verbose=False):
+        """
+        Trains a classification model using XGBoost, with optional SMOTE and undersampling.
+        
+        Parameters:
+        - smote (bool): Whether to apply SMOTE for oversampling the minority class.
+        - undersample_factor (float): Factor for undersampling the majority class. Ranges from 0 (no undersampling) to 1 (undersample until classes are balanced).
+        - verbose (bool): Whether to print sampling strategy feedback.
+        """
+        # Split the data
+        X_train, y_train = self.train_data[self.features], self.train_data[self.target]
+
+        # Define model
+        self.model = xgb.XGBClassifier()
+
+        # Handle imbalanced data
+        steps = []
+        if undersample_factor > 0:
+            class_counts = y_train.value_counts()
+            minority_class_count = class_counts.min()
+            majority_class_count = class_counts.max()
+            current_ratio = minority_class_count/majority_class_count
+            if verbose:
+                print(f'Minority Class Count: {minority_class_count}, Majority Class Count: {majority_class_count}')
+                print(f'Minority/Majority Ratio: {current_ratio:.4f}')
+            # Apply undersampling strategy
+            undersample_ratio = current_ratio * (1 - undersample_factor) + undersample_factor
+            if verbose:
+                print(f'Undersampling Majority. New Minority/Majority Ratio: {undersample_ratio:.4f}')
+            under_sampler = RandomUnderSampler(sampling_strategy=undersample_ratio)
+            steps.append(('under', under_sampler))
+
+        if undersample_factor < 1 and smote:
+            # Apply SMOTE for oversampling
+            smote_sampler = SMOTE()
+            steps.append(('smote', smote_sampler))
+
+        # Create pipeline with resampling and model
+        pipeline = Pipeline(steps=steps + [('model', self.model)])
+
+        # Train the model
+        pipeline.fit(X_train, y_train)
+
+        # Store trained model
+        self.model = pipeline
+
+    def evaluate_classification_model(self, eval_type='val'):
         """
         Evaluates the classification model on the test set.
 
         Returns:
             dict: A dictionary containing key evaluation metrics for regression.
         """
-        predictions = self.model.predict(self.data['test'][self.features])
-        accuracy = accuracy_score(self.data['test'][self.target], predictions)
-        precision = precision_score(self.data['test'][self.target], predictions)
-        recall = recall_score(self.data['test'][self.target], predictions)
-        f1 = f1_score(self.data['test'][self.target], predictions)
-        auc_roc = roc_auc_score(self.data['test'][self.target], predictions)
+        
+        self.predictions[eval_type] = self.model.predict(self.eval_data[eval_type][self.features])
+        
+        act = self.eval_data[eval_type][self.target]
+        pred = self.predictions[eval_type]
+        
+        accuracy = accuracy_score(act, pred)
+        precision = precision_score(act, pred)
+        recall = recall_score(act, pred)
+        f1 = f1_score(act, pred)
+        auc_roc = roc_auc_score(act, pred)
 
         # Return evaluation metrics
         return {'accuracy': accuracy, 'precision': precision, 'recall': recall, 'f1': f1, 'auc_roc': auc_roc}
 
-    def evaluate_regression_model(self):
+    def evaluate_regression_model(self, eval_type='val'):
         """
         Evaluates the regression model on the test set.
 
@@ -204,15 +287,41 @@ class MLUtils:
             dict: A dictionary containing key evaluation metrics for regression.
         """
         # Assuming self.model is the trained regression model and self.data['test'] is the test set
-        predictions = self.model.predict(self.data['test'][self.features])
+        self.predictions[eval_type] = self.model.predict(self.data['test'][self.features])
+
+        act = self.eval_data[eval_type][self.target]
+        pred = self.predictions[eval_type]
         
         # Calculate evaluation metrics
-        mse = mean_squared_error(self.data['test'][self.target], predictions)
-        mae = mean_absolute_error(self.data['test'][self.target], predictions)
-        r2 = r2_score(self.data['test'][self.target], predictions)
+        mse = mean_squared_error(act, pred)
+        mae = mean_absolute_error(act, pred)
+        r2 = r2_score(act, pred)
 
         # Return evaluation metrics
         return {'mean_squared_error': mse, 'mean_absolute_error': mae, 'r2_score': r2}
+
+    def display_confusion_matrix(self, eval_type='val'):
+        """
+        Displays a confusion matrix for the classification results.
+    
+        Parameters:
+        - eval_type (str): The evaluation dataset type ('val' or 'test').
+        """
+        
+        actual = self.eval_data[eval_type][self.target]
+        predicted = self.predictions[eval_type]
+    
+        # Generate confusion matrix
+        matrix = confusion_matrix(actual, predicted)
+    
+        # Plotting using seaborn
+        sns.heatmap(matrix, annot=True, fmt='d', cmap='Blues', 
+                    xticklabels=['Predicted Negative', 'Predicted Positive'],
+                    yticklabels=['Actual Negative', 'Actual Positive'])
+        plt.ylabel('Actual')
+        plt.xlabel('Predicted')
+        plt.title(f"Confusion Matrix ({'Validation Data' if eval_type == 'val' else 'Test Data'})")
+        plt.show()
 
 
     def log_changes(self, change_description):
@@ -231,42 +340,3 @@ class MLUtils:
             log_file.write(json.dumps(log_entry) + '\n')
 
         print("Change logged successfully.")
-
-
-
-# Subclasses of MLPrep for various modeling goals
-
-class ReadmissionRiskPrediction(MLUtils):
-    def __init__(self, data):
-        super().__init__(data)
-        # Initialize target variable and feature selection
-        self.target = None
-        self.features = None
-
-
-    # Add model goal-specific methods
-    def feature_engineering_for_readmission(self):
-        # Specific feature engineering steps
-        pass
-
-    def train_model(self):
-        # Split the data
-        split_data = self.split_data()
-
-        # Example: Logistic Regression Model
-        clf = LogisticRegression()
-
-        # Handle imbalanced data
-        smote = SMOTE()
-        X_resampled, y_resampled = smote.fit_resample(split_data['train'][self.features], split_data['train'][self.target])
-
-        # Training the model
-        clf.fit(X_resampled, y_resampled)
-
-        # Storing trained model for future use
-        self.model = clf
-
-    def evaluate_model(self):
-        # Logic to evaluate the readmission risk model
-        pass
-
