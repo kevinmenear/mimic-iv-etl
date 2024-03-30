@@ -1,9 +1,20 @@
 code,category,long_description,short_description
 G0378,,"Hospital observation service, per hour",Hospital observation per hr
-19303,1.0,,Integumentary system
-38500,1.0,,Hemic and lymphatic systems
-64450,1.0,,Nervous system
-93545,1.0,,Cardiovascular
-93510,1.0,,Cardiovascular
-93540,1.0,,Cardiovascular
-93539,1.0,,Cardiovascular
+93454,1.0,,Cardiovascular
+61886,1.0,,Nervous system
+63030,1.0,,Nervous system
+43264,1.0,,Digestive system
+43280,1.0,,Digestive system
+47562,1.0,,Digestive system
+43262,1.0,,Digestive system
+43275,1.0,,Digestive system
+49587,1.0,,Digestive system
+36246,1.0,,Cardiovascular system
+37221,1.0,,Cardiovascular system
+36245,1.0,,Cardiovascular system
+37236,1.0,,Cardiovascular system
+67400,1.0,,Eye and ocular adnexa
+21365,1.0,,Musculoskeletal system
+99220,1.0,,Hospital observation services
+99219,1.0,,Hospital observation services
+99218,1.0,,Hospital observation services
