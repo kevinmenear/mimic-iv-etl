@@ -1,20 +1,98 @@
 code,category,long_description,short_description
 G0378,,"Hospital observation service, per hour",Hospital observation per hr
+C9600,,"Percutaneous transcatheter placement of drug eluting intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch",Perc drug-el cor stent sing
+G0105,,Colorectal cancer screening; colonoscopy on individual at high risk,Colorectal scrn; hi risk ind
+G0275,,,"Renal angiography, non-selective, one or both kidneys, performed at the same time as cardiac catheterization and/or coronary angiography"
+93510,1.0,,Cardiovascular
+92943,1.0,,Cardiovascular
+93545,1.0,,Cardiovascular
 93454,1.0,,Cardiovascular
-61886,1.0,,Nervous system
-63030,1.0,,Nervous system
-43264,1.0,,Digestive system
-43280,1.0,,Digestive system
-47562,1.0,,Digestive system
+93455,1.0,,Cardiovascular
+92921,1.0,,Cardiovascular
+93456,1.0,,Cardiovascular
+64415,1.0,,Nervous system
+64486,1.0,,Nervous system
+62270,1.0,,Nervous system
+64447,1.0,,Nervous system
+63267,1.0,,Nervous system
+64910,1.0,,Nervous system
+64450,1.0,,Nervous system
+52204,1.0,,Urinary system
+52235,1.0,,Urinary system
+52601,1.0,,Urinary system
+52630,1.0,,Urinary system
+52000,1.0,,Urinary system
+52351,1.0,,Urinary system
+52332,1.0,,Urinary system
+43276,1.0,,Digestive system
+43271,1.0,,Digestive system
+49320,1.0,,Digestive system
+43249,1.0,,Digestive system
+43235,1.0,,Digestive system
+49505,1.0,,Digestive system
+45380,1.0,,Digestive system
+49585,1.0,,Digestive system
+43268,1.0,,Digestive system
+43259,1.0,,Digestive system
+43269,1.0,,Digestive system
+44376,1.0,,Digestive system
+49324,1.0,,Digestive system
+45378,1.0,,Digestive system
+49654,1.0,,Digestive system
+49081,1.0,,Digestive system
+44970,1.0,,Digestive system
+43246,1.0,,Digestive system
+43272,1.0,,Digestive system
+49321,1.0,,Digestive system
+43274,1.0,,Digestive system
+45330,1.0,,Digestive system
 43262,1.0,,Digestive system
-43275,1.0,,Digestive system
-49587,1.0,,Digestive system
-36246,1.0,,Cardiovascular system
+43239,1.0,,Digestive system
+43264,1.0,,Digestive system
+47562,1.0,,Digestive system
+60500,1.0,,Endocrine system
+19303,1.0,,Integumentary system
+15100,1.0,,Integumentary system
+15777,1.0,,Integumentary system
+15240,1.0,,Integumentary system
+19357,1.0,,Integumentary system
+19125,1.0,,Integumentary system
+12001,1.0,,Integumentary system
+15120,1.0,,Integumentary system
+15750,1.0,,Integumentary system
+37205,1.0,,Cardiovascular system
 37221,1.0,,Cardiovascular system
-36245,1.0,,Cardiovascular system
-37236,1.0,,Cardiovascular system
-67400,1.0,,Eye and ocular adnexa
-21365,1.0,,Musculoskeletal system
+35474,1.0,,Cardiovascular system
+37206,1.0,,Cardiovascular system
+37226,1.0,,Cardiovascular system
+36246,1.0,,Cardiovascular system
+36200,1.0,,Cardiovascular system
+36832,1.0,,Cardiovascular system
+58541,1.0,,Female genital system
+58571,1.0,,Female genital system
+58262,1.0,,Female genital system
+58561,1.0,,Female genital system
+57288,1.0,,Female genital system
+57240,1.0,,Female genital system
+27570,1.0,,Musculoskeletal system
+27524,1.0,,Musculoskeletal system
+28760,1.0,,Musculoskeletal system
+29881,1.0,,Musculoskeletal system
+27792,1.0,,Musculoskeletal system
+26140,1.0,,Musculoskeletal system
+29823,1.0,,Musculoskeletal system
+24545,1.0,,Musculoskeletal system
+29827,1.0,,Musculoskeletal system
+27829,1.0,,Musculoskeletal system
+27814,1.0,,Musculoskeletal system
+23430,1.0,,Musculoskeletal system
+29826,1.0,,Musculoskeletal system
+23605,1.0,,Musculoskeletal system
+28315,1.0,,Musculoskeletal system
+24655,1.0,,Musculoskeletal system
+29879,1.0,,Musculoskeletal system
+38500,1.0,,Hemic and lymphatic systems
+38510,1.0,,Hemic and lymphatic systems
 99220,1.0,,Hospital observation services
 99219,1.0,,Hospital observation services
 99218,1.0,,Hospital observation services
