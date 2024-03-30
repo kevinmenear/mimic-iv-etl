@@ -253,3 +253,33 @@ class FeatureEngineering:
     def get_processed_data(self):
         # Returns the processed data
         return self.data
+
+
+def left_merge_dataframes(left_df: DataFrame, right_df: DataFrame, join_cols: list):
+    """
+    Left merges two dataframes on specified columns and drops duplicate columns from right dataframe.
+
+    Parameters:
+    - left_df (DataFrame): The left DataFrame for the join.
+    - right_df (DataFrame): The right DataFrame for the join.
+    - join_cols (list): A list of column names (str) to join on.
+
+    Returns:
+    - DataFrame: The merged DataFrame.
+    """
+
+    # Rename columns in right_df to avoid duplicates
+    for col in join_cols:
+        right_df = right_df.withColumnRenamed(col, col + '_right')
+
+    # Construct join condition
+    join_condition = [left_df[col] == right_df[col + '_right'] for col in join_cols]
+
+    # Perform the join
+    merged_df = left_df.join(right_df, on=join_condition, how='left')
+
+    # Drop the renamed columns from right_df
+    for col in join_cols:
+        merged_df = merged_df.drop(col + '_right')
+
+    return merged_df
