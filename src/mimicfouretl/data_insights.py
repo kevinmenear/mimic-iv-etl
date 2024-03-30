@@ -19,8 +19,7 @@ def get_dataset_description(file_path):
     return dataset_description, schema_df
 
 
-def display_datasets():
-    description_path = '../data/descriptions'
+def display_datasets(description_path='../data/descriptions'):
     subdirs = ['hosp', 'icu']
     pd.set_option('display.max_colwidth', None)
     

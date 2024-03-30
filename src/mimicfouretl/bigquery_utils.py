@@ -51,10 +51,10 @@ def get_client(use_service_account_auth=False):
     return _client
 
 
-def list_tables(dataset_id, client=None, use_local_data=False):
+def list_tables(dataset_id, client=None, use_local_data=False, local_path='../data/sample/'):
     if use_local_data:
         tables = []
-        for file_name in os.listdir(f'../data/sample/'):
+        for file_name in os.listdir(local_path):
             if file_name.startswith(dataset_id):
                 tables.append(file_name)    
         return tables
@@ -92,10 +92,10 @@ def get_spark_session(materialization_dataset="mimiciv_materialization", use_ser
         return spark
 
 
-def run_query(spark, query, use_local_data=False):  
+def run_query(spark, query, use_local_data=False, local_path='../data/sample/'):  
     if use_local_data:
-        for file_name in os.listdir(f'../data/sample/'):
-            df = spark.read.csv(f"../data/sample/{file_name}", header=True, inferSchema=True)
+        for file_name in os.listdir(local_path):
+            df = spark.read.csv(f"{local_path}/{file_name}", header=True, inferSchema=True)
             df.createOrReplaceTempView(file_name.split('.')[1])
             
         query = query.replace('mimiciv_hosp.', '')
