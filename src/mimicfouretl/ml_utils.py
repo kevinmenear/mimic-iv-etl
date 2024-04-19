@@ -11,12 +11,17 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.metrics import confusion_matrix
+from sklearn.feature_selection import RFE
 
 from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.pipeline import Pipeline
 
 import xgboost as xgb
+
+import optuna
+
+import shap
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -190,6 +195,46 @@ class MLUtils:
         self.eval_data['val'] = val_data
         self.eval_data['test'] = test_data
 
+    def select_features_with_rfe(self, model_type='classification', n_features_to_select=None, step=1, verbose=False):
+        """
+        Feature selection using Recursive Feature Elimination (RFE) based on specified model type (classifier or regressor).
+    
+        Parameters:
+        - model_type (str): Type of model ('classification' or 'regression') for which to perform feature selection.
+        - n_features_to_select (int, optional): The number of features to select. If None, half of the features are selected.
+        - step (int or float, optional): The number of features to consider removing at each iteration.
+        - verbose (bool, optional): Whether to print the process details.
+        """
+        # Ensure target and features are already set
+        if self.target is None or self.features is None:
+            raise ValueError("Target and features must be set before feature selection.")
+    
+        # Choose the model based on the specified type
+        if model_type == 'classification':
+            model = xgb.XGBClassifier()
+        elif model_type == 'regression':
+            model = xgb.XGBRegressor()
+        else:
+            raise ValueError("Invalid model type specified. Choose 'classification' or 'regression'.")
+    
+        # Define RFE with the chosen model
+        rfe = RFE(estimator=model, n_features_to_select=n_features_to_select, step=step, verbose=verbose)
+    
+        # Fit RFE
+        self.data[self.features + [self.target]] = self.data[self.features + [self.target]].dropna()  # Ensure no NaNs
+        X = self.data[self.features]
+        y = self.data[self.target]
+        rfe.fit(X, y)
+    
+        # Update features to the selected features
+        self.features = [f for f, selected in zip(self.features, rfe.support_) if selected]
+    
+        # Log the feature selection
+        self.log_changes(f"Selected features with RFE: {self.features}")
+    
+        return self.features
+
+
     def export_data(self, filename='exported_data'):
         """
         Exports the processed dataset to a file in the ../data/processed/ directory.
@@ -206,12 +251,15 @@ class MLUtils:
     
         print(f"Data exported successfully to {filepath}")
 
-    def train_regression_model(self):
-        xg_reg = xgb.XGBRegressor()
+    def train_regression_model(self, params=None):
+        if params:
+            xg_reg = xgb.XGBRegressor(**params)
+        else:
+            xg_reg = xgb.XGBRegressor()
         xg_reg.fit(self.train_data[self.features], self.train_data[self.target])
         self.model = xg_reg
 
-    def train_classification_model(self, smote=True, undersample_factor=0, verbose=False):
+    def train_classification_model(self, smote=True, undersample_factor=0, params=None, verbose=False):
         """
         Trains a classification model using XGBoost, with optional SMOTE and undersampling.
         
@@ -224,7 +272,10 @@ class MLUtils:
         X_train, y_train = self.train_data[self.features], self.train_data[self.target]
 
         # Define model
-        self.model = xgb.XGBClassifier()
+        if params:
+            self.model = xgb.XGBClassifier(**params)
+        else:
+            self.model = xgb.XGBClassifier()
 
         # Handle imbalanced data
         steps = []
@@ -259,7 +310,7 @@ class MLUtils:
 
     def evaluate_classification_model(self, eval_type='val'):
         """
-        Evaluates the classification model on the test set.
+        Evaluates the classification model on the validation or test set.
 
         Returns:
             dict: A dictionary containing key evaluation metrics for regression.
@@ -281,7 +332,7 @@ class MLUtils:
 
     def evaluate_regression_model(self, eval_type='val'):
         """
-        Evaluates the regression model on the test set.
+        Evaluates the regression model on the validation or test set.
 
         Returns:
             dict: A dictionary containing key evaluation metrics for regression.
@@ -323,6 +374,157 @@ class MLUtils:
         plt.title(f"Confusion Matrix ({'Validation Data' if eval_type == 'val' else 'Test Data'})")
         plt.show()
 
+
+    def optimize_with_optuna(self, model_type='classification', n_trials=100, storage_url='sqlite:///optuna_study.db'):
+        """
+        Optimize hyperparameters using Optuna for the specified model type. This method sets up an optimization trial with 
+        Optuna to search for the best hyperparameters that maximize or minimize the specified evaluation metric. The function 
+        uses a storage mechanism to save all trials for resuming or reviewing in future sessions.
+    
+        Parameters:
+        - model_type (str): Specifies the type of model to optimize. Acceptable values are 'classification' or 'regression'.
+        - n_trials (int): The number of trials Optuna should run to optimize the hyperparameters.
+        - storage_url (str): URL to the database storage used to save the Optuna study's state. Format is 'sqlite:///file_path'.
+    
+        Returns:
+        - best_params (dict): A dictionary containing the hyperparameters that yielded the best performance metric 
+            (accuracy for classification or mean squared error for regression) during the trials.
+    
+        Raises:
+        - ValueError: If an invalid 'model_type' is specified.
+    
+        Example Usage:
+        - best_params = optimize_with_optuna(model_type='regression', n_trials=50, storage_url='sqlite:///my_optuna.db')
+        """
+    
+        def objective(trial):
+            # Define the hyperparameter space
+            params = {
+                'n_estimators': trial.suggest_int('n_estimators', 50, 400),
+                'max_depth': trial.suggest_int('max_depth', 3, 20),
+                'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.2, log=True),
+                'subsample': trial.suggest_float('subsample', 0.5, 1.0),
+                'colsample_bytree': trial.suggest_float('colsample_bytree', 0.5, 1.0),
+                'lambda': trial.suggest_float('lambda', 1e-8, 10.0, log=True),
+                'alpha': trial.suggest_float('alpha', 1e-8, 10.0, log=True),
+                'min_child_weight': trial.suggest_int('min_child_weight', 1, 10),
+                'eta': trial.suggest_float('eta', 0.01, 0.1),
+                'gamma': trial.suggest_float('gamma', 0.0, 1.0)
+            }
+
+    
+            # Initialize the model
+            if model_type == 'classification':
+                smote = trial.suggest_categorical('smote', [True, False])
+                undersample_factor = trial.suggest_float('undersample_factor', 0.0, 1.0)
+                self.train_classification_model(smote, undersample_factor, params=params)
+                results = self.evaluate_classification_model()
+                metric = results['accuracy']
+            elif model_type == 'regression':
+                self.train_regression_model(params=params)
+                results = self.evaluate_regression_model()
+                metric = results['mean_squared_error']
+            else:
+                raise ValueError("Invalid model type specified. Choose 'classification' or 'regression'.")
+
+            return metric
+
+        if model_type == 'classification':
+            direction='maximize'
+        elif model_type == 'regression':
+            direction='minimize'
+        study = optuna.create_study(direction=direction, storage=storage_url, load_if_exists=True)
+        study.optimize(objective, n_trials=n_trials)
+    
+        best_params = study.best_trial.params
+        print(f"Best trial parameters: {best_params}")
+        
+
+        # Train the model with the best parameters
+        if model_type == 'classification':
+            smote = best_params.pop('smote')
+            undersample_factor = best_params.pop('undersample_factor')
+            self.train_classification_model(smote, undersample_factor, params=best_params)
+        else:
+            self.train_regression_model(params=best_params)
+        print('Model trained with best trial parameters')
+        
+        return best_params
+        
+
+    def compute_shap_values(self):
+        """
+        Compute SHAP values to explain the model's decisions. This function initializes a SHAP explainer with the trained model and 
+        calculates SHAP values for the training data.
+    
+        Raises:
+        - ValueError: If the model is not trained prior to calling this function.
+    
+        Returns:
+        - shap_values: An object containing SHAP values for each feature across the training data. Each row in the SHAP values object
+          sums up to the difference between the model output for that row and the base value output by the model for the dataset.
+    
+        Example:
+        - shap_values = compute_shap_values()
+    
+        Note:
+        - Ensure that the model is trained and the data used for computing SHAP values is representative of the model's application context.
+        """
+        # Ensure the model is trained
+        if self.model is None:
+            raise ValueError("Model not trained. Train the model before computing SHAP values.")
+    
+        # Extract the actual model from the pipeline if it's wrapped in one
+        actual_model = self.model.steps[-1][1] if hasattr(self.model, 'steps') else self.model
+    
+        explainer = shap.Explainer(actual_model)
+        self.shap_values = explainer(self.train_data[self.features])
+    
+        return self.shap_values
+
+
+    def visualize_shap_values(self, plot_type='bar', sample_number=0, feature_name=None):
+        """
+        Visualize SHAP values in various formats. This function provides different plots to represent the SHAP values depending
+        on the plot type specified.
+    
+        Parameters:
+        - shap_values: The SHAP values object computed from the compute_shap_values function.
+        - plot_type (str): Type of plot to display SHAP values. Acceptable values include 'bar', 'waterfall', 'dependence', and 'bee_swarm'.
+          - 'bar' plot shows the average impact of each feature on model output.
+          - 'waterfall' shows the contribution of each feature to a single prediction, specified by sample_number.
+          - 'dependence' plots the effect of a single feature, specified by feature_name, across the whole dataset.
+          - 'bee_swarm' plots the distribution of impacts each feature has across all samples.
+        - sample_number (int): The index of the sample to plot in the 'waterfall' plot.
+        - feature_name (str): The name of the feature to plot in the 'dependence' plot.
+    
+        Raises:
+        - ValueError: If an incorrect plot type is provided.
+    
+        Example:
+        - visualize_shap_values(shap_values, plot_type='bar')
+    
+        Note:
+        - Ensure that SHAP values are computed using compute_shap_values before calling this function.
+        """
+        # Check if the correct plot type is provided
+        if plot_type not in ['bar', 'waterfall', 'dependence', 'bee_swarm']:
+            raise ValueError("Invalid plot type provided. Choose 'bar', 'waterfall', 'dependence', or 'bee_swarm'.")
+    
+        # Visualize the SHAP values
+        if plot_type == 'bar':
+            shap.plots.bar(self.shap_values)
+        elif plot_type == 'waterfall':
+            shap.plots.waterfall(self.shap_values[sample_number])
+        elif plot_type == 'dependence':
+            if feature_name is None:
+                raise ValueError("Feature name must be specified for 'dependence' plot.")
+            shap.plots.scatter(self.shap_values[:, feature_name])
+        elif plot_type == 'bee_swarm':
+            shap.plots.beeswarm(self.shap_values)
+    
+        return
+        
 
     def log_changes(self, change_description):
         """
