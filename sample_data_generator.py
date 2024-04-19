@@ -144,7 +144,7 @@ if __name__ == '__main__':
     spark = bq.get_spark_session(use_service_account_auth=True)
     
     # extract data
-    approx_sample_size = 10
+    approx_sample_size = 1000
     sample_patients = choose_random_sample(spark, approx_sample_size)
     print(sample_patients)
     extract_direct(spark, sample_patients)

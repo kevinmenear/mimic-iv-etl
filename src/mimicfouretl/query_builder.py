@@ -11,7 +11,7 @@ class QueryBuilder:
         - filters (list): Conditions applied to filter the query.
         - joins (list): Join conditions for combining with other datasets.
         """
-        self.dataset = 'physionet-data.mimiciv_' + dataset
+        self.dataset = 'mimiciv_' + dataset
         if columns:
             if isinstance(columns, list):
                 self.columns = columns

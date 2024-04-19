@@ -1,35 +1,876 @@
 icd_code,icd_version,long_title
-5371,9,"Laparoscopic repair of diaphragmatic hernia, abdominal approach"
-2319,9,Other surgical extraction of tooth
+311,9,Temporary tracheostomy
+370,9,Pericardiocentesis
+3975,9,Endovascular embolization or occlusion of vessel(s) of head or neck using bare coils
+4652,9,Closure of stoma of large intestine
+5994,9,Replacement of cystostomy tube
+8388,9,Other plastic operations on tendon
+8669,9,Other skin graft to other sites
+9604,9,Insertion of endotracheal tube
+9952,9,Prophylactic vaccination against influenza
+2751,9,Suture of laceration of lip
+3323,9,Other bronchoscopy
+4687,9,Other insertion of colonic stent(s)
+5012,9,Open biopsy of liver
+5361,9,Other open incisional hernia repair with graft or prosthesis
+5794,9,Insertion of indwelling urinary catheter
+6029,9,Other transurethral prostatectomy
+6849,9,Other and unspecified total abdominal hysterectomy
+6909,9,Other dilation and curettage
+7847,9,"Other repair or plastic operations on bone, tibia and fibula"
+7975,9,Closed reduction of dislocation of hip
+8672,9,Advancement of pedicle graft
+9910,9,Injection or infusion of thrombolytic agent
 3521,9,Open and other replacement of aortic valve with tissue graft
-3723,9,Combined right and left heart cardiac catheterization
+3979,9,Other endovascular procedures on other vessels
+570,9,Transurethral clearance of bladder
+6497,9,Insertion or replacement of inflatable penile prosthesis
+7301,9,Induction of labor by artificial rupture of membranes
+8683,9,Size reduction plastic operation
+9390,9,Non-invasive mechanical ventilation
+9394,9,Respiratory medication administered by nebulizer
+9962,9,Other electric countershock of heart
+0291,9,Lysis of cortical adhesions
+0479,9,Other neuroplasty
+3995,9,Hemodialysis
 4011,9,Biopsy of lymphatic structure
-8107,9,"Lumbar and lumbosacral fusion of the posterior column, posterior technique"
-3722,9,Left heart cardiac catheterization
-8162,9,Fusion or refusion of 2-3 vertebrae
+5013,9,Transjugular liver biopsy
+7569,9,Repair of other current obstetric laceration
+8106,9,"Lumbar and lumbosacral fusion of the anterior column, anterior technique"
+8587,9,Other repair or reconstruction of nipple
+8857,9,Other and unspecified coronary arteriography
+8872,9,Diagnostic ultrasound of heart
+0102,9,Ventriculopuncture through previously implanted catheter
+0392,9,Injection of other agent into spinal canal
+3523,9,Open and other replacement of mitral valve with tissue graft
+3776,9,Replacement of transvenous atrial and/or ventricular lead(s) [electrode]
+3950,9,Angioplasty of other non-coronary vessel(s)
+4041,9,"Radical neck dissection, unilateral"
+7532,9,Fetal EKG (scalp)
+8026,9,"Arthroscopy, knee"
+863,9,Other local excision or destruction of lesion or tissue of skin and subcutaneous tissue
+8801,9,Computerized axial tomography of abdomen
+9928,9,Injection or infusion of biological response modifier [BRM] as an antineoplastic agent
+022,9,Ventriculostomy
+3421,9,Transpleural thoracoscopy
+3749,9,Other repair of heart and pericardium
+391,9,Intra-abdominal venous shunt
+5059,9,Other transplant of liver
+7534,9,Other fetal monitoring
 8856,9,Coronary arteriography using two catheters
-9354,9,Application of splint
+8945,9,Artificial pacemaker rate check
+9907,9,Transfusion of other serum
+0131,9,Incision of cerebral meninges
+4441,9,Suture of gastric ulcer site
+4495,9,Laparoscopic gastric restrictive procedure
+5011,9,Closed (percutaneous) [needle] biopsy of liver
+5187,9,Endoscopic insertion of stent (tube) into bile duct
+5423,9,Biopsy of peritoneum
+5424,9,Closed [percutaneous] [needle] biopsy of intra-abdominal mass
+5491,9,Percutaneous abdominal drainage
+754,9,Manual removal of retained placenta
+7932,9,"Open reduction of fracture with internal fixation, radius and ulna"
+806,9,Excision of semilunar cartilage of knee
+8363,9,Rotator cuff repair
+8819,9,Other x-ray of abdomen
+8841,9,Arteriography of cerebral arteries
+8919,9,Video and radio-telemetered electroencephalographic monitoring
+9744,9,Nonoperative removal of heart assist system
+0159,9,Other excision or destruction of lesion or tissue of brain
+3201,9,Endoscopic excision or destruction of lesion or tissue of bronchus
+3712,9,Pericardiotomy
+3727,9,Cardiac mapping
+4439,9,Other gastroenterostomy without gastrectomy
+5188,9,Endoscopic removal of stone(s) from biliary tract
+5749,9,Other transurethral excision or destruction of lesion or tissue of bladder
+8154,9,Total knee replacement
+8605,9,Incision with removal of foreign body or device from skin and subcutaneous tissue
+8851,9,Angiocardiography of venae cavae
+0093,9,Transplant from cadaver
+0293,9,Implantation or replacement of intracranial neurostimulator lead(s)
+4131,9,Biopsy of bone marrow
+544,9,Excision or destruction of peritoneal tissue
+7757,9,Repair of claw toe
+7855,9,"Internal fixation of bone without fracture reduction, femur"
+8165,9,Percutaneous vertebroplasty
+8543,9,Unilateral extended simple mastectomy
 0481,9,Injection of anesthetic into peripheral nerve for analgesia
+5123,9,Laparoscopic cholecystectomy
+6632,9,Other bilateral ligation and division of fallopian tubes
+8128,9,Interphalangeal fusion
+9749,9,Removal of other device from thorax
+3927,9,Arteriovenostomy for renal dialysis
+8826,9,Other skeletal x-ray of pelvis and hip
 9904,9,Transfusion of packed cells
-3611,9,(Aorto)coronary bypass of one coronary artery
+3897,9,Central venous catheter placement with guidance
+5294,9,Endoscopic removal of stone(s) from pancreatic duct
+6812,9,Hysteroscopy
+7279,9,Other vacuum extraction
+7939,9,"Open reduction of fracture with internal fixation, other specified bone"
+8844,9,Arteriography of other intrathoracic vessels
+3972,9,Endovascular (total) embolization or occlusion of head and neck vessels
+4516,9,Esophagogastroduodenoscopy [EGD] with closed biopsy
+4921,9,Anoscopy
+5185,9,Endoscopic sphincterotomy and papillotomy
+8147,9,Other repair of knee
+8521,9,Local excision of lesion of breast
+864,9,Radical excision of skin lesion
+9955,9,Prophylactic administration of vaccine against other diseases
+3348,9,Other repair and plastic operations on bronchus
+3725,9,Biopsy of heart
+3778,9,Insertion of temporary transvenous pacemaker system
+3891,9,Arterial catheterization
+4413,9,Other gastroscopy
+6841,9,Laparoscopic total abdominal hysterectomy
+8051,9,Excision of intervertebral disc
+8601,9,Aspiration of skin and subcutaneous tissue
+9671,9,Continuous invasive mechanical ventilation for less than 96 consecutive hours
+3324,9,Closed [endoscopic] biopsy of bronchus
+5503,9,Percutaneous nephrostomy without fragmentation
+7071,9,Suture of laceration of vagina
+8411,9,Amputation of toe
+4443,9,Endoscopic control of gastric or duodenal bleeding
+4542,9,Endoscopic polypectomy of large intestine
+5091,9,Percutaneous aspiration of liver
+5523,9,Closed [percutaneous] [needle] biopsy of kidney
+6869,9,Other and unspecified radical abdominal hysterectomy
+7674,9,Open reduction of maxillary fracture
+7902,9,"Closed reduction of fracture without internal fixation, radius and ulna"
+8401,9,Amputation and disarticulation of finger
+9229,9,Other radiotherapeutic procedure
+2911,9,Pharyngoscopy
+3959,9,Other repair of vessel
+5349,9,Other open umbilical herniorrhaphy
+5351,9,Incisional hernia repair
+5411,9,Exploratory laparotomy
+6851,9,Laparoscopically assisted vaginal hysterectomy (LAVH)
+7985,9,Open reduction of dislocation of hip
+8102,9,"Other cervical fusion of the anterior column, anterior technique"
+8151,9,Total hip replacement
+8162,9,Fusion or refusion of 2-3 vertebrae
+8938,9,Other nonoperative respiratory measurements
+9702,9,Replacement of gastrostomy tube
+0066,9,Percutaneous transluminal coronary angioplasty [PTCA]
+3787,9,Replacement of any type pacemaker device with dual-chamber device
+7309,9,Other artificial rupture of membranes
+8845,9,Arteriography of renal arteries
+8855,9,Coronary arteriography using a single catheter
+9961,9,Atrial cardioversion
+0695,9,Parathyroid tissue reimplantation
+3794,9,"Implantation or replacement of automatic cardioverter/defibrillator, total system [AICD]"
+4525,9,Closed [endoscopic] biopsy of large intestine
+5022,9,Partial hepatectomy
+527,9,Radical pancreaticoduodenectomy
+8314,9,Fasciotomy
+8724,9,Other x-ray of lumbosacral spine
+8751,9,Percutaneous hepatic cholangiogram
+8878,9,Diagnostic ultrasound of gravid uterus
+9914,9,Injection or infusion of immunoglobulin
+3722,9,Left heart cardiac catheterization
+5421,9,Laparoscopy
+6712,9,Other cervical biopsy
+3505,9,Endovascular replacement of aortic valve
+4341,9,Endoscopic excision or destruction of lesion or tissue of stomach
+5184,9,Endoscopic dilation of ampulla and biliary duct
+5732,9,Other cystoscopy
+7359,9,Other manually assisted delivery
+8098,9,"Other excision of joint, foot and toe"
+8876,9,Diagnostic ultrasound of abdomen and retroperitoneum
+9202,9,Liver scan and radioisotope function study
+9925,9,Injection or infusion of cancer chemotherapeutic substance
+0077,9,"Hip bearing surface, ceramic-on-polyethylene"
+0212,9,Other repair of cerebral meninges
+5137,9,Anastomosis of hepatic duct to gastrointestinal tract
+8451,9,Insertion of interbody spinal fusion device
+8604,9,Other incision with drainage of skin and subcutaneous tissue
+9215,9,Pulmonary scan
+3895,9,Venous catheterization for renal dialysis
+4701,9,Laparoscopic appendectomy
+4824,9,Closed [endoscopic] biopsy of rectum
+8183,9,Other repair of shoulder
+9462,9,Alcohol detoxification
+3492,9,Injection into thoracic cavity
+3863,9,"Other excision of vessels, upper limb vessels"
+4709,9,Other appendectomy
+5114,9,Other closed [endoscopic] biopsy of biliary duct or sphincter of Oddi
+5631,9,Ureteroscopy
+6831,9,Laparoscopic supracervical hysterectomy [LSH]
+8534,9,Other unilateral subcutaneous mammectomy
+8753,9,Intraoperative cholangiogram
+8847,9,Arteriography of other intra-abdominal arteries
+8894,9,Magnetic resonance imaging of musculoskeletal
+9649,9,Other genitourinary instillation
+3322,9,Fiber-optic bronchoscopy
+3524,9,Open and other replacement of mitral valve
+3772,9,Initial insertion of transvenous leads [electrodes] into atrium and ventricle
+4024,9,Excision of inguinal lymph node
+5110,9,Endoscopic retrograde cholangiopancreatography [ERCP]
+5461,9,Reclosure of postoperative disruption of abdominal wall
+5533,9,Percutaneous ablation of renal lesion or tissue
+6549,9,Other unilateral salpingo-oophorectomy
+7961,9,"Debridement of open fracture site, humerus"
+8853,9,Angiocardiography of left heart structures
+0040,9,Procedure on single vessel
+0046,9,Insertion of two vascular stents
+3932,9,Suture of vein
+3990,9,Insertion of non-drug-eluting peripheral (non-coronary) vessel stent(s)
+5051,9,Auxiliary liver transplant
+5419,9,Other laparotomy
+5459,9,Other lysis of peritoneal adhesions
+8049,9,"Division of joint capsule, ligament, or cartilage, other specified sites"
+8842,9,Aortography
+9633,9,Gastric lavage
+9915,9,Parenteral infusion of concentrated nutritional substances
+3491,9,Thoracentesis
+3512,9,Open heart valvuloplasty of mitral valve without replacement
+4523,9,Colonoscopy
+7749,9,"Biopsy of bone, other bones"
+7769,9,"Local excision of lesion or tissue of bone, other bones"
+7798,9,"Total ostectomy, tarsals and metatarsals"
+7931,9,"Open reduction of fracture with internal fixation, humerus"
+8544,9,Bilateral extended simple mastectomy
+8674,9,Attachment of pedicle or flap graft to other sites
+9427,9,Other electroshock therapy
+0353,9,Repair of vertebral fracture
+0609,9,Other incision of thyroid field
+3403,9,Reopening of recent thoracotomy site
+346,9,Scarification of pleura
+3843,9,"Resection of vessel with replacement, upper limb vessels"
+741,9,Low cervical cesarean section
+9301,9,Functional evaluation
+9920,9,Injection or infusion of platelet inhibitor
+0015,9,High-dose infusion interleukin-2 [IL-2]
+0151,9,Excision of lesion or tissue of cerebral meninges
+2722,9,Biopsy of uvula and soft palate
+3142,9,Laryngoscopy and other tracheoscopy
+3533,9,Annuloplasty
+3761,9,Implant of pulsation balloon
+6859,9,Other and unspecified vaginal hysterectomy
+734,9,Medical induction of labor
+8309,9,Other incision of soft tissue
+8611,9,Closed biopsy of skin and subcutaneous tissue
+8838,9,Other computerized axial tomography
+8848,9,Arteriography of femoral and other lower extremity arteries
+9205,9,Cardiovascular and hematopoietic scan and radioisotope function study
+9322,9,Ambulation and gait training
+0239,9,Ventricular shunt to extracranial site NEC
+3942,9,Revision of arteriovenous shunt for renal dialysis
+3964,9,Intraoperative cardiac pacemaker
+4823,9,Rigid proctosigmoidoscopy
+5305,9,"Repair of inguinal hernia with graft or prosthesis, not otherwise specified"
+5362,9,Laparoscopic incisional hernia repair with graft or prosthesis
+586,9,Dilation of urethra
+7271,9,Vacuum extraction with episiotomy
+7973,9,Closed reduction of dislocation of wrist
+7983,9,Open reduction of dislocation of wrist
+8099,9,"Other excision of joint, other specified sites"
+8452,9,Insertion of recombinant bone morphogenetic protein
+0041,9,Procedure on two vessels
+0390,9,Insertion of catheter into spinal canal for infusion of therapeutic or palliative substances
+3220,9,Thoracoscopic excision of lesion or tissue of lung
+3724,9,Biopsy of pericardium
 3961,9,Extracorporeal circulation auxiliary to open heart surgery
-4467,9,Laparoscopic procedures for creation of esophagogastric sphincteric competence
-3615,9,Single internal mammary-coronary artery bypass
-8541,9,Unilateral simple mastectomy
+5164,9,Endoscopic excision or destruction of lesion of biliary ducts or sphincter of Oddi
+5979,9,Other repair of urinary stress incontinence
+8628,9,"Nonexcisional debridement of wound, infection or burn"
+0331,9,Spinal tap
+043,9,Suture of cranial and peripheral nerves
+270,9,Drainage of face and floor of mouth
+3321,9,Bronchoscopy through artificial stoma
+7935,9,"Open reduction of fracture with internal fixation, femur"
+8703,9,Computerized axial tomography of head
+8774,9,Retrograde pyelogram
+8873,9,Diagnostic ultrasound of other sites of thorax
+9921,9,Injection of antibiotic
+0359,9,Other repair and plastic operations on spinal cord structures
+2721,9,Biopsy of bony palate
+3613,9,(Aorto)coronary bypass of three coronary arteries
+3812,9,"Endarterectomy, other vessels of head and neck"
+4432,9,Percutaneous [endoscopic] gastrojejunostomy
+7964,9,"Debridement of open fracture site, phalanges of hand"
+8046,9,"Division of joint capsule, ligament, or cartilage, knee"
+8073,9,"Synovectomy, wrist"
+8074,9,"Synovectomy, hand and finger"
+8108,9,"Lumbar and lumbosacral fusion of the anterior column, posterior technique"
+8191,9,Arthrocentesis
+8595,9,Insertion of breast tissue expander
+0443,9,Release of carpal tunnel
+3783,9,Initial insertion of dual-chamber device
+387,9,Interruption of the vena cava
+3951,9,Clipping of aneurysm
+560,9,Transurethral removal of obstruction from ureter and renal pelvis
+6952,9,Aspiration curettage following delivery or abortion
+7535,9,Other diagnostic procedures on fetus and amnion
 7901,9,"Closed reduction of fracture without internal fixation, humerus"
-02HV33Z,10,"Insertion of Infusion Device into Superior Vena Cava, Percutaneous Approach"
-00U20JZ,10,"Supplement Dura Mater with Synthetic Substitute, Open Approach"
-B211YZZ,10,Fluoroscopy of Multiple Coronary Arteries using Other Contrast
-0WQFXZ2,10,"Repair Abdominal Wall, Stoma, External Approach"
-00B70ZZ,10,"Excision of Cerebral Hemisphere, Open Approach"
+9756,9,Removal of pancreatic tube or drain
+3893,9,"Venous catheterization, not elsewhere classified"
+4233,9,Endoscopic excision or destruction of lesion or tissue of esophagus
+4593,9,Other small-to-large intestinal anastomosis
+7779,9,"Excision of bone for graft, other bones"
+7936,9,"Open reduction of fracture with internal fixation, tibia and fibula"
+8607,9,Insertion of totally implantable vascular access device [VAD]
+0028,9,"Intravascular imaging, other specified vessel(s)"
+0881,9,Linear repair of laceration of eyelid or eyebrow
+2761,9,Suture of laceration of palate
+427,9,Esophagomyotomy
+7024,9,Vaginal biopsy
+9465,9,Drug detoxification
+9607,9,Insertion of other (naso-)gastric tube
+0047,9,Insertion of three vascular stents
+0531,9,Injection of anesthetic into sympathetic nerve for analgesia
+3734,9,"Excision or destruction of other lesion or tissue of heart, endovascular approach"
+6563,9,Laparoscopic removal of both ovaries and tubes at same operative episode
+7051,9,Repair of cystocele
+8039,9,"Biopsy of joint structure, other specified sites"
+9326,9,Manual rupture of joint adhesions
+9705,9,Replacement of stent (tube) in biliary or pancreatic duct
+3721,9,Right heart cardiac catheterization
+4603,9,Exteriorization of large intestine
+5412,9,Reopening of recent laparotomy site
+5551,9,Nephroureterectomy
+7761,9,"Local excision of lesion or tissue of bone, scapula, clavicle, and thorax [ribs and sternum]"
+8365,9,Other suture of muscle or fascia
+8893,9,Magnetic resonance imaging of spinal canal
+0042,9,Procedure on three vessels
+0122,9,Removal of intracranial neurostimulator lead(s)
+8339,9,Excision of lesion of other soft tissue
+8874,9,Diagnostic ultrasound of digestive system
+966,9,Enteral infusion of concentrated nutritional substances
+9977,9,Application or administration of an adhesion barrier substance
+598,9,Ureteral catheterization
+8081,9,"Other local excision or destruction of lesion of joint, shoulder"
+8164,9,Fusion or refusion of 9 or more vertebrae
+8244,9,Other suture of flexor tendon of hand
+8591,9,Aspiration of breast
+3929,9,Other (peripheral) vascular shunt or bypass
+4524,9,Flexible sigmoidoscopy
+4573,9,Open and other right hemicolectomy
+4685,9,Dilation of intestine
+4686,9,Endoscopic insertion of colonic stent(s)
+7867,9,"Removal of implanted devices from bone, tibia and fibula"
+7905,9,"Closed reduction of fracture without internal fixation, femur"
+0689,9,Other parathyroidectomy
+3371,9,"Endoscopic insertion or replacement of bronchial valve(s), single lobe"
+543,9,Excision or destruction of lesion or tissue of abdominal wall or umbilicus
+6951,9,Aspiration curettage of uterus for termination of pregnancy
+9905,9,Transfusion of platelets
+0139,9,Other incision of brain
+1735,9,Laparoscopic left hemicolectomy
+4466,9,Other procedures for creation of esophagogastric sphincteric competence
+4513,9,Other endoscopy of small intestine
+503,9,Lobectomy of liver
+6561,9,Other removal of both ovaries and tubes at same operative episode
+8622,9,"Excisional debridement of wound, infection, or burn"
+9723,9,Replacement of tracheostomy tube
+9755,9,"Removal of T-tube, other bile duct tube, or liver tube"
+9936,9,Administration of diphtheria toxoid
+1742,9,Laparoscopic robotic assisted procedure
+3606,9,Insertion of non-drug-eluting coronary artery stent(s)
+3611,9,(Aorto)coronary bypass of one coronary artery
+3779,9,Revision or relocation of cardiac device pocket
+403,9,Regional lymph node excision
+7077,9,Vaginal suspension and fixation
+8107,9,"Lumbar and lumbosacral fusion of the posterior column, posterior technique"
+8152,9,Partial hip replacement
+8345,9,Other myectomy
+0110,9,Intracranial pressure monitoring
+0309,9,Other exploration and decompression of spinal canal
+3224,9,Percutaneous ablation of lung lesion or tissue
+3404,9,Insertion of intercostal catheter for drainage
+3607,9,Insertion of drug-eluting coronary artery stent(s)
+4021,9,Excision of deep cervical lymph node
+5293,9,Endoscopic insertion of stent (tube) into pancreatic duct
+9308,9,Electromyography
+9605,9,Other intubation of respiratory tract
+2103,9,Control of epistaxis by cauterization (and packing)
+3615,9,Single internal mammary-coronary artery bypass
+3723,9,Combined right and left heart cardiac catheterization
+4311,9,Percutaneous [endoscopic] gastrostomy [PEG]
+8088,9,"Other local excision or destruction of lesion of joint, foot and toe"
+8166,9,Percutaneous vertebral augmentation
+0045,9,Insertion of one vascular stent
+0113,9,Closed [percutaneous] [needle] biopsy of brain
+064,9,Complete thyroidectomy
+3899,9,Other puncture of vein
+3949,9,Other revision of vascular procedure
+697,9,Insertion of intrauterine contraceptive device
+740,9,Classical cesarean section
+8105,9,"Dorsal and dorsolumbar fusion of the posterior column, posterior technique"
+8532,9,Bilateral reduction mammoplasty
+8744,9,"Routine chest x-ray, so described"
+8849,9,Arteriography of other specified sites
+9356,9,Application of pressure dressing
+9929,9,Injection or infusion of other therapeutic or prophylactic substance
+4574,9,Open and other resection of transverse colon
+4623,9,Other permanent ileostomy
+7987,9,Open reduction of dislocation of ankle
+8659,9,Closure of skin and subcutaneous tissue of other sites
+9672,9,Continuous invasive mechanical ventilation for 96 consecutive hours or more
+9906,9,Transfusion of coagulation factors
+9960,9,"Cardiopulmonary resuscitation, not otherwise specified"
+3612,9,(Aorto)coronary bypass of two coronary arteries
+4639,9,Other enterostomy
+5122,9,Cholecystectomy
+5198,9,Other percutaneous procedures on biliary tract
+5718,9,Other suprapubic cystostomy
+8313,9,Other tenotomy
+8877,9,Diagnostic ultrasound of peripheral vascular system
+8952,9,Electrocardiogram
+3241,9,Thoracoscopic lobectomy of lung
+5733,9,Closed [transurethral] biopsy of bladder
+7023,9,Biopsy of cul-de-sac
+731,9,Other surgical induction of labor
+7771,9,"Excision of bone for graft, scapula, clavicle, and thorax [ribs and sternum]"
+7789,9,"Other partial ostectomy, other bones"
+7915,9,"Closed reduction of fracture with internal fixation, femur"
+02BG0ZZ,10,"Excision of Mitral Valve, Open Approach"
+04CK0ZZ,10,"Extirpation of Matter from Right Femoral Artery, Open Approach"
 06BQ4ZZ,10,"Excision of Left Saphenous Vein, Percutaneous Endoscopic Approach"
-0DNW4ZZ,10,"Release Peritoneum, Percutaneous Endoscopic Approach"
-0D1L4Z4,10,"Bypass Transverse Colon to Cutaneous, Percutaneous Endoscopic Approach"
+0D9H0ZZ,10,"Drainage of Cecum, Open Approach"
+0DB78ZX,10,"Excision of Stomach, Pylorus, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DNM4ZZ,10,"Release Descending Colon, Percutaneous Endoscopic Approach"
+0QS606Z,10,"Reposition Right Upper Femur with Intramedullary Internal Fixation Device, Open Approach"
+0UBF0ZX,10,"Excision of Cul-de-sac, Open Approach, Diagnostic"
+0UT70ZZ,10,"Resection of Bilateral Fallopian Tubes, Open Approach"
+0UT90ZZ,10,"Resection of Uterus, Open Approach"
+0W9D30Z,10,"Drainage of Pericardial Cavity with Drainage Device, Percutaneous Approach"
+04100J1,10,"Bypass Abdominal Aorta to Celiac Artery with Synthetic Substitute, Open Approach"
+0D1B0Z4,10,"Bypass Ileum to Cutaneous, Open Approach"
+0DTK0ZZ,10,"Resection of Ascending Colon, Open Approach"
+0HTT0ZZ,10,"Resection of Right Breast, Open Approach"
+0QWB04Z,10,"Revision of Internal Fixation Device in Right Lower Femur, Open Approach"
+0RBV0ZZ,10,"Excision of Left Metacarpophalangeal Joint, Open Approach"
+0SG00Z1,10,"Fusion of Lumbar Vertebral Joint, Posterior Approach, Posterior Column, Open Approach"
+0UTC0ZZ,10,"Resection of Cervix, Open Approach"
+0W9G30Z,10,"Drainage of Peritoneal Cavity with Drainage Device, Percutaneous Approach"
+3E0H76Z,10,"Introduction of Nutritional Substance into Lower GI, Via Natural or Artificial Opening"
+02PYX3Z,10,"Removal of Infusion Device from Great Vessel, External Approach"
+03CG3ZZ,10,"Extirpation of Matter from Intracranial Artery, Percutaneous Approach"
+0S9D3ZX,10,"Drainage of Left Knee Joint, Percutaneous Approach, Diagnostic"
+0W9G3ZZ,10,"Drainage of Peritoneal Cavity, Percutaneous Approach"
+10907ZC,10,"Drainage of Amniotic Fluid, Therapeutic from Products of Conception, Via Natural or Artificial Opening"
+3E0336Z,10,"Introduction of Nutritional Substance into Peripheral Vein, Percutaneous Approach"
+3E033PZ,10,"Introduction of Platelet Inhibitor into Peripheral Vein, Percutaneous Approach"
+02H633Z,10,"Insertion of Infusion Device into Right Atrium, Percutaneous Approach"
+0FPB0DZ,10,"Removal of Intraluminal Device from Hepatobiliary Duct, Open Approach"
+0QB60ZZ,10,"Excision of Right Upper Femur, Open Approach"
+0Y6G0ZZ,10,"Detachment at Left Knee Region, Open Approach"
+0YP90JZ,10,"Removal of Synthetic Substitute from Right Lower Extremity, Open Approach"
+2W31X9Z,10,Immobilization of Face using Wire
+5A1955Z,10,"Respiratory Ventilation, Greater than 96 Consecutive Hours"
+00B70ZZ,10,"Excision of Cerebral Hemisphere, Open Approach"
+037Q34Z,10,"Dilation of Left Vertebral Artery with Drug-eluting Intraluminal Device, Percutaneous Approach"
+0GT24ZZ,10,"Resection of Left Adrenal Gland, Percutaneous Endoscopic Approach"
+0R9J30Z,10,"Drainage of Right Shoulder Joint with Drainage Device, Percutaneous Approach"
+0R9J3ZX,10,"Drainage of Right Shoulder Joint, Percutaneous Approach, Diagnostic"
+0R9N3ZZ,10,"Drainage of Right Wrist Joint, Percutaneous Approach"
+0SCC0ZZ,10,"Extirpation of Matter from Right Knee Joint, Open Approach"
+B410ZZZ,10,Fluoroscopy of Abdominal Aorta
+02UN08Z,10,"Supplement Pericardium with Zooplastic Tissue, Open Approach"
+05PYX3Z,10,"Removal of Infusion Device from Upper Vein, External Approach"
+0DH67UZ,10,"Insertion of Feeding Device into Stomach, Via Natural or Artificial Opening"
+30233Y3,10,"Transfusion of Allogeneic Unrelated Hematopoietic Stem Cells into Peripheral Vein, Percutaneous Approach"
+B218YZZ,10,Fluoroscopy of Left Internal Mammary Bypass Graft using Other Contrast
+B414YZZ,10,Fluoroscopy of Superior Mesenteric Artery using Other Contrast
+B41BYZZ,10,Fluoroscopy of Other Intra-Abdominal Arteries using Other Contrast
+00B10ZX,10,"Excision of Cerebral Meninges, Open Approach, Diagnostic"
+0BBF4ZX,10,"Excision of Right Lower Lung Lobe, Percutaneous Endoscopic Approach, Diagnostic"
+0DBP0ZZ,10,"Excision of Rectum, Open Approach"
+0HQ9XZZ,10,"Repair Perineum Skin, External Approach"
+0JH636Z,10,"Insertion of Pacemaker, Dual Chamber into Chest Subcutaneous Tissue and Fascia, Percutaneous Approach"
+0JPT3PZ,10,"Removal of Cardiac Rhythm Related Device from Trunk Subcutaneous Tissue and Fascia, Percutaneous Approach"
+0QSQ04Z,10,"Reposition Right Toe Phalanx with Internal Fixation Device, Open Approach"
+0T25X0Z,10,"Change Drainage Device in Kidney, External Approach"
+0WJG4ZZ,10,"Inspection of Peritoneal Cavity, Percutaneous Endoscopic Approach"
+4A023N7,10,"Measurement of Cardiac Sampling and Pressure, Left Heart, Percutaneous Approach"
+B41GYZZ,10,Fluoroscopy of Left Lower Extremity Arteries using Other Contrast
+01N60ZZ,10,"Release Radial Nerve, Open Approach"
+07BD4ZX,10,"Excision of Aortic Lymphatic, Percutaneous Endoscopic Approach, Diagnostic"
+0D1B4Z4,10,"Bypass Ileum to Cutaneous, Percutaneous Endoscopic Approach"
+0D773ZZ,10,"Dilation of Stomach, Pylorus, Percutaneous Approach"
+0DB68ZX,10,"Excision of Stomach, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DB90ZZ,10,"Excision of Duodenum, Open Approach"
+0DTB0ZZ,10,"Resection of Ileum, Open Approach"
+0DTM0ZZ,10,"Resection of Descending Colon, Open Approach"
+0F758ZZ,10,"Dilation of Right Hepatic Duct, Via Natural or Artificial Opening Endoscopic"
+0FT20ZZ,10,"Resection of Left Lobe Liver, Open Approach"
+0PSC04Z,10,"Reposition Right Humeral Head with Internal Fixation Device, Open Approach"
+0QH604Z,10,"Insertion of Internal Fixation Device into Right Upper Femur, Open Approach"
+2W30XYZ,10,Immobilization of Head using Other Device
+3E0M05Z,10,"Introduction of Adhesion Barrier into Peritoneal Cavity, Open Approach"
+B51WYZZ,10,Fluoroscopy of Dialysis Shunt/Fistula using Other Contrast
+01N30ZZ,10,"Release Brachial Plexus, Open Approach"
+06L03DZ,10,"Occlusion of Inferior Vena Cava with Intraluminal Device, Percutaneous Approach"
+0DJ08ZZ,10,"Inspection of Upper Intestinal Tract, Via Natural or Artificial Opening Endoscopic"
+0QSB04Z,10,"Reposition Right Lower Femur with Internal Fixation Device, Open Approach"
+0UH97HZ,10,"Insertion of Contraceptive Device into Uterus, Via Natural or Artificial Opening"
+0WPF0JZ,10,"Removal of Synthetic Substitute from Abdominal Wall, Open Approach"
+B41GZZZ,10,Fluoroscopy of Left Lower Extremity Arteries
+B543ZZA,10,"Ultrasonography of Right Jugular Veins, Guidance"
+041J0JB,10,"Bypass Left External Iliac Artery to Left Internal Iliac Artery with Synthetic Substitute, Open Approach"
+06BP4ZZ,10,"Excision of Right Saphenous Vein, Percutaneous Endoscopic Approach"
+07B50ZX,10,"Excision of Right Axillary Lymphatic, Open Approach, Diagnostic"
+0JH60XZ,10,"Insertion of Tunneled Vascular Access Device into Chest Subcutaneous Tissue and Fascia, Open Approach"
+0PST04Z,10,"Reposition Right Finger Phalanx with Internal Fixation Device, Open Approach"
+0QS806Z,10,"Reposition Right Femoral Shaft with Intramedullary Internal Fixation Device, Open Approach"
+0UQJXZZ,10,"Repair Clitoris, External Approach"
+0W9D4ZZ,10,"Drainage of Pericardial Cavity, Percutaneous Endoscopic Approach"
+0W9F00Z,10,"Drainage of Abdominal Wall with Drainage Device, Open Approach"
+B3131ZZ,10,Fluoroscopy of Right Common Carotid Artery using Low Osmolar Contrast
+DD001ZZ,10,Beam Radiation of Esophagus using Photons 1 - 10 MeV
+02PA3MZ,10,"Removal of Cardiac Lead from Heart, Percutaneous Approach"
+05H533Z,10,"Insertion of Infusion Device into Right Subclavian Vein, Percutaneous Approach"
+0D2DXUZ,10,"Change Feeding Device in Lower Intestinal Tract, External Approach"
+0DBW0ZZ,10,"Excision of Peritoneum, Open Approach"
+0DTP0ZZ,10,"Resection of Rectum, Open Approach"
+0KBG3ZX,10,"Excision of Left Trunk Muscle, Percutaneous Approach, Diagnostic"
+0KQM0ZZ,10,"Repair Perineum Muscle, Open Approach"
+0QN10ZZ,10,"Release Sacrum, Open Approach"
+0SG30AJ,10,"Fusion of Lumbosacral Joint with Interbody Fusion Device, Posterior Approach, Anterior Column, Open Approach"
+041K09N,10,"Bypass Right Femoral Artery to Posterior Tibial Artery with Autologous Venous Tissue, Open Approach"
+047Q3ZZ,10,"Dilation of Left Anterior Tibial Artery, Percutaneous Approach"
+0BH17EZ,10,"Insertion of Endotracheal Airway into Trachea, Via Natural or Artificial Opening"
+0DBL8ZX,10,"Excision of Transverse Colon, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0J9K0ZX,10,"Drainage of Left Hand Subcutaneous Tissue and Fascia, Open Approach, Diagnostic"
+0R9V0ZZ,10,"Drainage of Left Metacarpophalangeal Joint, Open Approach"
+0V950ZZ,10,"Drainage of Scrotum, Open Approach"
 10E0XZZ,10,"Delivery of Products of Conception, External Approach"
-3E0G76Z,10,"Introduction of Nutritional Substance into Upper GI, Via Natural or Artificial Opening"
-0WUF0JZ,10,"Supplement Abdominal Wall with Synthetic Substitute, Open Approach"
-021109W,10,"Bypass Coronary Artery, Two Arteries from Aorta with Autologous Venous Tissue, Open Approach"
-5A1221Z,10,"Performance of Cardiac Output, Continuous"
-00C00ZZ,10,"Extirpation of Matter from Brain, Open Approach"
-02100Z9,10,"Bypass Coronary Artery, One Artery from Left Internal Mammary, Open Approach"
+047D3EZ,10,"Dilation of Left Common Iliac Artery with Two Intraluminal Devices, Percutaneous Approach"
+047L34Z,10,"Dilation of Left Femoral Artery with Drug-eluting Intraluminal Device, Percutaneous Approach"
+067Y3DZ,10,"Dilation of Lower Vein with Intraluminal Device, Percutaneous Approach"
+06BP0ZZ,10,"Excision of Right Saphenous Vein, Open Approach"
+07DH3ZX,10,"Extraction of Right Inguinal Lymphatic, Percutaneous Approach, Diagnostic"
+0DBP8ZX,10,"Excision of Rectum, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DQV0ZZ,10,"Repair Mesentery, Open Approach"
+0DTL0ZZ,10,"Resection of Transverse Colon, Open Approach"
+0HQ0XZZ,10,"Repair Scalp Skin, External Approach"
+0SRC0J9,10,"Replacement of Right Knee Joint with Synthetic Substitute, Cemented, Open Approach"
+0T9430Z,10,"Drainage of Left Kidney Pelvis with Drainage Device, Percutaneous Approach"
+0W360ZZ,10,"Control Bleeding in Neck, Open Approach"
+30243N1,10,"Transfusion of Nonautologous Red Blood Cells into Central Vein, Percutaneous Approach"
+B211YZZ,10,Fluoroscopy of Multiple Coronary Arteries using Other Contrast
+BF11YZZ,10,Fluoroscopy of Biliary and Pancreatic Ducts using Other Contrast
+04100J2,10,"Bypass Abdominal Aorta to Mesenteric Artery with Synthetic Substitute, Open Approach"
+06H033Z,10,"Insertion of Infusion Device into Inferior Vena Cava, Percutaneous Approach"
+0DHA3UZ,10,"Insertion of Feeding Device into Jejunum, Percutaneous Approach"
+0TT14ZZ,10,"Resection of Left Kidney, Percutaneous Endoscopic Approach"
+3E0436Z,10,"Introduction of Nutritional Substance into Central Vein, Percutaneous Approach"
+02100AW,10,"Bypass Coronary Artery, One Artery from Aorta with Autologous Arterial Tissue, Open Approach"
+021209W,10,"Bypass Coronary Artery, Three Arteries from Aorta with Autologous Venous Tissue, Open Approach"
+04WY37Z,10,"Revision of Autologous Tissue Substitute in Lower Artery, Percutaneous Approach"
+07BH3ZX,10,"Excision of Right Inguinal Lymphatic, Percutaneous Approach, Diagnostic"
+0DNE0ZZ,10,"Release Large Intestine, Open Approach"
+0DNU0ZZ,10,"Release Omentum, Open Approach"
+0J9K0ZZ,10,"Drainage of Left Hand Subcutaneous Tissue and Fascia, Open Approach"
+0QS736Z,10,"Reposition Left Upper Femur with Intramedullary Internal Fixation Device, Percutaneous Approach"
+0T788DZ,10,"Dilation of Bilateral Ureters with Intraluminal Device, Via Natural or Artificial Opening Endoscopic"
+0W9B3ZX,10,"Drainage of Left Pleural Cavity, Percutaneous Approach, Diagnostic"
+8E09XBZ,10,Computer Assisted Procedure of Head and Neck Region
+02H63JZ,10,"Insertion of Pacemaker Lead into Right Atrium, Percutaneous Approach"
+047K3ZZ,10,"Dilation of Right Femoral Artery, Percutaneous Approach"
+0D20XUZ,10,"Change Feeding Device in Upper Intestinal Tract, External Approach"
+0D598ZZ,10,"Destruction of Duodenum, Via Natural or Artificial Opening Endoscopic"
+0D7P8DZ,10,"Dilation of Rectum with Intraluminal Device, Via Natural or Artificial Opening Endoscopic"
+0DQ80ZZ,10,"Repair Small Intestine, Open Approach"
+0PBF0ZX,10,"Excision of Right Humeral Shaft, Open Approach, Diagnostic"
+0QB00ZZ,10,"Excision of Lumbar Vertebra, Open Approach"
+0SP908Z,10,"Removal of Spacer from Right Hip Joint, Open Approach"
 0WUF4JZ,10,"Supplement Abdominal Wall with Synthetic Substitute, Percutaneous Endoscopic Approach"
+3E0E7GC,10,"Introduction of Other Therapeutic Substance into Products of Conception, Via Natural or Artificial Opening"
+5A02210,10,"Assistance with Cardiac Output using Balloon Pump, Continuous"
+02100A9,10,"Bypass Coronary Artery, One Artery from Left Internal Mammary with Autologous Arterial Tissue, Open Approach"
+07BH0ZX,10,"Excision of Right Inguinal Lymphatic, Open Approach, Diagnostic"
+07TC0ZZ,10,"Resection of Pelvis Lymphatic, Open Approach"
+0D9H3ZZ,10,"Drainage of Cecum, Percutaneous Approach"
+0DBN0ZZ,10,"Excision of Sigmoid Colon, Open Approach"
+0DN60ZZ,10,"Release Stomach, Open Approach"
+0UQG7ZZ,10,"Repair Vagina, Via Natural or Artificial Opening"
+0Y6S0Z1,10,"Detachment at Left 2nd Toe, High, Open Approach"
+5A1D60Z,10,"Performance of Urinary Filtration, Multiple"
+6A550Z1,10,"Pheresis of Leukocytes, Single"
+03BC4ZZ,10,"Excision of Left Radial Artery, Percutaneous Endoscopic Approach"
+04CP3ZZ,10,"Extirpation of Matter from Right Anterior Tibial Artery, Percutaneous Approach"
+0JBH0ZZ,10,"Excision of Left Lower Arm Subcutaneous Tissue and Fascia, Open Approach"
+0JBQ0ZZ,10,"Excision of Right Foot Subcutaneous Tissue and Fascia, Open Approach"
+0W3R7ZZ,10,"Control Bleeding in Genitourinary Tract, Via Natural or Artificial Opening"
+0WJG3ZZ,10,"Inspection of Peritoneal Cavity, Percutaneous Approach"
+B412YZZ,10,Fluoroscopy of Hepatic Artery using Other Contrast
+05HY33Z,10,"Insertion of Infusion Device into Upper Vein, Percutaneous Approach"
+0DTE4ZZ,10,"Resection of Large Intestine, Percutaneous Endoscopic Approach"
+0DTJ0ZZ,10,"Resection of Appendix, Open Approach"
+0JH60BZ,10,"Insertion of Single Array Stimulator Generator into Chest Subcutaneous Tissue and Fascia, Open Approach"
+0PBF3ZX,10,"Excision of Right Humeral Shaft, Percutaneous Approach, Diagnostic"
+04CK3ZZ,10,"Extirpation of Matter from Right Femoral Artery, Percutaneous Approach"
+0BBC4ZZ,10,"Excision of Right Upper Lung Lobe, Percutaneous Endoscopic Approach"
+0DB28ZX,10,"Excision of Middle Esophagus, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DBB0ZZ,10,"Excision of Ileum, Open Approach"
+0JWTX3Z,10,"Revision of Infusion Device in Trunk Subcutaneous Tissue and Fascia, External Approach"
+0RG2071,10,"Fusion of 2 or more Cervical Vertebral Joints with Autologous Tissue Substitute, Posterior Approach, Posterior Column, Open Approach"
+0SG1071,10,"Fusion of 2 or more Lumbar Vertebral Joints with Autologous Tissue Substitute, Posterior Approach, Posterior Column, Open Approach"
+0W3P0ZZ,10,"Control Bleeding in Gastrointestinal Tract, Open Approach"
+0DB60Z3,10,"Excision of Stomach, Open Approach, Vertical"
+0DHA8UZ,10,"Insertion of Feeding Device into Jejunum, Via Natural or Artificial Opening Endoscopic"
+0RRJ00Z,10,"Replacement of Right Shoulder Joint with Reverse Ball and Socket Synthetic Substitute, Open Approach"
+0Y6M0Z0,10,"Detachment at Right Foot, Complete, Open Approach"
+0Y6N0ZC,10,"Detachment at Left Foot, Partial 3rd Ray, Open Approach"
+5A12012,10,"Performance of Cardiac Output, Single, Manual"
+B519YZZ,10,Fluoroscopy of Inferior Vena Cava using Other Contrast
+00163J6,10,"Bypass Cerebral Ventricle to Peritoneal Cavity with Synthetic Substitute, Percutaneous Approach"
+02HQ32Z,10,"Insertion of Monitoring Device into Right Pulmonary Artery, Percutaneous Approach"
+047H34Z,10,"Dilation of Right External Iliac Artery with Drug-eluting Intraluminal Device, Percutaneous Approach"
+04L23DZ,10,"Occlusion of Gastric Artery with Intraluminal Device, Percutaneous Approach"
+0B9F8ZX,10,"Drainage of Right Lower Lung Lobe, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0D20XYZ,10,"Change Other Device in Upper Intestinal Tract, External Approach"
+0DTG0ZZ,10,"Resection of Left Large Intestine, Open Approach"
+0Y6N0Z0,10,"Detachment at Left Foot, Complete, Open Approach"
+00JU3ZZ,10,"Inspection of Spinal Canal, Percutaneous Approach"
+02HK3JZ,10,"Insertion of Pacemaker Lead into Right Ventricle, Percutaneous Approach"
+02UW08Z,10,"Supplement Thoracic Aorta, Descending with Zooplastic Tissue, Open Approach"
+047S3DZ,10,"Dilation of Left Posterior Tibial Artery with Intraluminal Device, Percutaneous Approach"
+04C00ZZ,10,"Extirpation of Matter from Abdominal Aorta, Open Approach"
+0BBF4ZZ,10,"Excision of Right Lower Lung Lobe, Percutaneous Endoscopic Approach"
+0D2DX0Z,10,"Change Drainage Device in Lower Intestinal Tract, External Approach"
+0DB58ZX,10,"Excision of Esophagus, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DBB8ZX,10,"Excision of Ileum, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DJD8ZZ,10,"Inspection of Lower Intestinal Tract, Via Natural or Artificial Opening Endoscopic"
+0JPT0MZ,10,"Removal of Stimulator Generator from Trunk Subcutaneous Tissue and Fascia, Open Approach"
+0RG4071,10,"Fusion of Cervicothoracic Vertebral Joint with Autologous Tissue Substitute, Posterior Approach, Posterior Column, Open Approach"
+0SUV09Z,10,"Supplement Right Knee Joint, Tibial Surface with Liner, Open Approach"
+0Y6N0Z9,10,"Detachment at Left Foot, Partial 1st Ray, Open Approach"
+BF10YZZ,10,Fluoroscopy of Bile Ducts using Other Contrast
+0HRFX73,10,"Replacement of Right Hand Skin with Autologous Tissue Substitute, Full Thickness, External Approach"
+0QSHXZZ,10,"Reposition Left Tibia, External Approach"
+0UQGXZZ,10,"Repair Vagina, External Approach"
+0W3P8ZZ,10,"Control Bleeding in Gastrointestinal Tract, Via Natural or Artificial Opening Endoscopic"
+0W993ZX,10,"Drainage of Right Pleural Cavity, Percutaneous Approach, Diagnostic"
+0WJJ4ZZ,10,"Inspection of Pelvic Cavity, Percutaneous Endoscopic Approach"
+00JV3ZZ,10,"Inspection of Spinal Cord, Percutaneous Approach"
+04CL0ZZ,10,"Extirpation of Matter from Left Femoral Artery, Open Approach"
+04U00JZ,10,"Supplement Abdominal Aorta with Synthetic Substitute, Open Approach"
+06H03DZ,10,"Insertion of Intraluminal Device into Inferior Vena Cava, Percutaneous Approach"
+07Q50ZZ,10,"Repair Right Axillary Lymphatic, Open Approach"
+0B958ZX,10,"Drainage of Right Middle Lobe Bronchus, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0J9H00Z,10,"Drainage of Left Lower Arm Subcutaneous Tissue and Fascia with Drainage Device, Open Approach"
+0SH908Z,10,"Insertion of Spacer into Right Hip Joint, Open Approach"
+0WQF0ZZ,10,"Repair Abdominal Wall, Open Approach"
+30243Y0,10,"Transfusion of Autologous Hematopoietic Stem Cells into Central Vein, Percutaneous Approach"
+B214YZZ,10,Fluoroscopy of Right Heart using Other Contrast
+02UF08Z,10,"Supplement Aortic Valve with Zooplastic Tissue, Open Approach"
+03B40ZZ,10,"Excision of Left Subclavian Artery, Open Approach"
+0HB6XZX,10,"Excision of Back Skin, External Approach, Diagnostic"
+02130AW,10,"Bypass Coronary Artery, Four or More Arteries from Aorta with Autologous Arterial Tissue, Open Approach"
+0QPG04Z,10,"Removal of Internal Fixation Device from Right Tibia, Open Approach"
+0TB13ZX,10,"Excision of Left Kidney, Percutaneous Approach, Diagnostic"
+0W9F3ZX,10,"Drainage of Abdominal Wall, Percutaneous Approach, Diagnostic"
+02QX0ZZ,10,"Repair Thoracic Aorta, Ascending/Arch, Open Approach"
+04UK0JZ,10,"Supplement Right Femoral Artery with Synthetic Substitute, Open Approach"
+0JB93ZX,10,"Excision of Buttock Subcutaneous Tissue and Fascia, Percutaneous Approach, Diagnostic"
+0V9030Z,10,"Drainage of Prostate with Drainage Device, Percutaneous Approach"
+0WWF0JZ,10,"Revision of Synthetic Substitute in Abdominal Wall, Open Approach"
+4A023N6,10,"Measurement of Cardiac Sampling and Pressure, Right Heart, Percutaneous Approach"
+01N40ZZ,10,"Release Ulnar Nerve, Open Approach"
+021009W,10,"Bypass Coronary Artery, One Artery from Aorta with Autologous Venous Tissue, Open Approach"
+02120AW,10,"Bypass Coronary Artery, Three Arteries from Aorta with Autologous Arterial Tissue, Open Approach"
+03VG0CZ,10,"Restriction of Intracranial Artery with Extraluminal Device, Open Approach"
+047K3Z1,10,"Dilation of Right Femoral Artery using Drug-Coated Balloon, Percutaneous Approach"
+0B9N30Z,10,"Drainage of Right Pleura with Drainage Device, Percutaneous Approach"
+0GT34ZZ,10,"Resection of Right Adrenal Gland, Percutaneous Endoscopic Approach"
+0RGA071,10,"Fusion of Thoracolumbar Vertebral Joint with Autologous Tissue Substitute, Posterior Approach, Posterior Column, Open Approach"
+0T9330Z,10,"Drainage of Right Kidney Pelvis with Drainage Device, Percutaneous Approach"
+3E0U0GB,10,"Introduction of Recombinant Bone Morphogenetic Protein into Joints, Open Approach"
+B245YZZ,10,Ultrasonography of Left Heart using Other Contrast
+027034Z,10,"Dilation of Coronary Artery, One Artery with Drug-eluting Intraluminal Device, Percutaneous Approach"
+0D738DZ,10,"Dilation of Lower Esophagus with Intraluminal Device, Via Natural or Artificial Opening Endoscopic"
+0FBC8ZX,10,"Excision of Ampulla of Vater, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0FC98ZZ,10,"Extirpation of Matter from Common Bile Duct, Via Natural or Artificial Opening Endoscopic"
+0JBR0ZZ,10,"Excision of Left Foot Subcutaneous Tissue and Fascia, Open Approach"
+0JPT0PZ,10,"Removal of Cardiac Rhythm Related Device from Trunk Subcutaneous Tissue and Fascia, Open Approach"
+0QN00ZZ,10,"Release Lumbar Vertebra, Open Approach"
+0TJB8ZZ,10,"Inspection of Bladder, Via Natural or Artificial Opening Endoscopic"
+0W9B30Z,10,"Drainage of Left Pleural Cavity with Drainage Device, Percutaneous Approach"
+B3161ZZ,10,Fluoroscopy of Right Internal Carotid Artery using Low Osmolar Contrast
+B51GYZZ,10,Fluoroscopy of Left Pelvic (Iliac) Veins using Other Contrast
+02C03ZZ,10,"Extirpation of Matter from Coronary Artery, One Artery, Percutaneous Approach"
+057Y3ZZ,10,"Dilation of Upper Vein, Percutaneous Approach"
+07BC0ZX,10,"Excision of Pelvis Lymphatic, Open Approach, Diagnostic"
+0DTF0ZZ,10,"Resection of Right Large Intestine, Open Approach"
+0HBKXZX,10,"Excision of Right Lower Leg Skin, External Approach, Diagnostic"
+0JH606Z,10,"Insertion of Pacemaker, Dual Chamber into Chest Subcutaneous Tissue and Fascia, Open Approach"
+0LNS0ZZ,10,"Release Right Ankle Tendon, Open Approach"
+0QB10ZZ,10,"Excision of Sacrum, Open Approach"
+0QS734Z,10,"Reposition Left Upper Femur with Internal Fixation Device, Percutaneous Approach"
+0SPC09Z,10,"Removal of Liner from Right Knee Joint, Open Approach"
+0W950ZZ,10,"Drainage of Lower Jaw, Open Approach"
+00U207Z,10,"Supplement Dura Mater with Autologous Tissue Substitute, Open Approach"
+0212093,10,"Bypass Coronary Artery, Three Arteries from Coronary Artery with Autologous Venous Tissue, Open Approach"
+02L73DK,10,"Occlusion of Left Atrial Appendage with Intraluminal Device, Percutaneous Approach"
+0D7N8DZ,10,"Dilation of Sigmoid Colon with Intraluminal Device, Via Natural or Artificial Opening Endoscopic"
+0D9670Z,10,"Drainage of Stomach with Drainage Device, Via Natural or Artificial Opening"
+0D9H30Z,10,"Drainage of Cecum with Drainage Device, Percutaneous Approach"
+0DBN8ZX,10,"Excision of Sigmoid Colon, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0JDR0ZZ,10,"Extraction of Left Foot Subcutaneous Tissue and Fascia, Open Approach"
+0KBB0ZZ,10,"Excision of Left Lower Arm and Wrist Muscle, Open Approach"
+0SG1070,10,"Fusion of 2 or more Lumbar Vertebral Joints with Autologous Tissue Substitute, Anterior Approach, Anterior Column, Open Approach"
+0SRR0J9,10,"Replacement of Right Hip Joint, Femoral Surface with Synthetic Substitute, Cemented, Open Approach"
+0WHG03Z,10,"Insertion of Infusion Device into Peritoneal Cavity, Open Approach"
+3E0P7VZ,10,"Introduction of Hormone into Female Reproductive, Via Natural or Artificial Opening"
+5A1945Z,10,"Respiratory Ventilation, 24-96 Consecutive Hours"
+5A1D90Z,10,"Performance of Urinary Filtration, Continuous, Greater than 18 hours Per Day"
+00B00ZX,10,"Excision of Brain, Open Approach, Diagnostic"
+01NB0ZZ,10,"Release Lumbar Nerve, Open Approach"
+02703EZ,10,"Dilation of Coronary Artery, One Artery with Two Intraluminal Devices, Percutaneous Approach"
+03VK3DZ,10,"Restriction of Right Internal Carotid Artery with Intraluminal Device, Percutaneous Approach"
+04UL0JZ,10,"Supplement Left Femoral Artery with Synthetic Substitute, Open Approach"
+08QRXZZ,10,"Repair Left Lower Eyelid, External Approach"
+0B9D8ZX,10,"Drainage of Right Middle Lung Lobe, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0QSH36Z,10,"Reposition Left Tibia with Intramedullary Internal Fixation Device, Percutaneous Approach"
+0SR90JZ,10,"Replacement of Right Hip Joint with Synthetic Substitute, Open Approach"
+0TN70ZZ,10,"Release Left Ureter, Open Approach"
+0Y6H0Z2,10,"Detachment at Right Lower Leg, Mid, Open Approach"
+3E0G76Z,10,"Introduction of Nutritional Substance into Upper GI, Via Natural or Artificial Opening"
+5A1935Z,10,"Respiratory Ventilation, Less than 24 Consecutive Hours"
+047N3DZ,10,"Dilation of Left Popliteal Artery with Intraluminal Device, Percutaneous Approach"
+05HM33Z,10,"Insertion of Infusion Device into Right Internal Jugular Vein, Percutaneous Approach"
+07DR3ZX,10,"Extraction of Iliac Bone Marrow, Percutaneous Approach, Diagnostic"
+0D20X0Z,10,"Change Drainage Device in Upper Intestinal Tract, External Approach"
+0LR707Z,10,"Replacement of Right Hand Tendon with Autologous Tissue Substitute, Open Approach"
+0SP904Z,10,"Removal of Internal Fixation Device from Right Hip Joint, Open Approach"
+0UQMXZZ,10,"Repair Vulva, External Approach"
+0VB08ZZ,10,"Excision of Prostate, Via Natural or Artificial Opening Endoscopic"
+0WUF0JZ,10,"Supplement Abdominal Wall with Synthetic Substitute, Open Approach"
+0Y6N0ZD,10,"Detachment at Left Foot, Partial 4th Ray, Open Approach"
+3E033VJ,10,"Introduction of Other Hormone into Peripheral Vein, Percutaneous Approach"
+3E04305,10,"Introduction of Other Antineoplastic into Central Vein, Percutaneous Approach"
+5A1D00Z,10,"Performance of Urinary Filtration, Single"
+B213YZZ,10,Fluoroscopy of Multiple Coronary Artery Bypass Grafts using Other Contrast
+02JA3ZZ,10,"Inspection of Heart, Percutaneous Approach"
+047J34Z,10,"Dilation of Left External Iliac Artery with Drug-eluting Intraluminal Device, Percutaneous Approach"
+0D1N0Z4,10,"Bypass Sigmoid Colon to Cutaneous, Open Approach"
+0DB60ZZ,10,"Excision of Stomach, Open Approach"
+0FC58ZZ,10,"Extirpation of Matter from Right Hepatic Duct, Via Natural or Artificial Opening Endoscopic"
+0JB80ZZ,10,"Excision of Abdomen Subcutaneous Tissue and Fascia, Open Approach"
+0W9B3ZZ,10,"Drainage of Left Pleural Cavity, Percutaneous Approach"
+0Y6N0ZB,10,"Detachment at Left Foot, Partial 2nd Ray, Open Approach"
+00HU33Z,10,"Insertion of Infusion Device into Spinal Canal, Percutaneous Approach"
+02110Z8,10,"Bypass Coronary Artery, Two Arteries from Right Internal Mammary, Open Approach"
+047K3DZ,10,"Dilation of Right Femoral Artery with Intraluminal Device, Percutaneous Approach"
+047R3ZZ,10,"Dilation of Right Posterior Tibial Artery, Percutaneous Approach"
+0DNW0ZZ,10,"Release Peritoneum, Open Approach"
+0JCL0ZZ,10,"Extirpation of Matter from Right Upper Leg Subcutaneous Tissue and Fascia, Open Approach"
+0JH63XZ,10,"Insertion of Tunneled Vascular Access Device into Chest Subcutaneous Tissue and Fascia, Percutaneous Approach"
+0UT20ZZ,10,"Resection of Bilateral Ovaries, Open Approach"
+DP051ZZ,10,Beam Radiation of Rib(s) using Photons 1 - 10 MeV
+01SH0ZZ,10,"Reposition Peroneal Nerve, Open Approach"
+02UG0JZ,10,"Supplement Mitral Valve with Synthetic Substitute, Open Approach"
+3E03305,10,"Introduction of Other Antineoplastic into Peripheral Vein, Percutaneous Approach"
+5A1223Z,10,"Performance of Cardiac Pacing, Continuous"
+B410YZZ,10,Fluoroscopy of Abdominal Aorta using Other Contrast
+D0001ZZ,10,Beam Radiation of Brain using Photons 1 - 10 MeV
+02100Z8,10,"Bypass Coronary Artery, One Artery from Right Internal Mammary, Open Approach"
+04V03DZ,10,"Restriction of Abdominal Aorta with Intraluminal Device, Percutaneous Approach"
+0SG0071,10,"Fusion of Lumbar Vertebral Joint with Autologous Tissue Substitute, Posterior Approach, Posterior Column, Open Approach"
+0W9930Z,10,"Drainage of Right Pleural Cavity with Drainage Device, Percutaneous Approach"
+5A1221Z,10,"Performance of Cardiac Output, Continuous"
+6A551Z3,10,"Pheresis of Plasma, Multiple"
+02100Z9,10,"Bypass Coronary Artery, One Artery from Left Internal Mammary, Open Approach"
+02PY33Z,10,"Removal of Infusion Device from Great Vessel, Percutaneous Approach"
+02Q50ZZ,10,"Repair Atrial Septum, Open Approach"
+06L38CZ,10,"Occlusion of Esophageal Vein with Extraluminal Device, Via Natural or Artificial Opening Endoscopic"
+0BBR0ZZ,10,"Excision of Right Diaphragm, Open Approach"
+0DB38ZX,10,"Excision of Lower Esophagus, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0FC68ZZ,10,"Extirpation of Matter from Left Hepatic Duct, Via Natural or Artificial Opening Endoscopic"
+0RG70J1,10,"Fusion of 2 to 7 Thoracic Vertebral Joints with Synthetic Substitute, Posterior Approach, Posterior Column, Open Approach"
+0SG10A0,10,"Fusion of 2 or more Lumbar Vertebral Joints with Interbody Fusion Device, Anterior Approach, Anterior Column, Open Approach"
+0SG30J1,10,"Fusion of Lumbosacral Joint with Synthetic Substitute, Posterior Approach, Posterior Column, Open Approach"
+0ST20ZZ,10,"Resection of Lumbar Vertebral Disc, Open Approach"
+10D00Z1,10,"Extraction of Products of Conception, Low, Open Approach"
+4A023N8,10,"Measurement of Cardiac Sampling and Pressure, Bilateral, Percutaneous Approach"
+B310YZZ,10,Fluoroscopy of Thoracic Aorta using Other Contrast
+00NY0ZZ,10,"Release Lumbar Spinal Cord, Open Approach"
+02UG3JZ,10,"Supplement Mitral Valve with Synthetic Substitute, Percutaneous Approach"
+0DBF8ZX,10,"Excision of Right Large Intestine, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DH63UZ,10,"Insertion of Feeding Device into Stomach, Percutaneous Approach"
+0QSH04Z,10,"Reposition Left Tibia with Internal Fixation Device, Open Approach"
+0R9J3ZZ,10,"Drainage of Right Shoulder Joint, Percutaneous Approach"
+0Y6N0ZF,10,"Detachment at Left Foot, Partial 5th Ray, Open Approach"
+3E033WK,10,"Introduction of Immunostimulator into Peripheral Vein, Percutaneous"
+5A1D70Z,10,"Performance of Urinary Filtration, Intermittent, Less than 6 Hours Per Day"
+02703ZZ,10,"Dilation of Coronary Artery, One Artery, Percutaneous Approach"
+02HV33Z,10,"Insertion of Infusion Device into Superior Vena Cava, Percutaneous Approach"
+03LG0CZ,10,"Occlusion of Intracranial Artery with Extraluminal Device, Open Approach"
+0DN80ZZ,10,"Release Small Intestine, Open Approach"
+0SH008Z,10,"Insertion of Spacer into Lumbar Vertebral Joint, Open Approach"
+06HY33Z,10,"Insertion of Infusion Device into Lower Vein, Percutaneous Approach"
+0D1B0ZL,10,"Bypass Ileum to Transverse Colon, Open Approach"
+0DBE8ZX,10,"Excision of Large Intestine, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DBL0ZZ,10,"Excision of Transverse Colon, Open Approach"
+0PSF04Z,10,"Reposition Right Humeral Shaft with Internal Fixation Device, Open Approach"
+0TY00Z0,10,"Transplantation of Right Kidney, Allogeneic, Open Approach"
+30283B1,10,"Transfusion of Nonautologous 4-Factor Prothrombin Complex Concentrate into Vein, Percutaneous Approach"
+8E0W4CZ,10,"Robotic Assisted Procedure of Trunk Region, Percutaneous Endoscopic Approach"
+02RF38Z,10,"Replacement of Aortic Valve with Zooplastic Tissue, Percutaneous Approach"
+04VE3DZ,10,"Restriction of Right Internal Iliac Artery with Intraluminal Device, Percutaneous Approach"
+0DBM8ZX,10,"Excision of Descending Colon, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0PS404Z,10,"Reposition Thoracic Vertebra with Internal Fixation Device, Open Approach"
+0RBP0ZZ,10,"Excision of Left Wrist Joint, Open Approach"
+6ABT0BZ,10,"Perfusion of Urinary System Donor Organ, Single"
+009U30Z,10,"Drainage of Spinal Canal with Drainage Device, Percutaneous Approach"
+0B9J8ZX,10,"Drainage of Left Lower Lung Lobe, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DQV4ZZ,10,"Repair Mesentery, Percutaneous Endoscopic Approach"
+0J9K3ZX,10,"Drainage of Left Hand Subcutaneous Tissue and Fascia, Percutaneous Approach, Diagnostic"
+0JBQ0ZX,10,"Excision of Right Foot Subcutaneous Tissue and Fascia, Open Approach, Diagnostic"
+0R9J0ZZ,10,"Drainage of Right Shoulder Joint, Open Approach"
+0S9D3ZZ,10,"Drainage of Left Knee Joint, Percutaneous Approach"
+0SRF0JZ,10,"Replacement of Right Ankle Joint with Synthetic Substitute, Open Approach"
+0Y6Q0Z1,10,"Detachment at Left 1st Toe, High, Open Approach"
+10D17ZZ,10,"Extraction of Products of Conception, Retained, Via Natural or Artificial Opening"
+30233S1,10,"Transfusion of Nonautologous Globulin into Peripheral Vein, Percutaneous Approach"
+3E1M39Z,10,"Irrigation of Peritoneal Cavity using Dialysate, Percutaneous Approach"
+02CX0ZZ,10,"Extirpation of Matter from Thoracic Aorta, Ascending/Arch, Open Approach"
+04HS33Z,10,"Insertion of Infusion Device into Left Posterior Tibial Artery, Percutaneous Approach"
+0DBG8ZX,10,"Excision of Left Large Intestine, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DJD4ZZ,10,"Inspection of Lower Intestinal Tract, Percutaneous Endoscopic Approach"
+0JCH0ZZ,10,"Extirpation of Matter from Left Lower Arm Subcutaneous Tissue and Fascia, Open Approach"
+0QP604Z,10,"Removal of Internal Fixation Device from Right Upper Femur, Open Approach"
+0S9C3ZX,10,"Drainage of Right Knee Joint, Percutaneous Approach, Diagnostic"
+0W9F3ZZ,10,"Drainage of Abdominal Wall, Percutaneous Approach"
+3E0430M,10,"Introduction of Monoclonal Antibody into Central Vein, Percutaneous Approach"
+5A2204Z,10,"Restoration of Cardiac Rhythm, Single"
+B215YZZ,10,Fluoroscopy of Left Heart using Other Contrast
+09JK8ZZ,10,"Inspection of Nasal Mucosa and Soft Tissue, Via Natural or Artificial Opening Endoscopic"
+0W9G3ZX,10,"Drainage of Peritoneal Cavity, Percutaneous Approach, Diagnostic"
+3E05317,10,"Introduction of Other Thrombolytic into Peripheral Artery, Percutaneous Approach"
+067M3DZ,10,"Dilation of Right Femoral Vein with Intraluminal Device, Percutaneous Approach"
+0DBV0ZZ,10,"Excision of Mesentery, Open Approach"
+0DTN0ZZ,10,"Resection of Sigmoid Colon, Open Approach"
+0F798DZ,10,"Dilation of Common Bile Duct with Intraluminal Device, Via Natural or Artificial Opening Endoscopic"
+0FT44ZZ,10,"Resection of Gallbladder, Percutaneous Endoscopic Approach"
+0QB03ZX,10,"Excision of Lumbar Vertebra, Percutaneous Approach, Diagnostic"
+5A1213Z,10,"Performance of Cardiac Pacing, Intermittent"
+009U3ZX,10,"Drainage of Spinal Canal, Percutaneous Approach, Diagnostic"
+02VW3DZ,10,"Restriction of Thoracic Aorta, Descending with Intraluminal Device, Percutaneous Approach"
+047N3ZZ,10,"Dilation of Left Popliteal Artery, Percutaneous Approach"
+06HM33Z,10,"Insertion of Infusion Device into Right Femoral Vein, Percutaneous Approach"
+0DB98ZX,10,"Excision of Duodenum, Via Natural or Artificial Opening Endoscopic, Diagnostic"
+0DNM0ZZ,10,"Release Descending Colon, Open Approach"
+0HB7XZX,10,"Excision of Abdomen Skin, External Approach, Diagnostic"
+0JH60WZ,10,"Insertion of Totally Implantable Vascular Access Device into Chest Subcutaneous Tissue and Fascia, Open Approach"
+0JXJ0ZB,10,"Transfer Right Hand Subcutaneous Tissue and Fascia with Skin and Subcutaneous Tissue, Open Approach"
+0U7C7ZZ,10,"Dilation of Cervix, Via Natural or Artificial Opening"
+B548ZZA,10,"Ultrasonography of Superior Vena Cava, Guidance"
+00160J6,10,"Bypass Cerebral Ventricle to Peritoneal Cavity with Synthetic Substitute, Open Approach"
+009U3ZZ,10,"Drainage of Spinal Canal, Percutaneous Approach"
+00B00ZZ,10,"Excision of Brain, Open Approach"
+02RF08Z,10,"Replacement of Aortic Valve with Zooplastic Tissue, Open Approach"
+041M09P,10,"Bypass Right Popliteal Artery to Foot Artery with Autologous Venous Tissue, Open Approach"
+0FB23ZX,10,"Excision of Left Lobe Liver, Percutaneous Approach, Diagnostic"
+0T9030Z,10,"Drainage of Right Kidney with Drainage Device, Percutaneous Approach"
+10H07YZ,10,"Insertion of Other Device into Products of Conception, Via Natural or Artificial Opening"
+2Y41X5Z,10,Packing of Nasal Region using Packing Material
+00B73ZX,10,"Excision of Cerebral Hemisphere, Percutaneous Approach, Diagnostic"
+03LY3DZ,10,"Occlusion of Upper Artery with Intraluminal Device, Percutaneous Approach"
+0DJ07ZZ,10,"Inspection of Upper Intestinal Tract, Via Natural or Artificial Opening"
+0SP90JZ,10,"Removal of Synthetic Substitute from Right Hip Joint, Open Approach"
+0SRD0J9,10,"Replacement of Left Knee Joint with Synthetic Substitute, Cemented, Open Approach"
+0W993ZZ,10,"Drainage of Right Pleural Cavity, Percutaneous Approach"
+3E0P7GC,10,"Introduction of Other Therapeutic Substance into Female Reproductive, Via Natural or Artificial Opening"
